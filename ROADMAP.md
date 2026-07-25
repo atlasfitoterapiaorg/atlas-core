@@ -97,7 +97,7 @@ Formalizar la gobernanza documental y arquitectónica del Atlas.
 ### Sprint 0.2
 
 - [ ] Publicar GOV-001
-- [ ] Crear ADR-001
+- [x] Crear ADR-001
 - [x] Crear ADR-002
 - [ ] Crear EEA-000
 - [ ] Crear EEA-001

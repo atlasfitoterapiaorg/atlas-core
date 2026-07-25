@@ -35,3 +35,7 @@ Este proyecto sigue el principio **Keep a Changelog** y utiliza **Versionado Sem
 ### Añadido
 
 - ADR-001 — El ROADMAP como Documento Vivo de Planificación.
+
+### Añadido
+
+- ADR-002 — Sistema de Identificación Única.
