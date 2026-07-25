@@ -29,3 +29,9 @@ Este proyecto sigue el principio **Keep a Changelog** y utiliza **Versionado Sem
 - Creación de `ADR-001`.
 - Creación de `ADR-002`.
 - Primer commit oficial del proyecto.
+
+## [Sin publicar]
+
+### Añadido
+
+- ADR-001 — El ROADMAP como Documento Vivo de Planificación.

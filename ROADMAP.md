@@ -98,7 +98,7 @@ Formalizar la gobernanza documental y arquitectónica del Atlas.
 
 - [ ] Publicar GOV-001
 - [ ] Crear ADR-001
-- [ ] Crear ADR-002
+- [x] Crear ADR-002
 - [ ] Crear EEA-000
 - [ ] Crear EEA-001
 - [ ] Crear ADM-001
