@@ -9,36 +9,36 @@
 | Elemento | Estado |
 |----------|--------|
 | Proyecto | Atlas de Fitoterapia |
-| Versión | v0.1.0-alpha |
+| Versión | v0.2.0-alpha |
 | Estado general | 🟡 En construcción |
-| Release activa | Release 0.1 – Fundación |
-| Sprint activo | Sprint 0.1 – Fundación del repositorio |
-| Progreso global | 18% |
+| Release activa | Release v0.2 – Gobierno |
+| Sprint activo | Sprint 0.2 – Gobierno del Atlas |
+| Progreso global | 28% |
 | Última actualización | 2026-07-25 |
 
 ---
 
 # Visión
 
-Construir el Atlas de Fitoterapia más completo, interoperable y científicamente sustentado en idioma español, integrando conocimiento botánico, farmacognóstico, fitoquímico, farmacológico y clínico mediante un modelo de conocimiento estructurado y trazable.
+Construir el Atlas de Fitoterapia más completo, interoperable y científicamente sustentado en idioma español, integrando conocimiento botánico, farmacognóstico, fitoquímico, farmacológico y clínico mediante un modelo de conocimiento estructurado, trazable e interoperable.
 
 ---
 
 # Arquitectura de planificación
 
 ```text
-Visión
-    │
-    ▼
+GOV
+ │
+ ▼
 ROADMAP
-    │
-    ▼
+ │
+ ▼
 Release
-    │
-    ▼
+ │
+ ▼
 Sprint
-    │
-    ▼
+ │
+ ▼
 Tareas
 ```
 
@@ -48,12 +48,12 @@ Tareas
 
 | Release | Objetivo | Estado |
 |----------|----------|--------|
-| v0.1 | Fundación del Atlas | 🟡 En progreso |
-| v0.2 | Gobierno | ⚪ Pendiente |
+| v0.1 | Fundación del Atlas | ✅ Finalizado |
+| v0.2 | Gobierno | 🟡 En progreso |
 | v0.3 | Infraestructura | ⚪ Pendiente |
-| v0.4 | Modelo de conocimiento | ⚪ Pendiente |
-| v0.5 | Monografías base | ⚪ Pendiente |
-| v1.0 | Primera publicación oficial | ⚪ Pendiente |
+| v0.4 | Modelo de Conocimiento | ⚪ Pendiente |
+| v0.5 | Monografías Base | ⚪ Pendiente |
+| v1.0 | Primera Publicación Oficial | ⚪ Pendiente |
 
 ---
 
@@ -63,13 +63,9 @@ Tareas
 
 Establecer la infraestructura documental, metodológica y tecnológica que servirá como base para todo el Atlas.
 
----
+### Sprint 0.1 — Fundación del repositorio
 
-## Sprint 0.1 — Fundación del repositorio
-
-### Estado
-
-🟡 En progreso
+Estado: ✅ Finalizado
 
 ### Entregables
 
@@ -82,9 +78,9 @@ Establecer la infraestructura documental, metodológica y tecnológica que servi
 - [x] Definir arquitectura inicial
 - [x] Crear estructura del repositorio
 - [x] Crear `README.md`
-- [ ] Crear `ROADMAP.md`
-- [ ] Crear `CHANGELOG.md`
-- [ ] Realizar primer commit oficial
+- [x] Crear `ROADMAP.md`
+- [x] Crear `CHANGELOG.md`
+- [x] Realizar primer commit oficial
 
 ---
 
@@ -94,14 +90,20 @@ Establecer la infraestructura documental, metodológica y tecnológica que servi
 
 Formalizar la gobernanza documental y arquitectónica del Atlas.
 
-### Sprint 0.2
+### Sprint 0.2 — Gobierno del Atlas
+
+Estado: 🟡 En progreso
+
+### Entregables
 
 - [ ] Publicar GOV-001
-- [x] Crear ADR-001
-- [x] Crear ADR-002
-- [ ] Crear EEA-000
-- [ ] Crear EEA-001
-- [ ] Crear ADM-001
+- [x] ADR-001 — ROADMAP como Documento Vivo
+- [x] ADR-002 — Sistema de Identificación Única
+- [x] ADR-003 — Jerarquía Normativa
+- [ ] ADR-004 — Arquitectura antes que Implementación
+- [ ] EEA-000 — Convenciones Generales
+- [ ] EEA-001 — Estándar de Nomenclatura
+- [ ] ADM-001 — Arquitectura General del Atlas
 
 ---
 
@@ -116,12 +118,12 @@ Implementar la infraestructura tecnológica del Atlas.
 - [ ] Configurar Quartz
 - [ ] Configurar GitHub Actions
 - [ ] Publicación automática
-- [ ] Plantillas
+- [ ] Plantillas oficiales
 - [ ] Flujo de despliegue
 
 ---
 
-# Release v0.4 — Modelo de conocimiento
+# Release v0.4 — Modelo de Conocimiento
 
 ## Objetivo
 
@@ -130,15 +132,15 @@ Diseñar el modelo conceptual del Atlas.
 ### Entregables
 
 - [ ] Ontología
-- [ ] Entidades
-- [ ] Relaciones
-- [ ] Sistema de evidencia
-- [ ] Identificadores únicos
+- [ ] Modelo de entidades
+- [ ] Modelo de relaciones
+- [ ] Sistema de evidencia científica
 - [ ] Modelo de referencias
+- [ ] Modelo de conocimiento
 
 ---
 
-# Release v0.5 — Monografías base
+# Release v0.5 — Monografías Base
 
 ## Objetivo
 
@@ -154,7 +156,7 @@ Crear las primeras monografías científicas completas.
 
 ---
 
-# Release v1.0 — Primera publicación
+# Release v1.0 — Primera Publicación Oficial
 
 ## Objetivo
 
@@ -162,7 +164,7 @@ Publicar la primera versión oficial del Atlas.
 
 ### Entregables
 
-- [ ] Publicación con Quartz
+- [ ] Publicación mediante Quartz
 - [ ] Dominio
 - [ ] SEO
 - [ ] Buscador
@@ -172,11 +174,11 @@ Publicar la primera versión oficial del Atlas.
 
 # Backlog de propuestas
 
-Las propuestas incluidas en esta sección **no forman parte del alcance aprobado**. Solo podrán desarrollarse después de ser evaluadas y, en caso de aprobarse, incorporadas formalmente al ROADMAP.
+Las propuestas incluidas en esta sección **no forman parte del alcance aprobado**. Solo podrán desarrollarse después de ser evaluadas e incorporadas formalmente al ROADMAP.
 
 | ID | Propuesta | Estado |
 |----|-----------|--------|
-| BP-001 | Documento `MASTER.md` como mapa integral del sistema | Propuesta |
+| BP-001 | PROJECT_STATE.md | Propuesta |
 
 ---
 
@@ -185,21 +187,23 @@ Las propuestas incluidas en esta sección **no forman parte del alcance aprobado
 1. El ROADMAP es el documento oficial de planificación del proyecto.
 2. Todo trabajo deberá estar registrado en este documento antes de comenzar.
 3. Ningún documento nuevo podrá desarrollarse fuera del alcance definido por el ROADMAP.
-4. Las nuevas ideas deberán registrarse primero en el **Backlog de propuestas**.
+4. Las nuevas ideas deberán registrarse primero en el Backlog.
 5. Cada Sprint deberá concluir antes de iniciar el siguiente.
 6. Cada Release finalizará con una versión oficial y su correspondiente actualización en `CHANGELOG.md`.
-7. El ROADMAP es un documento vivo y podrá actualizarse únicamente para reflejar el estado real del proyecto o incorporar cambios previamente aprobados.
+7. El ROADMAP refleja siempre el estado real del proyecto.
 
 ---
 
 # Estado del proyecto
 
+## Release v0.2
+
 ```text
-Release actual
+█████████████████░░░░░░░░░░░░░░░░░░░ 35%
+```
 
-███████████░░░░░░░░░░░░░░░░░░░░░ 18%
+## Sprint 0.2
 
-Sprint 0.1
-
-██████████████████████░░░░░░░░░░ 83%
+```text
+███████████████████░░░░░░░░░░░░░░░░░ 43%
 ```
