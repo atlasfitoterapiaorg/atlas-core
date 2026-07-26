@@ -184,17 +184,15 @@ La documentación oficial seguirá la siguiente jerarquía:
 
 
 
-1\. GOV
+0\. GOV
 
-2\. ADR
+10\. ADM
 
-3\. ADM
+20\. ADR
 
-4\. EEA
+30\. Plantillas
 
-5\. TPL
-
-6\. Documentación Científica
+40\. EEA
 
 
 

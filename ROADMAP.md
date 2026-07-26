@@ -104,7 +104,7 @@ Estado: 🟡 En progreso
 - [x] EEA-000 — Convenciones Generales
 - [x] EEA-001 — Estándar de Nomenclatura
 - [x] EEA-002 — Convenciones de Nomenclatura
-- [ ] ADM-001 — Arquitectura General del Atlas
+- [x] ADM-001 — Arquitectura General del Atlas
 
 ---
 

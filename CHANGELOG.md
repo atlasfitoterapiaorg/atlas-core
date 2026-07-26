@@ -32,12 +32,16 @@ Este proyecto sigue el principio **Keep a Changelog** y utiliza **Versionado Sem
 #### Gobernanza
 - GOV-001 — Constitución del Atlas de Fitoterapia.
 
+#### ADM
+- ADM-001-Arquitectura-General-del-Atlas.md
+
 #### Arquitectura
 
 - ADR-001 — El ROADMAP como Documento Vivo de Planificación.
 - ADR-002 — Sistema de Identificación Única.
 - ADR-003 — Jerarquía Normativa.
 - ADR-004 — Arquitectura antes que Implementación.
+
 
 #### Estándares
 
