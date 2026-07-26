@@ -96,7 +96,7 @@ Estado: 🟡 En progreso
 
 ### Entregables
 
-- [ ] Publicar GOV-001
+- [x] GOV-001 — Constitución del Atlas de Fitoterapia.
 - [x] ADR-001 — ROADMAP como Documento Vivo
 - [x] ADR-002 — Sistema de Identificación Única
 - [x] ADR-003 — Jerarquía Normativa

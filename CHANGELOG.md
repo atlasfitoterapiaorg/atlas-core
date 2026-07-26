@@ -29,6 +29,9 @@ Este proyecto sigue el principio **Keep a Changelog** y utiliza **Versionado Sem
 
 ### Añadido
 
+#### Gobernanza
+- GOV-001 — Constitución del Atlas de Fitoterapia.
+
 #### Arquitectura
 
 - ADR-001 — El ROADMAP como Documento Vivo de Planificación.
