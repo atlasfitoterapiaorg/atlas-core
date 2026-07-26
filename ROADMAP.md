@@ -103,6 +103,7 @@ Estado: 🟡 En progreso
 - [x] ADR-004 — Arquitectura antes que Implementación
 - [x] EEA-000 — Convenciones Generales
 - [x] EEA-001 — Estándar de Nomenclatura
+- [x] EEA-002 — Convenciones de Nomenclatura
 - [ ] ADM-001 — Arquitectura General del Atlas
 
 ---

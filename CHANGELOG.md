@@ -40,4 +40,4 @@ Este proyecto sigue el principio **Keep a Changelog** y utiliza **Versionado Sem
 
 - EEA-000 — Convenciones Generales.
 - EEA-001 — Convenciones Documentales.
-
+- EEA-002 — Convenciones de Nomenclatura.
