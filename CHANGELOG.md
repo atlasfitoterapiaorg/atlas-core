@@ -23,21 +23,21 @@ Este proyecto sigue el principio **Keep a Changelog** y utiliza **Versionado Sem
 - Definición del control de alcance mediante Backlog de Propuestas.
 - Aprobación del sistema de trabajo basado en Releases y Sprints.
 
-### Pendiente
-
-- Publicación de `GOV-001`.
-- Creación de `ADR-001`.
-- Creación de `ADR-002`.
-- Primer commit oficial del proyecto.
+---
 
 ## [Sin publicar]
-- EEA-000 — Convenciones Generales.
 
 ### Añadido
+
+#### Arquitectura
 
 - ADR-001 — El ROADMAP como Documento Vivo de Planificación.
 - ADR-002 — Sistema de Identificación Única.
 - ADR-003 — Jerarquía Normativa.
 - ADR-004 — Arquitectura antes que Implementación.
 
+#### Estándares
+
+- EEA-000 — Convenciones Generales.
+- EEA-001 — Convenciones Documentales.
 

@@ -102,7 +102,7 @@ Estado: 🟡 En progreso
 - [x] ADR-003 — Jerarquía Normativa
 - [x] ADR-004 — Arquitectura antes que Implementación
 - [x] EEA-000 — Convenciones Generales
-- [ ] EEA-001 — Estándar de Nomenclatura
+- [x] EEA-001 — Estándar de Nomenclatura
 - [ ] ADM-001 — Arquitectura General del Atlas
 
 ---
