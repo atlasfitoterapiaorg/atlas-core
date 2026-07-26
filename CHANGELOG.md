@@ -36,6 +36,7 @@ Este proyecto sigue el principio **Keep a Changelog** y utiliza **Versionado Sem
 
 - ADR-001 — El ROADMAP como Documento Vivo de Planificación.
 - ADR-003 — Jerarquía Normativa.
+- ADR-004 — Arquitectura antes que Implementación.
 
 ### Añadido
 
