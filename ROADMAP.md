@@ -101,7 +101,7 @@ Estado: 🟡 En progreso
 - [x] ADR-002 — Sistema de Identificación Única
 - [x] ADR-003 — Jerarquía Normativa
 - [x] ADR-004 — Arquitectura antes que Implementación
-- [ ] EEA-000 — Convenciones Generales
+- [x] EEA-000 — Convenciones Generales
 - [ ] EEA-001 — Estándar de Nomenclatura
 - [ ] ADM-001 — Arquitectura General del Atlas
 
