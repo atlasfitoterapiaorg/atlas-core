@@ -1,4 +1,4 @@
-\---
+---
 
 id: GOV-001
 
@@ -18,29 +18,29 @@ author: Proyecto Atlas de Fitoterapia
 
 tags:
 
-&#x20; - governance
+  - governance
 
-&#x20; - constitution
+  - constitution
 
-&#x20; - atlas
+  - atlas
 
-\---
-
-
-
-\# GOV-001
+---
 
 
 
-\# Constitución del Atlas de Fitoterapia
+# GOV-001
 
 
 
-\---
+# Constitución del Atlas de Fitoterapia
 
 
 
-\## 1. Información del documento
+---
+
+
+
+## 1. Información del documento
 
 
 
@@ -62,31 +62,31 @@ tags:
 
 
 
-\### Documentos relacionados
+### Documentos relacionados
 
 
 
-\- ADR-001
+- ADR-001
 
-\- ADR-002
+- ADR-002
 
-\- ADR-003
+- ADR-003
 
-\- ADR-004
+- ADR-004
 
-\- EEA-000
+- EEA-000
 
-\- EEA-001
+- EEA-001
 
-\- EEA-002
-
-
-
-\---
+- EEA-002
 
 
 
-\## 2. Propósito
+---
+
+
+
+## 2. Propósito
 
 
 
@@ -102,11 +102,11 @@ Este documento constituye la máxima autoridad normativa del Atlas.
 
 
 
-\---
+---
 
 
 
-\## 3. Alcance
+## 3. Alcance
 
 
 
@@ -114,11 +114,11 @@ Las disposiciones contenidas en este documento aplican a todos los repositorios 
 
 
 
-\---
+---
 
 
 
-\## 4. Misión
+## 4. Misión
 
 
 
@@ -126,11 +126,11 @@ Desarrollar un atlas científico de fitoterapia basado en evidencia, estructurad
 
 
 
-\---
+---
 
 
 
-\## 5. Visión
+## 5. Visión
 
 
 
@@ -138,11 +138,11 @@ Consolidar al Atlas de Fitoterapia como una referencia científica, documental y
 
 
 
-\---
+---
 
 
 
-\## 6. Principios de Gobernanza
+## 6. Principios de Gobernanza
 
 
 
@@ -150,33 +150,33 @@ La gobernanza del Atlas se fundamenta en los siguientes principios:
 
 
 
-\- Arquitectura antes que implementación.
+- Arquitectura antes que implementación.
 
-\- Trazabilidad completa.
+- Trazabilidad completa.
 
-\- Unicidad de la información.
+- Unicidad de la información.
 
-\- Modularidad documental.
+- Modularidad documental.
 
-\- Evolución controlada.
+- Evolución controlada.
 
-\- Transparencia.
+- Transparencia.
 
-\- Reutilización.
+- Reutilización.
 
-\- Neutralidad tecnológica.
+- Neutralidad tecnológica.
 
-\- Automatización cuando sea posible.
+- Automatización cuando sea posible.
 
-\- Evidencia científica como fundamento del conocimiento.
-
-
-
-\---
+- Evidencia científica como fundamento del conocimiento.
 
 
 
-\## 7. Jerarquía Normativa
+---
+
+
+
+## 7. Jerarquía Normativa
 
 
 
@@ -184,15 +184,15 @@ La documentación oficial seguirá la siguiente jerarquía:
 
 
 
-0\. GOV
+0. GOV
 
-10\. ADM
+10. ADM
 
-20\. ADR
+20. ADR
 
-30\. Plantillas
+30. Plantillas
 
-40\. EEA
+40. EEA
 
 
 
@@ -200,11 +200,11 @@ Los documentos inferiores podrán ampliar, pero nunca contradecir, a los superio
 
 
 
-\---
+---
 
 
 
-\## 8. Gestión del Ciclo de Vida Documental
+## 8. Gestión del Ciclo de Vida Documental
 
 
 
@@ -220,11 +220,11 @@ Draft → Review → Approved → Deprecated → Archived
 
 
 
-\---
+---
 
 
 
-\## 9. Gestión del ROADMAP
+## 9. Gestión del ROADMAP
 
 
 
@@ -236,11 +236,11 @@ Toda modificación de alcance deberá registrarse y mantener trazabilidad con Re
 
 
 
-\---
+---
 
 
 
-\## 10. Gestión de Cambios
+## 10. Gestión de Cambios
 
 
 
@@ -248,23 +248,23 @@ Toda modificación deberá:
 
 
 
-\- justificarse;
+- justificarse;
 
-\- mantener trazabilidad;
+- mantener trazabilidad;
 
-\- respetar la jerarquía normativa;
+- respetar la jerarquía normativa;
 
-\- actualizar la versión correspondiente;
+- actualizar la versión correspondiente;
 
-\- registrarse en el CHANGELOG cuando aplique.
-
-
-
-\---
+- registrarse en el CHANGELOG cuando aplique.
 
 
 
-\## 11. Roles y Responsabilidades
+---
+
+
+
+## 11. Roles y Responsabilidades
 
 
 
@@ -272,15 +272,15 @@ El Atlas podrá contar con:
 
 
 
-\- Arquitecto del Atlas.
+- Arquitecto del Atlas.
 
-\- Editor Científico.
+- Editor Científico.
 
-\- Revisor Técnico.
+- Revisor Técnico.
 
-\- Colaborador.
+- Colaborador.
 
-\- Agentes Automatizados.
+- Agentes Automatizados.
 
 
 
@@ -288,11 +288,11 @@ Las responsabilidades específicas podrán documentarse en normas complementaria
 
 
 
-\---
+---
 
 
 
-\## 12. Cumplimiento
+## 12. Cumplimiento
 
 
 
@@ -300,25 +300,25 @@ El cumplimiento de esta Constitución es obligatorio para todos los activos ofic
 
 
 
-\---
+---
 
 
 
-\## 13. Referencias
+## 13. Referencias
 
 
 
-\- ADR-001
+- ADR-001
 
-\- ADR-002
+- ADR-002
 
-\- ADR-003
+- ADR-003
 
-\- ADR-004
+- ADR-004
 
-\- EEA-000
+- EEA-000
 
-\- EEA-001
+- EEA-001
 
-\- EEA-002
+- EEA-002
 
