@@ -1,0 +1,281 @@
+---
+id: ROADMAP
+title: Plan Director del Atlas de Fitoterapia
+version: 1.0.0
+status: Approved
+type: ROADMAP
+created: 2026-07-25
+updated: 2026-07-28
+author: Proyecto Atlas de Fitoterapia
+tags:
+  - roadmap
+  - governance
+  - planning
+---
+
+# Plan Director del Atlas de Fitoterapia
+
+## 1. Propósito
+
+El ROADMAP constituye el documento oficial de planificación estratégica y operativa del Atlas de Fitoterapia.
+
+Define la evolución del proyecto mediante Releases, Sprints y Entregables, estableciendo el alcance aprobado, las prioridades de desarrollo y el estado real del proyecto.
+
+Conforme al ADR-001, este documento es un documento vivo y representa la única fuente oficial para conocer la planificación vigente del Atlas.
+
+---
+
+# 2. Alcance
+
+Este documento aplica a todo el proyecto Atlas de Fitoterapia.
+
+Toda iniciativa, documento, componente arquitectónico o desarrollo tecnológico deberá encontrarse planificado dentro del presente ROADMAP antes de iniciar su ejecución.
+
+---
+
+# 3. Estado General del Proyecto
+
+| Elemento | Estado |
+|----------|--------|
+| Proyecto | Atlas de Fitoterapia |
+| Estado general | 🟢 Gobernanza consolidada |
+| Release activo | Release v0.3 — Infraestructura Tecnológica |
+| Sprint activo | Sprint 3.1 — Infraestructura Base |
+| Versión del documento | 1.0.0 |
+| Última actualización | 2026-07-28 |
+
+---
+
+# 4. Métricas Ejecutivas
+
+| Indicador | Valor |
+|-----------|------:|
+| Releases completados | 2 |
+| Release activo | v0.3 |
+| Documentos normativos aprobados | 9 |
+| GOV | 1 |
+| ADR | 4 |
+| ADM | 1 |
+| EEA | 3 |
+| Progreso global estimado | 40 % |
+
+---
+
+# 5. Visión Estratégica
+
+Construir el Atlas de Fitoterapia más completo, interoperable y científicamente sustentado en idioma español mediante un modelo de conocimiento estructurado, trazable, reutilizable y gobernado.
+
+---
+
+# 6. Principios de Planificación
+
+La evolución del Atlas se regirá por los siguientes principios:
+
+- La arquitectura precede a la implementación.
+- El conocimiento se define una única vez y se reutiliza.
+- Cada documento debe aportar una responsabilidad arquitectónica única.
+- Solo el Release activo y el siguiente se planifican en detalle.
+- Los Releases posteriores permanecerán en planificación estratégica hasta su inicio.
+- Todo cambio aprobado deberá reflejarse primero en el ROADMAP y posteriormente en el CHANGELOG.
+- El Atlas evolucionará por niveles de abstracción.
+
+---
+
+# 7. Arquitectura de Planificación
+
+```text
+GOV
+ │
+ ▼
+ROADMAP
+ │
+ ▼
+Release
+ │
+ ▼
+Sprint
+ │
+ ▼
+Entregables
+ │
+ ▼
+Tareas
+```
+
+---
+
+# 8. Releases
+
+## Release v0.1 — Fundación
+
+**Estado:** ✅ Completado
+
+### Propósito arquitectónico
+
+Establecer la infraestructura inicial del proyecto.
+
+### Sprint 0.1
+
+**Estado:** ✅ Completado
+
+### Entregables
+
+- Organización del proyecto.
+- Repositorios iniciales.
+- Git.
+- GitHub Desktop.
+- Obsidian.
+- Arquitectura inicial.
+- README.
+- ROADMAP.
+- CHANGELOG.
+- Primer commit oficial.
+
+---
+
+## Release v0.2 — Gobernanza
+
+**Estado:** ✅ Completado
+
+### Propósito arquitectónico
+
+Definir la gobernanza, arquitectura documental y estándares que regirán todo el Atlas.
+
+### Sprint 0.2
+
+**Estado:** ✅ Completado
+
+### Entregables
+
+- GOV-001 — Constitución del Atlas.
+- ADR-001 — ROADMAP como Documento Vivo.
+- ADR-002 — Sistema de Identificación Única.
+- ADR-003 — Jerarquía Normativa.
+- ADR-004 — Arquitectura antes que Implementación.
+- ADM-001 — Arquitectura General del Atlas.
+- EEA-000 — Convenciones Generales.
+- EEA-001 — Convenciones Documentales.
+- EEA-002 — Convenciones de Nomenclatura.
+
+---
+
+## Release v0.3 — Infraestructura Tecnológica
+
+**Estado:** 🟡 En progreso
+
+### Propósito arquitectónico
+
+Implementar la infraestructura tecnológica que soportará el desarrollo, validación y publicación del Atlas.
+
+### Sprint 3.1 — Infraestructura Base
+
+**Estado:** En progreso
+
+### Entregables
+
+- Configuración de Quartz.
+- Configuración de GitHub Pages.
+- Configuración de GitHub Actions.
+- Flujo de despliegue.
+- Plantillas oficiales.
+- Automatización básica.
+- Validación automática de Front Matter.
+- Validación automática de nomenclatura.
+- Validación automática de enlaces.
+
+---
+
+## Release v0.4 — Arquitectura del Conocimiento
+
+**Estado:** ⚪ Planeado
+
+### Propósito arquitectónico
+
+Diseñar y aprobar la arquitectura conceptual del Atlas mediante un modelo híbrido orientado por dominios de conocimiento.
+
+### Sprint 4.1 — Arquitectura del Conocimiento
+
+**Estado:** Planeado
+
+### Entregables
+
+- ADR-005 — Modelo Híbrido del Conocimiento.
+- ADM-002 — Arquitectura del Modelo de Conocimiento.
+- ADM-003 — Dominios de Conocimiento del Atlas.
+- ADM-004 — Modelo de Información del Atlas.
+
+---
+
+# 9. Releases Estratégicos
+
+Los Releases posteriores permanecerán en planificación estratégica hasta el inicio formal de su ejecución.
+
+| Release | Propósito | Estado |
+|----------|-----------|--------|
+| v0.5 | Por definir | ⚪ Planeación pendiente |
+| v0.6 | Por definir | ⚪ Planeación pendiente |
+| v0.7 | Por definir | ⚪ Planeación pendiente |
+| v0.8 | Por definir | ⚪ Planeación pendiente |
+| v0.9 | Por definir | ⚪ Planeación pendiente |
+| v1.0 | Primera publicación oficial | ⚪ Planeación pendiente |
+
+---
+
+# 10. Backlog Estratégico
+
+Las iniciativas registradas en esta sección no forman parte del alcance aprobado y únicamente podrán desarrollarse después de ser incorporadas formalmente a un Release.
+
+| ID | Iniciativa | Estado |
+|----|------------|--------|
+| BP-001 | PROJECT_STATE.md | Propuesta |
+
+---
+
+# 11. Reglas del ROADMAP
+
+1. El ROADMAP constituye el plan director del Atlas.
+2. Todo trabajo deberá encontrarse registrado antes de iniciar su ejecución.
+3. Ningún documento podrá desarrollarse fuera del alcance definido por un Release.
+4. Cada entregable deberá aportar una responsabilidad arquitectónica única.
+5. Todo Release deberá completarse antes del inicio del siguiente.
+6. Los Releases posteriores al activo podrán mantenerse únicamente en planificación estratégica.
+7. Todo cambio aprobado deberá actualizar primero el ROADMAP y posteriormente el CHANGELOG.
+8. El ROADMAP deberá reflejar permanentemente el estado real del proyecto.
+
+---
+
+# 12. Estado del Proyecto
+
+## Progreso general
+
+```text
+████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░ 40%
+```
+
+## Dependencia entre Releases
+
+```text
+v0.1 Fundación
+        │
+        ▼
+v0.2 Gobernanza
+        │
+        ▼
+v0.3 Infraestructura
+        │
+        ▼
+v0.4 Arquitectura del Conocimiento
+        │
+        ▼
+Releases posteriores
+```
+
+---
+
+# 13. Referencias
+
+- GOV-001 — Constitución del Atlas de Fitoterapia.
+- ADR-001 — ROADMAP como Documento Vivo.
+- ADR-003 — Jerarquía Normativa.
+- ADR-004 — Arquitectura antes que Implementación.
+- ADM-001 — Arquitectura General del Atlas.

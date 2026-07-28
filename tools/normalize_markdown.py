@@ -26,10 +26,10 @@ def normalize_markdown(content: str) -> str:
     content = re.sub(r"(?m)^\\---\s*$", "---", content)
 
     # Encabezados Markdown.
-    content = re.sub(r"(?m)^\\(#{1,6})(\s+)", r"\1\2", content)
+    content = re.sub(r"(?m)^(\s*)\\(#{1,6})(\s+)", r"\1\2\3", content)
 
     # Viñetas escapadas.
-    content = re.sub(r"(?m)^(\s*)\\-\s+", r"\1- ", content)
+    content = re.sub(r"(?m)^\s*\\\s*$", "", content)
 
     # Listas numeradas escapadas: 1\. texto
     content = re.sub(r"(?m)^(\s*\d+)\\\.\s+", r"\1. ", content)

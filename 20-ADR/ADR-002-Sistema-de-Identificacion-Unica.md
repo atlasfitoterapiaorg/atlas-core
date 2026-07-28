@@ -1,4 +1,32 @@
-\# ADR-002
+\---
+
+id: ADR-002
+
+title: Sistema de Identificación Única
+
+version: 1.1.0
+
+status: Approved
+
+type: ADR
+
+created: 2026-07-25
+
+updated: 2026-07-28
+
+author: Proyecto Atlas de Fitoterapia
+
+tags:
+
+&#x20; - architecture
+
+&#x20; - governance
+
+&#x20; - identification
+
+&#x20; - traceability
+
+\---
 
 
 
@@ -6,51 +34,7 @@
 
 
 
-\---
-
-
-
-\## 1. Información del documento
-
-
-
-| Campo | Valor |
-
-|-------|-------|
-
-| Identificador | ADR-002 |
-
-| Versión | 1.0 |
-
-| Estado | Aprobado |
-
-| Fecha | 2026-07-25 |
-
-| Tipo | Architecture Decision Record |
-
-| Autor | Proyecto Atlas de Fitoterapia |
-
-
-
-\### Documentos relacionados
-
-
-
-\- GOV-001
-
-\- ADR-001
-
-\- EEA-000
-
-\- ADM-001
-
-
-
-\---
-
-
-
-\## 2. Contexto
+\## 1. Contexto
 
 
 
@@ -62,7 +46,11 @@ Durante la fase de diseño se identificó que los nombres de las entidades puede
 
 
 
-Por esta razón se consideró necesario separar la identidad de una entidad de su nombre, ubicación o representación documental, garantizando así su estabilidad a lo largo del tiempo.
+Asimismo, la estabilidad de la identidad constituye un requisito indispensable para preservar la trazabilidad, garantizar la interoperabilidad y permitir la evolución ordenada del conocimiento administrado por el Atlas.
+
+
+
+Por esta razón se consideró necesario separar la identidad de una entidad de su nombre, ubicación o representación documental, garantizando así su estabilidad durante todo su ciclo de vida.
 
 
 
@@ -70,11 +58,11 @@ Por esta razón se consideró necesario separar la identidad de una entidad de s
 
 
 
-\## 3. Problema
+\## 2. Problema
 
 
 
-Utilizar nombres como mecanismo de identificación genera ambigüedad y dificulta la trazabilidad.
+Utilizar nombres como mecanismo de identificación genera ambigüedad y dificulta la trazabilidad del conocimiento.
 
 
 
@@ -82,17 +70,19 @@ Una misma entidad puede:
 
 
 
-\- cambiar de nombre;
+\- Cambiar de nombre.
 
-\- cambiar de clasificación;
+\- Cambiar de clasificación.
 
-\- aparecer en múltiples documentos;
+\- Aparecer en múltiples documentos.
 
-\- relacionarse con numerosas entidades diferentes.
+\- Relacionarse con numerosas entidades diferentes.
+
+\- Mantener relaciones que deben conservarse entre distintas versiones del conocimiento.
 
 
 
-Sin un sistema de identificación permanente resulta imposible garantizar referencias estables, automatizar relaciones entre entidades o mantener la consistencia del conocimiento conforme el Atlas evolucione.
+Sin un sistema de identificación permanente resulta imposible garantizar referencias estables, automatizar relaciones entre entidades o mantener la consistencia del Atlas conforme evolucione.
 
 
 
@@ -100,7 +90,7 @@ Sin un sistema de identificación permanente resulta imposible garantizar refere
 
 
 
-\## 4. Decisión
+\## 3. Decisión
 
 
 
@@ -108,29 +98,41 @@ El Atlas de Fitoterapia adoptará un Sistema de Identificación Única (SIU) bas
 
 
 
-Toda entidad administrada por el Atlas deberá contar con un identificador único, persistente y no reutilizable, asignado desde su creación.
+Toda entidad gobernada por el Atlas deberá contar con un identificador único, permanente, estable y no reutilizable, asignado desde el momento de su creación.
 
 
 
-Los identificadores constituirán la referencia oficial de cada entidad y deberán utilizarse en relaciones, enlaces, trazabilidad, automatizaciones y procesos de integración.
+Los identificadores constituirán la referencia oficial de cada objeto gobernado y deberán utilizarse en relaciones, referencias, trazabilidad, automatizaciones, integraciones y procesos de análisis.
 
 
 
-Los nombres científicos, nombres comunes, títulos de documentos y demás atributos descriptivos podrán modificarse cuando exista justificación científica o editorial, sin afectar la identidad de la entidad.
+Los nombres científicos, nombres comunes, títulos de documentos y cualquier otro atributo descriptivo podrán modificarse cuando exista justificación científica, editorial o técnica, sin afectar la identidad del objeto.
 
 
 
-El sistema distinguirá explícitamente entre:
+\### Principio de separación entre identidad y representación
 
 
 
-\- \*\*Entidades de conocimiento\*\*, que representan objetos del dominio (por ejemplo, plantas, compuestos, enfermedades, metabolitos, preparados, estudios clínicos o referencias bibliográficas).
-
-\- \*\*Documentos\*\*, que representan artefactos editoriales destinados a describir, organizar o normar el conocimiento (por ejemplo, monografías, estándares, ADR, ADM o guías).
+El Atlas distingue explícitamente los siguientes conceptos:
 
 
 
-La identidad pertenece a la entidad; el documento constituye únicamente una representación estructurada de dicha entidad.
+| Concepto | Definición |
+
+|----------|------------|
+
+| \*\*Objeto gobernado\*\* | Elemento administrado por el Atlas cuya existencia debe ser identificada y trazable durante todo su ciclo de vida. |
+
+| \*\*Identidad\*\* | Propiedad permanente que distingue de forma única a un objeto gobernado. La identidad permanece inalterada durante todo su ciclo de vida. |
+
+| \*\*Representación\*\* | Forma en que un objeto gobernado es descrito, documentado o visualizado. Una representación puede modificarse sin alterar la identidad del objeto. |
+
+| \*\*Documento\*\* | Artefacto editorial utilizado para representar, describir, gobernar o comunicar uno o varios objetos gobernados. |
+
+
+
+En consecuencia, la identidad pertenece al objeto gobernado y no a su representación documental. Los documentos constituyen representaciones editables utilizadas para describir, organizar o gobernar dichos objetos, mientras que los identificadores permanentes garantizan su estabilidad, trazabilidad e interoperabilidad a lo largo del tiempo.
 
 
 
@@ -138,7 +140,7 @@ La identidad pertenece a la entidad; el documento constituye únicamente una rep
 
 
 
-\## 5. Justificación
+\## 4. Justificación
 
 
 
@@ -146,7 +148,7 @@ La adopción de un Sistema de Identificación Única proporciona una base sólid
 
 
 
-Esta decisión permite desacoplar la identidad de una entidad de sus atributos descriptivos, evitando que cambios editoriales, taxonómicos o científicos afecten las relaciones previamente establecidas.
+Esta decisión permite desacoplar la identidad de un objeto gobernado de sus atributos descriptivos, evitando que cambios editoriales, taxonómicos o científicos afecten las relaciones previamente establecidas.
 
 
 
@@ -162,7 +164,7 @@ La identificación permanente constituye un requisito fundamental para preservar
 
 
 
-\## 6. Consecuencias
+\## 5. Consecuencias
 
 
 
@@ -170,15 +172,17 @@ Como resultado de esta decisión:
 
 
 
-\- Toda entidad deberá recibir un identificador único antes de incorporarse al Atlas.
+\- Toda entidad gobernada por el Atlas deberá recibir un identificador único antes de incorporarse al proyecto.
 
 \- Los identificadores nunca serán reutilizados.
 
-\- Los cambios de nombre no modificarán la identidad de la entidad.
+\- Los cambios de nombre no modificarán la identidad del objeto.
 
 \- Las relaciones entre entidades utilizarán identificadores permanentes.
 
 \- Los documentos deberán referenciar entidades mediante sus identificadores oficiales cuando corresponda.
+
+\- Los identificadores deberán mantenerse aun cuando un objeto sea archivado, sustituido o declarado obsoleto.
 
 \- Las automatizaciones futuras podrán utilizar el Sistema de Identificación Única como mecanismo principal de integración.
 
@@ -188,17 +192,29 @@ Como resultado de esta decisión:
 
 
 
-\## 7. Impacto
+\## 6. Impacto
 
 
 
-Esta decisión afecta a todos los componentes del Atlas, incluyendo:
+Esta decisión afecta a los siguientes componentes del Atlas:
 
 
 
-\- Gobernanza documental.
+\### Gobernanza
 
-\- Arquitectura del conocimiento.
+
+
+\- Gobierno documental.
+
+\- Arquitectura.
+
+\- Estándares.
+
+
+
+\### Conocimiento
+
+
 
 \- Ontología.
 
@@ -206,15 +222,47 @@ Esta decisión afecta a todos los componentes del Atlas, incluyendo:
 
 \- Plantillas.
 
+\- Entidades científicas.
+
+
+
+\### Automatización
+
+
+
 \- Automatizaciones.
+
+\- Validaciones.
+
+\- Integraciones.
+
+
+
+\### Publicación
+
+
 
 \- Publicación mediante Quartz.
 
-\- Integraciones futuras con agentes de inteligencia artificial y otras herramientas de análisis.
+\- Navegación.
+
+\- Referencias internas.
 
 
 
-El Sistema de Identificación Única se considera una decisión arquitectónica fundacional y deberá mantenerse estable a lo largo del ciclo de vida del proyecto.
+\### Evolución futura
+
+
+
+\- Integraciones con agentes de inteligencia artificial.
+
+\- Interoperabilidad con sistemas externos.
+
+\- Grafos de conocimiento.
+
+
+
+El Sistema de Identificación Única constituye una decisión arquitectónica fundacional y deberá mantenerse estable durante todo el ciclo de vida del Atlas.
 
 
 
@@ -222,15 +270,29 @@ El Sistema de Identificación Única se considera una decisión arquitectónica 
 
 
 
-\## 8. Implementación
+\## 7. Implementación
 
 
 
-La especificación técnica del Sistema de Identificación Única, incluyendo la sintaxis de los identificadores, reglas de asignación, categorías, validaciones y convenciones de nomenclatura, será desarrollada en los documentos de arquitectura y estándares correspondientes.
+La implementación de esta decisión comprende:
 
 
 
-Este ADR establece únicamente la decisión de adoptar un sistema de identificación permanente y el principio de separación entre identidad y representación.
+1\. Definir la sintaxis oficial de los identificadores.
+
+2\. Establecer las reglas de asignación.
+
+3\. Definir categorías y convenciones de nomenclatura.
+
+4\. Incorporar mecanismos de validación.
+
+5\. Actualizar las plantillas para soportar identificadores permanentes.
+
+6\. Incorporar el uso obligatorio de identificadores en las relaciones entre entidades.
+
+
+
+Este ADR establece únicamente la decisión arquitectónica de adoptar un Sistema de Identificación Única y el principio de separación entre identidad y representación. La especificación técnica será desarrollada en los documentos de arquitectura y estándares correspondientes.
 
 
 
@@ -238,19 +300,23 @@ Este ADR establece únicamente la decisión de adoptar un sistema de identificac
 
 
 
-\## 9. Referencias
+\## 8. Referencias
 
 
 
-\- GOV-001 – Constitución del Atlas de Fitoterapia.
+\- GOV-001 — Constitución del Atlas de Fitoterapia.
 
-\- ADR-001 – ROADMAP como Documento Vivo.
+\- ADM-001 — Arquitectura General del Atlas de Fitoterapia.
+
+\- ADR-001 — El ROADMAP como Documento Vivo de Planificación.
+
+\- EEA-000 — Convenciones Generales.
 
 \- ISO 11179 — Metadata Registries.
 
-\- Wilkinson, M. D., et al. (2016). \*The FAIR Guiding Principles for scientific data management and stewardship\*. Scientific Data, 3, 160018.
+\- Wilkinson, M. D., et al. (2016). \*The FAIR Guiding Principles for Scientific Data Management and Stewardship\*. Scientific Data, 3, 160018.
 
 \- W3C Resource Description Framework (RDF).
 
-\- W3C SKOS – Simple Knowledge Organization System.
+\- W3C SKOS — Simple Knowledge Organization System.
 

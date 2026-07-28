@@ -4,7 +4,7 @@ id: EEA-000
 
 title: Convenciones Generales
 
-version: 1.0
+version: 1.1.0
 
 status: Approved
 
@@ -12,7 +12,7 @@ type: EEA
 
 created: 2026-07-25
 
-updated: 2026-07-25
+updated: 2026-07-28
 
 author: Proyecto Atlas de Fitoterapia
 
@@ -30,61 +30,11 @@ tags:
 
 
 
-\# EEA-000
-
-
-
 \# Convenciones Generales
 
 
 
-\---
-
-
-
-\## 1. Información del documento
-
-
-
-| Campo | Valor |
-
-|-------|-------|
-
-| Identificador | EEA-000 |
-
-| Versión | 1.0 |
-
-| Estado | Aprobado |
-
-| Fecha | 2026-07-25 |
-
-| Tipo | Estándar de Ejecución del Atlas |
-
-| Autor | Proyecto Atlas de Fitoterapia |
-
-
-
-\### Documentos relacionados
-
-
-
-\- GOV-001
-
-\- ADR-001
-
-\- ADR-002
-
-\- ADR-003
-
-\- ADR-004
-
-
-
-\---
-
-
-
-\## 2. Propósito
+\## 1. Propósito
 
 
 
@@ -92,7 +42,7 @@ Este documento establece las convenciones generales que deberán seguir todos lo
 
 
 
-Su objetivo es garantizar uniformidad, consistencia, trazabilidad y mantenibilidad, independientemente del autor, la herramienta utilizada o el momento en que se incorpore una nueva contribución al proyecto.
+Su objetivo es garantizar uniformidad, consistencia, trazabilidad y mantenibilidad, independientemente del autor, la herramienta utilizada o del momento en que una nueva contribución sea incorporada al proyecto.
 
 
 
@@ -104,11 +54,11 @@ Las reglas aquí definidas constituyen el estándar base sobre el cual se desarr
 
 
 
-\## 3. Alcance
+\## 2. Alcance
 
 
 
-Las disposiciones de este estándar aplican a todos los repositorios oficiales del Atlas, incluyendo documentación de gobernanza, arquitectura, diseño, estándares, plantillas, monografías científicas, bases de conocimiento y cualquier otro activo incorporado al proyecto.
+Las disposiciones de este estándar aplican a todos los repositorios oficiales del Atlas, incluyendo documentación de gobernanza, arquitectura, estándares, plantillas, monografías científicas, bases de conocimiento y cualquier otro activo incorporado al proyecto.
 
 
 
@@ -120,67 +70,25 @@ Su cumplimiento es obligatorio para todas las contribuciones que formen parte de
 
 
 
-\## 4. Principios generales
+\## 3. Objetivos
 
 
 
-Toda contribución al Atlas deberá respetar los siguientes principios.
+Este estándar tiene como objetivos:
 
 
 
-\### 4.1 Consistencia
+\- Establecer un conjunto uniforme de convenciones aplicables a todos los activos del Atlas.
 
+\- Garantizar la coherencia entre documentos y repositorios.
 
+\- Facilitar la trazabilidad del conocimiento.
 
-La información deberá presentarse siguiendo una estructura uniforme y predecible.
+\- Promover la reutilización de la información.
 
+\- Favorecer la automatización de procesos de validación.
 
-
-\### 4.2 Trazabilidad
-
-
-
-Toda decisión, documento o entidad deberá poder relacionarse con su origen y con los documentos que la sustentan.
-
-
-
-\### 4.3 Reutilización
-
-
-
-La información deberá organizarse para evitar duplicidades y facilitar su reutilización en distintos contextos.
-
-
-
-\### 4.4 Escalabilidad
-
-
-
-Las convenciones deberán permitir el crecimiento continuo del Atlas sin requerir reorganizaciones estructurales.
-
-
-
-\### 4.5 Neutralidad tecnológica
-
-
-
-Las reglas del Atlas no dependerán de herramientas específicas, salvo cuando exista una decisión arquitectónica que así lo establezca.
-
-
-
-\### 4.6 Legibilidad
-
-
-
-Los documentos deberán priorizar la claridad, simplicidad y facilidad de lectura tanto para personas como para sistemas automatizados.
-
-
-
-\### 4.7 Evolución controlada
-
-
-
-Toda modificación deberá respetar la gobernanza definida por el Atlas y mantener compatibilidad con la arquitectura vigente.
+\- Proporcionar una base común para los demás estándares del Atlas.
 
 
 
@@ -188,31 +96,51 @@ Toda modificación deberá respetar la gobernanza definida por el Atlas y manten
 
 
 
-\## 5. Convenciones Generales
+\## 4. Convenciones Generales
 
 
 
-Las siguientes convenciones deberán cumplirse en todos los activos oficiales del Atlas.
+\### 4.1 Gobernanza
 
 
 
-\### 5.1 Unicidad
+Toda actividad realizada dentro del Atlas deberá respetar la jerarquía normativa y el proceso de gobernanza definidos por el proyecto.
 
 
 
-Todo activo deberá contar con un identificador único y permanente conforme a las reglas establecidas por el Atlas.
+Ninguna convención, documento, plantilla o implementación podrá contradecir las disposiciones establecidas por los niveles documentales superiores.
 
 
 
-Los identificadores nunca deberán reutilizarse, incluso si el activo es eliminado o sustituido.
+\---
 
 
 
-\### 5.2 Trazabilidad
+\### 4.2 Consistencia
 
 
 
-Todo documento deberá indicar, cuando corresponda:
+La información deberá presentarse siguiendo una estructura uniforme, predecible y coherente con los estándares oficiales del Atlas.
+
+
+
+\---
+
+
+
+\### 4.3 Trazabilidad
+
+
+
+Toda decisión, documento o entidad deberá poder relacionarse con su origen y con los documentos que la sustentan.
+
+
+
+Ningún documento oficial deberá existir de forma aislada.
+
+
+
+Cuando corresponda, cada documento deberá indicar:
 
 
 
@@ -226,11 +154,27 @@ Todo documento deberá indicar, cuando corresponda:
 
 
 
-Ningún documento oficial deberá existir de forma aislada.
+\---
 
 
 
-\### 5.3 Modularidad
+\### 4.4 Unicidad
+
+
+
+Todo activo deberá contar con un identificador único y permanente conforme a las reglas establecidas por el Atlas.
+
+
+
+Los identificadores nunca deberán reutilizarse, incluso cuando un activo sea eliminado, sustituido o archivado.
+
+
+
+\---
+
+
+
+\### 4.5 Modularidad
 
 
 
@@ -238,11 +182,15 @@ Cada documento deberá abordar un único propósito claramente definido.
 
 
 
-Cuando un tema exceda el alcance previsto, deberá dividirse en nuevos documentos relacionados.
+Cuando un tema exceda su alcance previsto, deberá dividirse en nuevos documentos relacionados.
 
 
 
-\### 5.4 No duplicación
+\---
+
+
+
+\### 4.6 No duplicación
 
 
 
@@ -254,7 +202,27 @@ Cuando un contenido sea necesario en varios documentos, éstos deberán referenc
 
 
 
-\### 5.5 Consistencia documental
+\---
+
+
+
+\### 4.7 Referencias cruzadas
+
+
+
+Siempre que exista una fuente oficial dentro del Atlas, ésta deberá citarse mediante referencias documentales en lugar de duplicar su contenido.
+
+
+
+La duplicación únicamente será admisible cuando exista una justificación documental explícita.
+
+
+
+\---
+
+
+
+\### 4.8 Consistencia documental
 
 
 
@@ -262,7 +230,81 @@ Todos los documentos deberán seguir la plantilla oficial correspondiente a su c
 
 
 
-\### 5.6 Evolución controlada
+\---
+
+
+
+\### 4.9 Neutralidad tecnológica
+
+
+
+Las convenciones deberán permanecer independientes de herramientas específicas.
+
+
+
+Toda dependencia tecnológica deberá documentarse mediante la decisión arquitectónica correspondiente.
+
+
+
+\---
+
+
+
+\### 4.10 Automatización
+
+
+
+Siempre que sea técnicamente viable, las convenciones deberán diseñarse para facilitar su validación mediante procesos automatizados.
+
+
+
+Las reglas deberán ser:
+
+
+
+\- objetivas;
+
+\- verificables;
+
+\- reproducibles;
+
+\- medibles.
+
+
+
+Siempre que sea posible, las reglas deberán diseñarse para que su cumplimiento pueda verificarse automáticamente.
+
+
+
+\---
+
+
+
+\### 4.11 Reproducibilidad
+
+
+
+Cualquier colaborador deberá poder reproducir un resultado utilizando exclusivamente la documentación oficial del Atlas.
+
+
+
+\---
+
+
+
+\### 4.12 Escalabilidad
+
+
+
+Las convenciones deberán permitir el crecimiento continuo del Atlas sin requerir reorganizaciones estructurales.
+
+
+
+\---
+
+
+
+\### 4.13 Evolución controlada
 
 
 
@@ -274,39 +316,11 @@ Los cambios que afecten decisiones previamente aprobadas deberán seguir el proc
 
 
 
-\### 5.7 Neutralidad tecnológica
+\---
 
 
 
-Las convenciones deberán permanecer independientes de herramientas específicas.
-
-
-
-Las dependencias tecnológicas deberán documentarse mediante la decisión arquitectónica correspondiente.
-
-
-
-\### 5.8 Automatización
-
-
-
-Siempre que sea técnicamente viable, las convenciones deberán diseñarse para facilitar su validación mediante procesos automatizados.
-
-
-
-Las reglas deberán ser objetivas, verificables y medibles.
-
-
-
-\### 5.9 Reproducibilidad
-
-
-
-Cualquier colaborador deberá poder reproducir un resultado siguiendo exclusivamente la documentación oficial del Atlas.
-
-
-
-\### 5.10 Mejora continua
+\### 4.14 Mejora continua
 
 
 
@@ -314,7 +328,7 @@ Las convenciones podrán evolucionar conforme crezca el Atlas.
 
 
 
-Toda modificación deberá justificarse y mantener coherencia con la arquitectura y la gobernanza del proyecto.
+Toda modificación deberá justificarse documentalmente y mantener coherencia con la gobernanza y la arquitectura del proyecto.
 
 
 
@@ -322,7 +336,7 @@ Toda modificación deberá justificarse y mantener coherencia con la arquitectur
 
 
 
-\## 6. Cumplimiento
+\## 5. Cumplimiento
 
 
 
@@ -338,25 +352,47 @@ Siempre que sea técnicamente posible, el cumplimiento deberá verificarse media
 
 
 
-Las reglas definidas por los Estándares de Ejecución del Atlas deberán redactarse de manera que sean:
+\### Clasificación del cumplimiento
 
 
 
-\- objetivas;
+| Estado | Descripción |
 
-\- verificables;
+|---------|-------------|
 
-\- reproducibles;
+| \*\*Cumple\*\* | El activo satisface todas las convenciones aplicables. |
 
-\- automatizables.
+| \*\*Cumple parcialmente\*\* | Existen incumplimientos menores que no comprometen la integridad del Atlas. |
 
-
-
-Las reglas que dependan de criterios subjetivos deberán justificarse explícitamente y limitarse a los casos donde no sea posible establecer un criterio objetivo.
+| \*\*No cumple\*\* | El activo presenta incumplimientos que impiden su incorporación al repositorio oficial. |
 
 
 
-El incumplimiento de un estándar deberá poder demostrarse mediante evidencia documental o mediante procesos automáticos de validación.
+\---
+
+
+
+\## 6. Excepciones
+
+
+
+Toda excepción a las convenciones definidas en este estándar deberá:
+
+
+
+\- documentarse explícitamente;
+
+\- justificarse técnicamente;
+
+\- identificar claramente su alcance;
+
+\- indicar su vigencia cuando corresponda;
+
+\- ser aprobada conforme al proceso de gobernanza vigente.
+
+
+
+Las excepciones deberán ser temporales siempre que sea posible y no constituirán precedentes para futuras decisiones.
 
 
 
@@ -368,15 +404,17 @@ El incumplimiento de un estándar deberá poder demostrarse mediante evidencia d
 
 
 
-\- GOV-001 – Constitución del Atlas de Fitoterapia.
+\- GOV-001 — Constitución del Atlas de Fitoterapia.
 
-\- ADR-001 – ROADMAP como Documento Vivo.
+\- ADM-001 — Arquitectura General del Atlas de Fitoterapia.
 
-\- ADR-002 – Sistema de Identificación Única.
+\- ADR-001 — El ROADMAP como Documento Vivo de Planificación.
 
-\- ADR-003 – Jerarquía Normativa.
+\- ADR-002 — Sistema de Identificación Única.
 
-\- ADR-004 – Arquitectura antes que Implementación.
+\- ADR-003 — Jerarquía Normativa.
+
+\- ADR-004 — Arquitectura antes que Implementación.
 
 \- ISO 9001:2015 — Sistemas de Gestión de la Calidad.
 
