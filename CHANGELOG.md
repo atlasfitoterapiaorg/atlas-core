@@ -6,6 +6,24 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 
 ---
 
+## [0.3.0] - 2026-08-03
+
+### Added
+- Plataforma de publicación basada en Quartz 5.
+- Integración con GitHub Pages.
+- Automatización mediante GitHub Actions.
+- Configuración inicial del sitio Atlas de Fitoterapia.
+
+### Changed
+- Se fortaleció la configuración de `.gitignore`.
+- Se eliminó `node_modules` del control de versiones.
+- Se ajustó la configuración inicial de Quartz para el Atlas.
+
+### Fixed
+- Corrección de la configuración regional.
+- Validación del proceso de compilación local.
+---
+
 ## [Unreleased]
 
 ### Added

@@ -7,6 +7,14 @@ El **Atlas de Fitoterapia** es un proyecto orientado a construir una base de con
 Este repositorio (**atlas-core**) constituye el núcleo arquitectónico del proyecto y contiene la documentación que define su gobierno, estándares, reglas y evolución.
 
 ---
+## Estado actual
+
+- Gobernanza implementada.
+- Arquitectura documental implementada.
+- Plataforma Quartz operativa.
+- Publicación automática habilitada.
+- Desarrollo del conocimiento en progreso.
+---
 
 # Estado del Proyecto
 

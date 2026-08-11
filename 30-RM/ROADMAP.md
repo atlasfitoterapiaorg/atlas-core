@@ -122,6 +122,16 @@ Implementar la infraestructura tecnológica del Atlas.
 - [ ] Plantillas oficiales
 - [ ] Flujo de despliegue
 
+Sprint 3.1 — Plataforma Base
+
+✅ Node.js instalado
+✅ npm configurado
+✅ Quartz instalado
+✅ Quartz configurado
+✅ Build local validado
+✅ GitHub Pages operativo
+✅ GitHub Actions operativo
+
 ---
 
 # Release v0.4 — Modelo de Conocimiento
