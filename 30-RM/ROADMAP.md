@@ -1,16 +1,19 @@
 ---
+
 id: ROADMAP
 title: Plan Director del Atlas de Fitoterapia
-version: 1.1.0
+version: 1.2.0
 status: Approved
 type: ROADMAP
 created: 2026-07-25
-updated: 2026-08-11
+updated: 2026-08-12
 author: Proyecto Atlas de Fitoterapia
 tags:
-  - roadmap
-  - governance
-  - planning
+
+* roadmap
+* governance
+* planning
+
 ---
 
 # Plan Director del Atlas de Fitoterapia
@@ -35,29 +38,30 @@ Toda iniciativa, capacidad, documento, componente arquitectónico o desarrollo t
 
 ## 3. Estado General del Proyecto
 
-| Elemento | Estado |
-|----------|--------|
-| Proyecto | Atlas de Fitoterapia |
-| Estado general | 🟢 Plataforma tecnológica operativa |
-| Release activo | Release v0.3 — Infraestructura Tecnológica |
-| Sprint activo | Sprint 3.3 — Identidad Visual y Navegación |
-| Sprint paralelo | Sprint 3.4 — Estructura Inicial del Conocimiento |
-| Versión del documento | 1.1.0 |
-| Última actualización | 2026-08-11 |
+| Elemento              | Estado                                     |
+| --------------------- | ------------------------------------------ |
+| Proyecto              | Atlas de Fitoterapia                       |
+| Estado general        | 🟢 Plataforma tecnológica operativa        |
+| Release activo        | Release v0.3 — Infraestructura Tecnológica |
+| Sprint activo         | Sprint 3.5 — Validación Automática         |
+| Versión del documento | 1.2.0                                      |
+| Última actualización  | 2026-08-12                                 |
 
 ---
 
 ## 4. Métricas Ejecutivas
 
-| Indicador | Valor |
-|-----------|------:|
-| Releases completados | 2 |
-| Release activo | v0.3 |
-| Documentos normativos aprobados | 9 |
-| GOV | 1 |
-| ADR | 4 |
-| ADM | 1 |
-| EEA | 3 |
+| Indicador                       | Valor |
+| ------------------------------- | ----: |
+| Releases completados            |     2 |
+| Release activo                  |  v0.3 |
+| Sprints completados             |     5 |
+| Sprint activo                   |   3.5 |
+| Documentos normativos aprobados |     9 |
+| GOV                             |     1 |
+| ADR                             |     4 |
+| ADM                             |     1 |
+| EEA                             |     3 |
 
 ---
 
@@ -71,17 +75,19 @@ Construir el Atlas de Fitoterapia más completo, interoperable y científicament
 
 La evolución del Atlas se regirá por los siguientes principios:
 
-- La arquitectura precede a la implementación.
-- El conocimiento se define una única vez y se reutiliza.
-- Cada documento debe aportar una responsabilidad arquitectónica única.
-- Cada Sprint deberá generar capacidades concretas y verificables.
-- Solo el Release activo y el siguiente se planifican en detalle.
-- Los Releases posteriores permanecerán en planificación estratégica hasta su inicio.
-- Todo cambio aprobado deberá reflejarse primero en el ROADMAP y posteriormente en el CHANGELOG.
-- El Atlas evolucionará por niveles de abstracción.
-- La documentación existente se actualizará cuando un Sprint modifique planificación, arquitectura, gobernanza o estándares.
-- Se evitará crear documentos nuevos cuando la información pueda incorporarse adecuadamente en documentos existentes.
-- Los Sprints priorizarán capacidades funcionales sobre documentación adicional.
+* La arquitectura precede a la implementación.
+* El conocimiento se define una única vez y se reutiliza.
+* Cada documento debe aportar una responsabilidad arquitectónica única.
+* Cada Sprint deberá generar capacidades concretas y verificables.
+* Solo el Release activo y el siguiente se planifican en detalle.
+* Los Releases posteriores permanecerán en planificación estratégica hasta su inicio.
+* Todo cambio aprobado deberá reflejarse primero en el ROADMAP y posteriormente en el CHANGELOG.
+* El Atlas evolucionará por niveles de abstracción.
+* La documentación existente se actualizará cuando un Sprint modifique planificación, arquitectura, gobernanza o estándares.
+* Se evitará crear documentos nuevos cuando la información pueda incorporarse adecuadamente en documentos existentes.
+* Los Sprints priorizarán capacidades funcionales sobre documentación adicional.
+* Las automatizaciones deberán respetar la gobernanza y los estándares aprobados.
+* El conocimiento deberá mantenerse independiente de su mecanismo de presentación.
 
 ---
 
@@ -128,18 +134,18 @@ Crear la estructura inicial del Atlas, sus repositorios y las herramientas bási
 
 #### Entregables
 
-- [x] Crear organización del proyecto.
-- [x] Crear repositorio `atlas-core`.
-- [x] Crear repositorio `atlas-knowledge`.
-- [x] Instalar Git.
-- [x] Instalar GitHub Desktop.
-- [x] Instalar Obsidian.
-- [x] Definir arquitectura inicial.
-- [x] Crear estructura inicial del repositorio.
-- [x] Crear `README.md`.
-- [x] Crear `ROADMAP.md`.
-- [x] Crear `CHANGELOG.md`.
-- [x] Realizar primer commit oficial.
+* [x] Crear organización del proyecto.
+* [x] Crear repositorio `atlas-core`.
+* [x] Crear repositorio `atlas-knowledge`.
+* [x] Instalar Git.
+* [x] Instalar GitHub Desktop.
+* [x] Instalar Obsidian.
+* [x] Definir arquitectura inicial.
+* [x] Crear estructura inicial del repositorio.
+* [x] Crear `README.md`.
+* [x] Crear `ROADMAP.md`.
+* [x] Crear `CHANGELOG.md`.
+* [x] Realizar primer commit oficial.
 
 #### Resultado
 
@@ -165,26 +171,26 @@ Formalizar las reglas de gobierno, decisiones arquitectónicas y estándares doc
 
 #### Entregables
 
-- [x] GOV-001 — Constitución del Atlas de Fitoterapia.
-- [x] ADR-001 — ROADMAP como Documento Vivo.
-- [x] ADR-002 — Sistema de Identificación Única.
-- [x] ADR-003 — Jerarquía Normativa.
-- [x] ADR-004 — Arquitectura antes que Implementación.
-- [x] ADM-001 — Arquitectura General del Atlas.
-- [x] EEA-000 — Convenciones Generales.
-- [x] EEA-001 — Convenciones Documentales.
-- [x] EEA-002 — Convenciones de Nomenclatura.
+* [x] GOV-001 — Constitución del Atlas de Fitoterapia.
+* [x] ADR-001 — ROADMAP como Documento Vivo.
+* [x] ADR-002 — Sistema de Identificación Única.
+* [x] ADR-003 — Jerarquía Normativa.
+* [x] ADR-004 — Arquitectura antes que Implementación.
+* [x] ADM-001 — Arquitectura General del Atlas.
+* [x] EEA-000 — Convenciones Generales.
+* [x] EEA-001 — Convenciones Documentales.
+* [x] EEA-002 — Convenciones de Nomenclatura.
 
 #### Capacidades obtenidas
 
-- [x] Gobernanza formal del proyecto.
-- [x] Jerarquía normativa definida.
-- [x] Identificación única de objetos gobernados.
-- [x] Arquitectura documental consolidada.
-- [x] Convenciones editoriales consolidadas.
-- [x] Convenciones de nomenclatura consolidadas.
-- [x] ROADMAP establecido como documento vivo.
-- [x] Separación formal entre arquitectura e implementación.
+* [x] Gobernanza formal del proyecto.
+* [x] Jerarquía normativa definida.
+* [x] Identificación única de objetos gobernados.
+* [x] Arquitectura documental consolidada.
+* [x] Convenciones editoriales consolidadas.
+* [x] Convenciones de nomenclatura consolidadas.
+* [x] ROADMAP establecido como documento vivo.
+* [x] Separación formal entre arquitectura e implementación.
 
 #### Resultado
 
@@ -204,13 +210,15 @@ Implementar la infraestructura tecnológica que soportará el desarrollo, valida
 
 Al finalizar el Release v0.3, el Atlas deberá contar con una plataforma funcional capaz de:
 
-- editar contenido;
-- validar contenido;
-- compilar el sitio;
-- publicar automáticamente;
-- mantener separación entre gobernanza y conocimiento;
-- proporcionar navegación básica;
-- soportar el crecimiento del modelo de conocimiento.
+* editar contenido;
+* validar contenido;
+* compilar el sitio;
+* publicar automáticamente;
+* mantener separación entre gobernanza y conocimiento;
+* proporcionar navegación básica;
+* soportar el crecimiento del modelo de conocimiento.
+
+---
 
 ### Sprint 3.1 — Plataforma Base
 
@@ -222,23 +230,23 @@ Establecer y validar la infraestructura base de ejecución y publicación del At
 
 #### Capacidades implementadas
 
-- [x] Node.js instalado y validado.
-- [x] npm configurado.
-- [x] Quartz 5 instalado.
-- [x] Quartz configurado.
-- [x] Build local validado.
-- [x] GitHub Pages operativo.
-- [x] GitHub Actions operativo.
-- [x] Flujo automático de despliegue desde `main`.
-- [x] Publicación automática del sitio.
-- [x] Repositorio `atlas-knowledge` operando como plataforma de publicación.
-- [x] `atlas-core` conservado como repositorio de gobernanza, arquitectura y estándares.
-- [x] Exclusión de `node_modules` del control de versiones.
-- [x] Exclusión de `public/` del control de versiones.
-- [x] Exclusión de cachés y archivos temporales.
-- [x] `.gitignore` fortalecido.
-- [x] Configuración regional de Quartz ajustada a español compatible.
-- [x] Validación del pipeline GitHub → Actions → Quartz → GitHub Pages.
+* [x] Node.js instalado y validado.
+* [x] npm configurado.
+* [x] Quartz 5 instalado.
+* [x] Quartz configurado.
+* [x] Build local validado.
+* [x] GitHub Pages operativo.
+* [x] GitHub Actions operativo.
+* [x] Flujo automático de despliegue desde `main`.
+* [x] Publicación automática del sitio.
+* [x] Repositorio `atlas-knowledge` operando como plataforma de publicación.
+* [x] `atlas-core` conservado como repositorio de gobernanza, arquitectura y estándares.
+* [x] Exclusión de `node_modules` del control de versiones.
+* [x] Exclusión de `public/` del control de versiones.
+* [x] Exclusión de cachés y archivos temporales.
+* [x] `.gitignore` fortalecido.
+* [x] Configuración regional de Quartz ajustada a español compatible.
+* [x] Validación del pipeline GitHub → Actions → Quartz → GitHub Pages.
 
 #### Arquitectura tecnológica resultante
 
@@ -268,6 +276,8 @@ Establecer y validar la infraestructura base de ejecución y publicación del At
 
 La plataforma tecnológica base del Atlas quedó operativa tanto localmente como en GitHub.
 
+---
+
 ### Sprint 3.2 — Página de Inicio
 
 **Estado:** ✅ Completado
@@ -278,55 +288,59 @@ Crear la página principal institucional del Atlas y establecer su primera exper
 
 #### Capacidades implementadas
 
-- [x] Página principal del Atlas definida.
-- [x] Nombre `Atlas de Fitoterapia` incorporado.
-- [x] Propósito visible.
-- [x] Alcance inicial visible.
-- [x] Misión incorporada.
-- [x] Principios del proyecto incorporados.
-- [x] Estado del proyecto visible.
-- [x] Aviso científico incorporado.
-- [x] Navegación conceptual descrita.
-- [x] Página compilada correctamente mediante Quartz.
+* [x] Página principal del Atlas definida.
+* [x] Nombre `Atlas de Fitoterapia` incorporado.
+* [x] Propósito visible.
+* [x] Alcance inicial visible.
+* [x] Misión incorporada.
+* [x] Principios del proyecto incorporados.
+* [x] Estado del proyecto visible.
+* [x] Aviso científico incorporado.
+* [x] Navegación conceptual descrita.
+* [x] Página compilada correctamente mediante Quartz.
 
 #### Resultado
 
 El sitio dejó de ser una instalación genérica de Quartz y comenzó a representar públicamente al Atlas de Fitoterapia.
 
+---
+
 ### Sprint 3.3 — Identidad Visual y Navegación
 
-**Estado:** 🟡 En progreso
+**Estado:** ✅ Completado
 
 #### Objetivo
 
 Dotar al sitio de una identidad visual mínima y establecer una navegación coherente con la arquitectura del Atlas.
 
-#### Alcance aprobado
+#### Capacidades implementadas
 
 ##### Identidad
 
-- [x] Nombre del sitio configurado como `Atlas de Fitoterapia`.
-- [x] Idioma configurado en español.
-- [ ] Implementar favicon botánico temporal.
-- [ ] Implementar paleta visual inicial.
-- [x] Footer institucional.
-- [ ] Validar tipografía.
-- [ ] Validar contraste y legibilidad.
+* [x] Nombre del sitio configurado como `Atlas de Fitoterapia`.
+* [x] Idioma configurado en español.
+* [x] Favicon botánico temporal implementado.
+* [x] Paleta visual inicial implementada.
+* [x] Modo claro validado.
+* [x] Modo oscuro validado.
+* [x] Footer institucional configurado.
+* [x] Tipografía validada en la interfaz.
+* [x] Contraste y legibilidad validados.
+* [x] Identidad visual validada en el sitio publicado.
 
 ##### Navegación
 
-- [ ] Configurar navegación principal.
-- [ ] Ajustar orden de navegación.
-- [ ] Validar Explorer.
-- [ ] Validar Search.
-- [ ] Validar Graph.
-- [ ] Validar Breadcrumbs.
-- [ ] Validar navegación móvil.
-- [ ] Validar sitio publicado.
+* [x] Navegación principal incorporada a la página inicial.
+* [x] Orden conceptual de navegación definido.
+* [x] Explorer validado como navegación secundaria.
+* [x] Search validado.
+* [x] Graph validado.
+* [x] Table of Contents validada.
+* [x] Navegación móvil validada.
+* [x] Visualización responsive validada.
+* [x] Sitio publicado validado mediante GitHub Pages.
 
-##### Elementos aprobados
-
-La navegación inicial deberá considerar:
+#### Navegación principal aprobada
 
 ```text
 Inicio
@@ -339,17 +353,21 @@ Farmacopeas
 Referencias
 ```
 
-#### Pendientes
+El Explorer conserva orden alfabético y funciona como mecanismo secundario de navegación.
 
-- [ ] Favicon.
-- [ ] Paleta visual.
-- [ ] Orden definitivo del explorador.
-- [ ] Validación visual completa.
-- [ ] Página 404 personalizada.
+#### Decisiones de alcance
+
+La personalización de la página 404 no constituye un criterio necesario para el cierre del Sprint y podrá evaluarse posteriormente si aporta valor funcional.
+
+#### Resultado
+
+El Atlas cuenta con una identidad visual inicial coherente, navegación funcional y experiencia básica validada tanto en escritorio como en dispositivos móviles.
+
+---
 
 ### Sprint 3.4 — Estructura Inicial del Conocimiento
 
-**Estado:** 🟡 En progreso
+**Estado:** ✅ Completado
 
 #### Objetivo
 
@@ -378,54 +396,71 @@ content/
 
 #### Capacidades implementadas
 
-- [x] Crear dominio `dominios`.
-- [x] Crear dominio `especies`.
-- [x] Crear dominio `principios-activos`.
-- [x] Crear dominio `preparados`.
-- [x] Crear dominio `enfermedades`.
-- [x] Crear dominio `farmacopeas`.
-- [x] Crear dominio `referencias`.
-- [x] Crear página índice para cada dominio.
-- [x] Incorporar Front Matter mínimo.
-- [x] Validar compilación de Quartz con 8 archivos Markdown.
-- [x] Confirmar generación correcta de `public/`.
-
-#### Pendientes
-
-- [ ] Versionar la estructura completa en Git.
-- [ ] Validar despliegue mediante GitHub Actions.
-- [ ] Validar navegación desde GitHub Pages.
-- [ ] Ajustar orden y nombres visibles en Explorer.
-- [ ] Confirmar estructura definitiva previa al Release v0.4.
+* [x] Crear sección `dominios`.
+* [x] Crear sección `especies`.
+* [x] Crear sección `principios-activos`.
+* [x] Crear sección `preparados`.
+* [x] Crear sección `enfermedades`.
+* [x] Crear sección `farmacopeas`.
+* [x] Crear sección `referencias`.
+* [x] Crear página índice para cada sección.
+* [x] Incorporar Front Matter mínimo.
+* [x] Validar compilación de Quartz con ocho archivos Markdown.
+* [x] Confirmar generación correcta de `public/`.
+* [x] Versionar la estructura mediante Git.
+* [x] Integrar los cambios mediante Pull Request `develop → main`.
+* [x] Validar despliegue mediante GitHub Actions.
+* [x] Validar navegación desde GitHub Pages.
+* [x] Validar nombres visibles de las secciones.
+* [x] Validar favicon en producción.
+* [x] Validar identidad visual en producción.
 
 #### Restricción
 
-Esta estructura no constituye todavía el modelo formal de dominios del Atlas.
+Esta estructura constituye únicamente un scaffold tecnológico y editorial inicial.
 
-El modelo definitivo será definido durante el Release v0.4 mediante ADM-003.
+No representa todavía el modelo formal de dominios, entidades o relaciones del Atlas.
+
+El modelo definitivo será definido durante el Release v0.4, particularmente mediante ADM-003 y ADM-004.
+
+#### Resultado
+
+El repositorio `atlas-knowledge` dispone de una estructura inicial navegable y publicada que permitirá recibir posteriormente el modelo formal de conocimiento sin anticipar sus decisiones arquitectónicas.
+
+---
 
 ### Sprint 3.5 — Validación Automática
 
-**Estado:** ⚪ Planeado
+**Estado:** 🟡 En progreso
 
 #### Objetivo
 
-Implementar controles automáticos que prevengan la incorporación de contenido estructuralmente inválido.
+Implementar controles automáticos que prevengan la incorporación o publicación de contenido estructuralmente inválido.
 
 #### Capacidades previstas
 
-- [ ] Validación automática de Front Matter.
-- [ ] Validación automática de Markdown.
-- [ ] Validación automática de nomenclatura.
-- [ ] Validación automática de enlaces.
-- [ ] Detección de identificadores duplicados.
-- [ ] Detección de archivos huérfanos cuando corresponda.
-- [ ] Integración de validaciones con GitHub Actions.
-- [ ] Bloqueo de publicación ante errores críticos.
+* [ ] Validación automática de Front Matter.
+* [ ] Validación automática de Markdown.
+* [ ] Validación automática de nomenclatura.
+* [ ] Validación automática de enlaces.
+* [ ] Detección de identificadores duplicados.
+* [ ] Detección de archivos huérfanos cuando corresponda.
+* [ ] Integración de validaciones con GitHub Actions.
+* [ ] Bloqueo de publicación ante errores críticos.
+
+#### Principios de implementación
+
+* Las validaciones deberán automatizar reglas existentes.
+* No deberán introducir reglas arquitectónicas nuevas fuera de los documentos normativos vigentes.
+* Las reglas deberán ser reproducibles tanto localmente como en CI.
+* Un error crítico deberá impedir la publicación.
+* Las advertencias no críticas deberán ser distinguibles de los errores de bloqueo.
 
 #### Resultado esperado
 
-El contenido deberá superar validaciones automáticas antes de ser publicado.
+Todo contenido deberá superar controles automáticos mínimos antes de ser publicado.
+
+---
 
 ### Sprint 3.6 — Plantillas y Flujo Editorial
 
@@ -437,18 +472,20 @@ Preparar las plantillas y mecanismos mínimos necesarios para incorporar conocim
 
 #### Capacidades previstas
 
-- [ ] Plantilla base para contenido científico.
-- [ ] Plantilla compatible con Front Matter definido.
-- [ ] Integración con convenciones EEA.
-- [ ] Compatibilidad con Obsidian.
-- [ ] Compatibilidad con Quartz.
-- [ ] Validación de uso de plantillas.
+* [ ] Plantilla base para contenido científico.
+* [ ] Plantilla compatible con Front Matter definido.
+* [ ] Integración con convenciones EEA.
+* [ ] Compatibilidad con Obsidian.
+* [ ] Compatibilidad con Quartz.
+* [ ] Validación de uso de plantillas.
 
 #### Restricción
 
 Las plantillas científicas definitivas dependerán del Modelo de Información definido en el Release v0.4.
 
 Por tanto, este Sprint solo deberá implementar plantillas que no anticipen decisiones del modelo de conocimiento.
+
+---
 
 ### Sprint 3.7 — Validación Integral y Cierre
 
@@ -460,35 +497,38 @@ Validar de extremo a extremo la plataforma antes de cerrar el Release v0.3.
 
 #### Validaciones previstas
 
-- [ ] Edición local.
-- [ ] Build local.
-- [ ] Commit.
-- [ ] Push.
-- [ ] Ejecución de GitHub Actions.
-- [ ] Validaciones automáticas.
-- [ ] Build Quartz.
-- [ ] Generación de artefacto.
-- [ ] Deploy GitHub Pages.
-- [ ] Navegación.
-- [ ] Search.
-- [ ] Graph.
-- [ ] Enlaces internos.
-- [ ] Visualización móvil.
-- [ ] Recuperación ante fallo de build.
+* [ ] Edición local.
+* [ ] Build local.
+* [ ] Commit.
+* [ ] Push.
+* [ ] Pull Request.
+* [ ] Merge hacia `main`.
+* [ ] Ejecución de GitHub Actions.
+* [ ] Validaciones automáticas.
+* [ ] Build Quartz.
+* [ ] Generación de artefacto.
+* [ ] Deploy GitHub Pages.
+* [ ] Navegación.
+* [ ] Search.
+* [ ] Graph.
+* [ ] Enlaces internos.
+* [ ] Visualización móvil.
+* [ ] Recuperación ante fallo de build.
 
 #### Criterios de cierre
 
 El Release v0.3 se considerará completado cuando:
 
-- [ ] Quartz compile correctamente.
-- [ ] GitHub Pages publique automáticamente.
-- [ ] GitHub Actions ejecute el pipeline completo.
-- [ ] Las validaciones automáticas estén operativas.
-- [ ] La navegación inicial sea funcional.
-- [ ] El sitio sea accesible públicamente.
-- [ ] La infraestructura permita comenzar el Release v0.4 sin rediseño técnico.
-- [ ] ROADMAP actualizado.
-- [ ] CHANGELOG actualizado.
+* [ ] Quartz compile correctamente.
+* [ ] GitHub Pages publique automáticamente.
+* [ ] GitHub Actions ejecute el pipeline completo.
+* [ ] Las validaciones automáticas estén operativas.
+* [ ] La navegación sea funcional.
+* [ ] El sitio sea accesible públicamente.
+* [ ] El flujo `develop → Pull Request → main → GitHub Actions → GitHub Pages` esté validado integralmente.
+* [ ] La infraestructura permita comenzar el Release v0.4 sin rediseño técnico.
+* [ ] ROADMAP actualizado.
+* [ ] CHANGELOG actualizado.
 
 ---
 
@@ -526,6 +566,8 @@ Vistas Editoriales
 
 Las monografías serán vistas editoriales construidas a partir de entidades, atributos y relaciones del modelo de conocimiento.
 
+---
+
 ### Sprint 4.1 — Modelo Híbrido del Conocimiento
 
 **Estado:** ⚪ Planeado
@@ -536,11 +578,13 @@ Formalizar el modelo conceptual mediante el cual se organizará el conocimiento 
 
 #### Entregable
 
-- [ ] ADR-005 — Modelo Híbrido del Conocimiento.
+* [ ] ADR-005 — Modelo Híbrido del Conocimiento.
 
 #### Resultado esperado
 
-Definir formalmente que el Atlas será construido por dominios y entidades, y no mediante acumulación independiente de documentos.
+Definir formalmente que el Atlas será construido por dominios, entidades y relaciones, y no mediante acumulación independiente de documentos.
+
+---
 
 ### Sprint 4.2 — Arquitectura del Modelo de Conocimiento
 
@@ -552,7 +596,9 @@ Definir la arquitectura general que conectará dominios, entidades, relaciones y
 
 #### Entregable
 
-- [ ] ADM-002 — Arquitectura del Modelo de Conocimiento.
+* [ ] ADM-002 — Arquitectura del Modelo de Conocimiento.
+
+---
 
 ### Sprint 4.3 — Dominios de Conocimiento
 
@@ -564,24 +610,26 @@ Definir formalmente los dominios y subdominios que estructurarán el Atlas.
 
 #### Entregable
 
-- [ ] ADM-003 — Dominios de Conocimiento del Atlas.
+* [ ] ADM-003 — Dominios de Conocimiento del Atlas.
 
 #### Consideraciones
 
 Los dominios deberán permitir incorporar, entre otros:
 
-- botánica;
-- farmacognosia;
-- fitoquímica;
-- farmacología;
-- evidencia clínica;
-- seguridad;
-- toxicología;
-- regulación;
-- preparados;
-- referencias.
+* botánica;
+* farmacognosia;
+* fitoquímica;
+* farmacología;
+* evidencia clínica;
+* seguridad;
+* toxicología;
+* regulación;
+* preparados;
+* referencias.
 
 La lista definitiva será definida durante este Sprint.
+
+---
 
 ### Sprint 4.4 — Modelo de Información
 
@@ -593,23 +641,25 @@ Definir la estructura formal de la información del Atlas.
 
 #### Entregable
 
-- [ ] ADM-004 — Modelo de Información del Atlas.
+* [ ] ADM-004 — Modelo de Información del Atlas.
 
 #### El modelo deberá definir
 
-- entidades;
-- atributos;
-- relaciones;
-- identificadores;
-- cardinalidades;
-- metadatos;
-- procedencia;
-- trazabilidad;
-- reglas mínimas de interoperabilidad.
+* entidades;
+* atributos;
+* relaciones;
+* identificadores;
+* cardinalidades;
+* metadatos;
+* procedencia;
+* trazabilidad;
+* reglas mínimas de interoperabilidad.
 
 #### Preparación para agentes
 
 El modelo deberá poder ser interpretado tanto por personas como por software, permitiendo posteriormente la integración de sistemas automáticos y agentes de inteligencia artificial.
+
+---
 
 ### Principio de diseño del Release v0.4
 
@@ -617,10 +667,10 @@ Cada documento deberá introducir una responsabilidad arquitectónica nueva.
 
 No se crearán:
 
-- catálogos redundantes de entidades;
-- diccionarios duplicados;
-- glosarios que reproduzcan información existente;
-- documentos cuya responsabilidad pueda integrarse en ADM-002, ADM-003 o ADM-004.
+* catálogos redundantes de entidades;
+* diccionarios duplicados;
+* glosarios que reproduzcan información existente;
+* documentos cuya responsabilidad pueda integrarse en ADM-002, ADM-003 o ADM-004.
 
 ---
 
@@ -630,14 +680,14 @@ Los Releases posteriores permanecerán en planificación estratégica hasta el i
 
 Solo se desarrollarán en detalle cuando el Release precedente permita conocer con suficiente precisión su alcance.
 
-| Release | Propósito | Estado |
-|---------|-----------|--------|
-| v0.5 | Por definir | ⚪ Planeación pendiente |
-| v0.6 | Por definir | ⚪ Planeación pendiente |
-| v0.7 | Por definir | ⚪ Planeación pendiente |
-| v0.8 | Por definir | ⚪ Planeación pendiente |
-| v0.9 | Por definir | ⚪ Planeación pendiente |
-| v1.0 | Primera publicación oficial del Atlas | ⚪ Planeación pendiente |
+| Release | Propósito                             | Estado                 |
+| ------- | ------------------------------------- | ---------------------- |
+| v0.5    | Por definir                           | ⚪ Planeación pendiente |
+| v0.6    | Por definir                           | ⚪ Planeación pendiente |
+| v0.7    | Por definir                           | ⚪ Planeación pendiente |
+| v0.8    | Por definir                           | ⚪ Planeación pendiente |
+| v0.9    | Por definir                           | ⚪ Planeación pendiente |
+| v1.0    | Primera publicación oficial del Atlas | ⚪ Planeación pendiente |
 
 ---
 
@@ -647,27 +697,27 @@ Las iniciativas registradas en esta sección no forman parte del alcance aprobad
 
 Solo podrán desarrollarse después de ser evaluadas e incorporadas formalmente a un Release.
 
-| ID | Iniciativa | Estado |
-|----|------------|--------|
-| BP-001 | PROJECT_STATE.md | Propuesta |
+| ID     | Iniciativa                                                                   | Estado    |
+| ------ | ---------------------------------------------------------------------------- | --------- |
+| BP-001 | PROJECT_STATE.md                                                             | Propuesta |
 | BP-002 | Sistema de agentes para vigilancia científica y detección de nueva evidencia | Propuesta |
 
 ### BP-002 — Vigilancia Científica Automatizada
 
 La iniciativa contempla la incorporación futura de agentes especializados capaces de:
 
-- monitorear nuevas publicaciones científicas;
-- detectar nuevos ensayos clínicos;
-- identificar cambios en estudios registrados;
-- monitorear fuentes botánicas y taxonómicas;
-- detectar nueva evidencia de seguridad;
-- detectar nueva evidencia fitoquímica;
-- identificar metaanálisis y revisiones sistemáticas;
-- clasificar información científica;
-- identificar duplicados;
-- comparar nueva evidencia contra el conocimiento existente;
-- proponer actualizaciones del Atlas;
-- conservar trazabilidad hacia las fuentes originales.
+* monitorear nuevas publicaciones científicas;
+* detectar nuevos ensayos clínicos;
+* identificar cambios en estudios registrados;
+* monitorear fuentes botánicas y taxonómicas;
+* detectar nueva evidencia de seguridad;
+* detectar nueva evidencia fitoquímica;
+* identificar metaanálisis y revisiones sistemáticas;
+* clasificar información científica;
+* identificar duplicados;
+* comparar nueva evidencia contra el conocimiento existente;
+* proponer actualizaciones del Atlas;
+* conservar trazabilidad hacia las fuentes originales.
 
 ### Principio de gobernanza
 
@@ -721,6 +771,8 @@ Publicación
 14. Solo se crearán nuevos documentos cuando exista una necesidad de gobernanza, arquitectura o estandarización que no pueda resolverse mediante documentación existente.
 15. El conocimiento deberá mantenerse independiente del mecanismo de presentación.
 16. La automatización deberá respetar en todo momento las reglas de gobernanza del Atlas.
+17. Las validaciones automáticas deberán implementar reglas existentes y no crear gobernanza implícita.
+18. Los cambios destinados a publicación deberán integrarse a `main` mediante el flujo de control aprobado para el repositorio.
 
 ---
 
@@ -746,9 +798,9 @@ Release v0.2
 Release v0.3
 ├── Sprint 3.1  Plataforma Base                       ✅
 ├── Sprint 3.2  Página de Inicio                      ✅
-├── Sprint 3.3  Identidad Visual y Navegación         🟡
-├── Sprint 3.4  Estructura Inicial del Conocimiento   🟡
-├── Sprint 3.5  Validación Automática                 ⚪
+├── Sprint 3.3  Identidad Visual y Navegación         ✅
+├── Sprint 3.4  Estructura Inicial del Conocimiento   ✅
+├── Sprint 3.5  Validación Automática                 🟡
 ├── Sprint 3.6  Plantillas y Flujo Editorial          ⚪
 └── Sprint 3.7  Validación Integral y Cierre          ⚪
 
@@ -781,12 +833,12 @@ Releases posteriores
 
 ## 13. Referencias
 
-- GOV-001 — Constitución del Atlas de Fitoterapia.
-- ADR-001 — ROADMAP como Documento Vivo.
-- ADR-002 — Sistema de Identificación Única.
-- ADR-003 — Jerarquía Normativa.
-- ADR-004 — Arquitectura antes que Implementación.
-- ADM-001 — Arquitectura General del Atlas.
-- EEA-000 — Convenciones Generales.
-- EEA-001 — Convenciones Documentales.
-- EEA-002 — Convenciones de Nomenclatura.
+* GOV-001 — Constitución del Atlas de Fitoterapia.
+* ADR-001 — ROADMAP como Documento Vivo.
+* ADR-002 — Sistema de Identificación Única.
+* ADR-003 — Jerarquía Normativa.
+* ADR-004 — Arquitectura antes que Implementación.
+* ADM-001 — Arquitectura General del Atlas.
+* EEA-000 — Convenciones Generales.
+* EEA-001 — Convenciones Documentales.
+* EEA-002 — Convenciones de Nomenclatura.
