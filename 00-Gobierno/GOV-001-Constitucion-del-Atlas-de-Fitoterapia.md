@@ -18,11 +18,11 @@ author: Proyecto Atlas de Fitoterapia
 
 tags:
 
-&#x20; - governance
+  - governance
 
-&#x20; - constitution
+  - constitution
 
-&#x20; - atlas
+  - atlas
 
 ---
 
@@ -126,15 +126,15 @@ La gobernanza del Atlas se fundamenta en los siguientes principios:
 
 La documentación oficial seguirá la siguiente jerarquía:
 
-0\. GOV
+0. GOV
 
-10\. ADM
+10. ADM
 
-20\. ADR
+20. ADR
 
-30\. Plantillas
+30. Plantillas
 
-40\. EEA
+40. EEA
 
 Los documentos inferiores podrán ampliar, pero nunca contradecir, a los superiores.
 

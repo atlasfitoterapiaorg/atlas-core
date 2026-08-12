@@ -1,5 +1,4 @@
-\---
-
+---
 id: EEA-000
 
 title: Convenciones Generales
@@ -18,23 +17,20 @@ author: Proyecto Atlas de Fitoterapia
 
 tags:
 
-&#x20; - governance
+  - governance
 
-&#x20; - standards
+  - standards
 
-&#x20; - documentation
+  - documentation
 
-&#x20; - quality
+  - quality
 
-\---
-
-
-
-\# Convenciones Generales
+---
+# Convenciones Generales
 
 
 
-\## 1. Propósito
+## 1. Propósito
 
 
 
@@ -50,11 +46,8 @@ Las reglas aquí definidas constituyen el estándar base sobre el cual se desarr
 
 
 
-\---
-
-
-
-\## 2. Alcance
+---
+## 2. Alcance
 
 
 
@@ -66,11 +59,8 @@ Su cumplimiento es obligatorio para todas las contribuciones que formen parte de
 
 
 
-\---
-
-
-
-\## 3. Objetivos
+---
+## 3. Objetivos
 
 
 
@@ -92,15 +82,12 @@ Este estándar tiene como objetivos:
 
 
 
-\---
+---
+## 4. Convenciones Generales
 
 
 
-\## 4. Convenciones Generales
-
-
-
-\### 4.1 Gobernanza
+### 4.1 Gobernanza
 
 
 
@@ -112,11 +99,8 @@ Ninguna convención, documento, plantilla o implementación podrá contradecir l
 
 
 
-\---
-
-
-
-\### 4.2 Consistencia
+---
+### 4.2 Consistencia
 
 
 
@@ -124,11 +108,8 @@ La información deberá presentarse siguiendo una estructura uniforme, predecibl
 
 
 
-\---
-
-
-
-\### 4.3 Trazabilidad
+---
+### 4.3 Trazabilidad
 
 
 
@@ -154,11 +135,8 @@ Cuando corresponda, cada documento deberá indicar:
 
 
 
-\---
-
-
-
-\### 4.4 Unicidad
+---
+### 4.4 Unicidad
 
 
 
@@ -170,11 +148,8 @@ Los identificadores nunca deberán reutilizarse, incluso cuando un activo sea el
 
 
 
-\---
-
-
-
-\### 4.5 Modularidad
+---
+### 4.5 Modularidad
 
 
 
@@ -186,11 +161,8 @@ Cuando un tema exceda su alcance previsto, deberá dividirse en nuevos documento
 
 
 
-\---
-
-
-
-\### 4.6 No duplicación
+---
+### 4.6 No duplicación
 
 
 
@@ -202,11 +174,8 @@ Cuando un contenido sea necesario en varios documentos, éstos deberán referenc
 
 
 
-\---
-
-
-
-\### 4.7 Referencias cruzadas
+---
+### 4.7 Referencias cruzadas
 
 
 
@@ -218,11 +187,8 @@ La duplicación únicamente será admisible cuando exista una justificación doc
 
 
 
-\---
-
-
-
-\### 4.8 Consistencia documental
+---
+### 4.8 Consistencia documental
 
 
 
@@ -230,11 +196,8 @@ Todos los documentos deberán seguir la plantilla oficial correspondiente a su c
 
 
 
-\---
-
-
-
-\### 4.9 Neutralidad tecnológica
+---
+### 4.9 Neutralidad tecnológica
 
 
 
@@ -246,11 +209,8 @@ Toda dependencia tecnológica deberá documentarse mediante la decisión arquite
 
 
 
-\---
-
-
-
-\### 4.10 Automatización
+---
+### 4.10 Automatización
 
 
 
@@ -276,11 +236,8 @@ Siempre que sea posible, las reglas deberán diseñarse para que su cumplimiento
 
 
 
-\---
-
-
-
-\### 4.11 Reproducibilidad
+---
+### 4.11 Reproducibilidad
 
 
 
@@ -288,11 +245,8 @@ Cualquier colaborador deberá poder reproducir un resultado utilizando exclusiva
 
 
 
-\---
-
-
-
-\### 4.12 Escalabilidad
+---
+### 4.12 Escalabilidad
 
 
 
@@ -300,11 +254,8 @@ Las convenciones deberán permitir el crecimiento continuo del Atlas sin requeri
 
 
 
-\---
-
-
-
-\### 4.13 Evolución controlada
+---
+### 4.13 Evolución controlada
 
 
 
@@ -316,11 +267,8 @@ Los cambios que afecten decisiones previamente aprobadas deberán seguir el proc
 
 
 
-\---
-
-
-
-\### 4.14 Mejora continua
+---
+### 4.14 Mejora continua
 
 
 
@@ -332,11 +280,8 @@ Toda modificación deberá justificarse documentalmente y mantener coherencia co
 
 
 
-\---
-
-
-
-\## 5. Cumplimiento
+---
+## 5. Cumplimiento
 
 
 
@@ -352,7 +297,7 @@ Siempre que sea técnicamente posible, el cumplimiento deberá verificarse media
 
 
 
-\### Clasificación del cumplimiento
+### Clasificación del cumplimiento
 
 
 
@@ -368,11 +313,8 @@ Siempre que sea técnicamente posible, el cumplimiento deberá verificarse media
 
 
 
-\---
-
-
-
-\## 6. Excepciones
+---
+## 6. Excepciones
 
 
 
@@ -396,11 +338,8 @@ Las excepciones deberán ser temporales siempre que sea posible y no constituir�
 
 
 
-\---
-
-
-
-\## 7. Referencias
+---
+## 7. Referencias
 
 
 
@@ -421,4 +360,3 @@ Las excepciones deberán ser temporales siempre que sea posible y no constituir�
 \- ISO/IEC/IEEE 42010 — Systems and Software Engineering — Architecture Description.
 
 \- ISO 30301 — Management Systems for Records.
-

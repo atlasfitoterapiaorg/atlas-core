@@ -1,5 +1,4 @@
-\---
-
+---
 id: EEA-002
 
 title: Convenciones de Nomenclatura
@@ -18,21 +17,18 @@ author: Proyecto Atlas de Fitoterapia
 
 tags:
 
-&#x20; - standards
+  - standards
 
-&#x20; - naming
+  - naming
 
-&#x20; - governance
+  - governance
 
-\---
-
-
-
-\# Convenciones de Nomenclatura
+---
+# Convenciones de Nomenclatura
 
 
 
-\## 1. Propósito
+## 1. Propósito
 
 
 
@@ -44,11 +40,8 @@ Su finalidad es garantizar que documentos, directorios, recursos multimedia, con
 
 
 
-\---
-
-
-
-\## 2. Alcance
+---
+## 2. Alcance
 
 
 
@@ -56,11 +49,8 @@ Las disposiciones de este estándar aplican a todos los activos almacenados en l
 
 
 
-\---
-
-
-
-\## 3. Objetivos
+---
+## 3. Objetivos
 
 
 
@@ -80,15 +70,12 @@ Este estándar tiene como objetivos:
 
 
 
-\---
+---
+## 4. Convenciones
 
 
 
-\## 4. Convenciones
-
-
-
-\### 4.1 Relación entre identidad y nomenclatura
+### 4.1 Relación entre identidad y nomenclatura
 
 
 
@@ -116,11 +103,8 @@ El nombre del archivo y el título del documento podrán modificarse cuando exis
 
 
 
-\---
-
-
-
-\### 4.2 Idioma
+---
+### 4.2 Idioma
 
 
 
@@ -166,11 +150,8 @@ Semantic Versioning
 
 
 
-\---
-
-
-
-\### 4.3 Caracteres permitidos
+---
+### 4.3 Caracteres permitidos
 
 
 
@@ -202,11 +183,8 @@ No deberán utilizarse:
 
 
 
-\---
-
-
-
-\### 4.4 Formato general
+---
+### 4.4 Formato general
 
 
 
@@ -242,11 +220,8 @@ MON-001-Echinacea-purpurea.md
 
 
 
-\---
-
-
-
-\### 4.5 Uso de mayúsculas
+---
+### 4.5 Uso de mayúsculas
 
 
 
@@ -274,11 +249,8 @@ ADR-003-Jerarquia-Normativa.md
 
 
 
-\---
-
-
-
-\### 4.6 Singular y plural
+---
+### 4.6 Singular y plural
 
 
 
@@ -318,15 +290,12 @@ Estadisticas
 
 
 
-\---
+---
+### 4.7 Directorios
 
 
 
-\### 4.7 Directorios
-
-
-
-\#### Directorios funcionales
+#### Directorios funcionales
 
 
 
@@ -362,7 +331,7 @@ RecursosGraficos/
 
 
 
-\#### Directorios institucionales
+#### Directorios institucionales
 
 
 
@@ -398,11 +367,8 @@ Ejemplos:
 
 
 
-\---
-
-
-
-\### 4.8 Acrónimos institucionales
+---
+### 4.8 Acrónimos institucionales
 
 
 
@@ -466,11 +432,8 @@ Tpl
 
 
 
-\---
-
-
-
-\## 5. Validación
+---
+## 5. Validación
 
 
 
@@ -504,11 +467,8 @@ Los activos que incumplan estas reglas no deberán incorporarse al repositorio o
 
 
 
-\---
-
-
-
-\## 6. Compatibilidad futura
+---
+## 6. Compatibilidad futura
 
 
 
@@ -520,11 +480,8 @@ Las modificaciones a este estándar únicamente podrán realizarse mediante el p
 
 
 
-\---
-
-
-
-\## 7. Referencias
+---
+## 7. Referencias
 
 
 
@@ -543,4 +500,3 @@ Las modificaciones a este estándar únicamente podrán realizarse mediante el p
 \- ISO 8601 — Date and Time Format.
 
 \- Semantic Versioning Specification 2.0.0.
-

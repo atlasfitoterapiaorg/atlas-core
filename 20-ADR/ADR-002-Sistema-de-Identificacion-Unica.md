@@ -1,5 +1,4 @@
-\---
-
+---
 id: ADR-002
 
 title: Sistema de Identificación Única
@@ -18,23 +17,20 @@ author: Proyecto Atlas de Fitoterapia
 
 tags:
 
-&#x20; - architecture
+  - architecture
 
-&#x20; - governance
+  - governance
 
-&#x20; - identification
+  - identification
 
-&#x20; - traceability
+  - traceability
 
-\---
-
-
-
-\# Sistema de Identificación Única
+---
+# Sistema de Identificación Única
 
 
 
-\## 1. Contexto
+## 1. Contexto
 
 
 
@@ -54,11 +50,8 @@ Por esta razón se consideró necesario separar la identidad de una entidad de s
 
 
 
-\---
-
-
-
-\## 2. Problema
+---
+## 2. Problema
 
 
 
@@ -86,11 +79,8 @@ Sin un sistema de identificación permanente resulta imposible garantizar refere
 
 
 
-\---
-
-
-
-\## 3. Decisión
+---
+## 3. Decisión
 
 
 
@@ -110,7 +100,7 @@ Los nombres científicos, nombres comunes, títulos de documentos y cualquier ot
 
 
 
-\### Principio de separación entre identidad y representación
+### Principio de separación entre identidad y representación
 
 
 
@@ -136,11 +126,8 @@ En consecuencia, la identidad pertenece al objeto gobernado y no a su representa
 
 
 
-\---
-
-
-
-\## 4. Justificación
+---
+## 4. Justificación
 
 
 
@@ -160,11 +147,8 @@ La identificación permanente constituye un requisito fundamental para preservar
 
 
 
-\---
-
-
-
-\## 5. Consecuencias
+---
+## 5. Consecuencias
 
 
 
@@ -188,11 +172,8 @@ Como resultado de esta decisión:
 
 
 
-\---
-
-
-
-\## 6. Impacto
+---
+## 6. Impacto
 
 
 
@@ -200,7 +181,7 @@ Esta decisión afecta a los siguientes componentes del Atlas:
 
 
 
-\### Gobernanza
+### Gobernanza
 
 
 
@@ -212,7 +193,7 @@ Esta decisión afecta a los siguientes componentes del Atlas:
 
 
 
-\### Conocimiento
+### Conocimiento
 
 
 
@@ -226,7 +207,7 @@ Esta decisión afecta a los siguientes componentes del Atlas:
 
 
 
-\### Automatización
+### Automatización
 
 
 
@@ -238,7 +219,7 @@ Esta decisión afecta a los siguientes componentes del Atlas:
 
 
 
-\### Publicación
+### Publicación
 
 
 
@@ -250,7 +231,7 @@ Esta decisión afecta a los siguientes componentes del Atlas:
 
 
 
-\### Evolución futura
+### Evolución futura
 
 
 
@@ -266,11 +247,8 @@ El Sistema de Identificación Única constituye una decisión arquitectónica fu
 
 
 
-\---
-
-
-
-\## 7. Implementación
+---
+## 7. Implementación
 
 
 
@@ -278,17 +256,17 @@ La implementación de esta decisión comprende:
 
 
 
-1\. Definir la sintaxis oficial de los identificadores.
+1. Definir la sintaxis oficial de los identificadores.
 
-2\. Establecer las reglas de asignación.
+2. Establecer las reglas de asignación.
 
-3\. Definir categorías y convenciones de nomenclatura.
+3. Definir categorías y convenciones de nomenclatura.
 
-4\. Incorporar mecanismos de validación.
+4. Incorporar mecanismos de validación.
 
-5\. Actualizar las plantillas para soportar identificadores permanentes.
+5. Actualizar las plantillas para soportar identificadores permanentes.
 
-6\. Incorporar el uso obligatorio de identificadores en las relaciones entre entidades.
+6. Incorporar el uso obligatorio de identificadores en las relaciones entre entidades.
 
 
 
@@ -296,11 +274,8 @@ Este ADR establece únicamente la decisión arquitectónica de adoptar un Sistem
 
 
 
-\---
-
-
-
-\## 8. Referencias
+---
+## 8. Referencias
 
 
 
@@ -319,4 +294,3 @@ Este ADR establece únicamente la decisión arquitectónica de adoptar un Sistem
 \- W3C Resource Description Framework (RDF).
 
 \- W3C SKOS — Simple Knowledge Organization System.
-

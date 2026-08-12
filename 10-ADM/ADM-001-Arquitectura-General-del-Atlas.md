@@ -203,14 +203,13 @@ La arquitectura del Atlas deberá cumplir las siguientes restricciones:
 - La automatización no deberá modificar contenido aprobado sin intervención humana.
 
 ---
-
 ## 10. Referencias
 
-- GOV-001 Constitución del Atlas de Fitoterapia.
-- ADR-001 Roadmap como Documento Vivo.
-- ADR-002 Gobernanza Arquitectónica.
-- ADR-003 Estructura del Repositorio.
-- ADR-004 Publicación Controlada.
-- EEA-000 Convenciones Generales.
-- EEA-001 Estándares Documentales.
-- EEA-002 Convenciones de Nomenclatura.
+- GOV-001 — Constitución del Atlas de Fitoterapia.
+- ADR-001 — ROADMAP como Documento Vivo.
+- ADR-002 — Sistema de Identificación Única.
+- ADR-003 — Jerarquía Normativa.
+- ADR-004 — Arquitectura antes que Implementación.
+- EEA-000 — Convenciones Generales.
+- EEA-001 — Convenciones Documentales.
+- EEA-002 — Convenciones de Nomenclatura.
