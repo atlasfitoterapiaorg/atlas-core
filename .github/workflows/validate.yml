@@ -68,3 +68,20 @@ jobs:
 
       - name: Validate Naming
         run: python tools/validate_naming.py
+
+  validate-links:
+    name: Validate Links
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Validate Links
+        run: python tools/validate_links.py
+
