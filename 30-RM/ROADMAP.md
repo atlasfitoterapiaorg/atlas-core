@@ -9,10 +9,9 @@ created: 2026-07-25
 updated: 2026-08-12
 author: Proyecto Atlas de Fitoterapia
 tags:
-
-* roadmap
-* governance
-* planning
+  - roadmap
+  - governance
+  - planning
 
 ---
 
