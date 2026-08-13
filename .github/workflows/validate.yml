@@ -49,8 +49,8 @@ jobs:
 
       - name: Validate Markdown
         run: python tools/validate_markdown.py
-        
-    validate-naming:
+
+  validate-naming:
     name: Validate Naming
     runs-on: ubuntu-latest
 
