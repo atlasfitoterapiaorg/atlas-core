@@ -1,18 +1,16 @@
 ---
-
 id: ROADMAP
 title: Plan Director del Atlas de Fitoterapia
-version: 1.2.0
+version: 1.2.1
 status: Approved
 type: ROADMAP
 created: 2026-07-25
-updated: 2026-08-12
+updated: 2026-08-13
 author: Proyecto Atlas de Fitoterapia
 tags:
   - roadmap
   - governance
   - planning
-
 ---
 
 # Plan Director del Atlas de Fitoterapia
@@ -37,14 +35,14 @@ Toda iniciativa, capacidad, documento, componente arquitectónico o desarrollo t
 
 ## 3. Estado General del Proyecto
 
-| Elemento              | Estado                                     |
-| --------------------- | ------------------------------------------ |
-| Proyecto              | Atlas de Fitoterapia                       |
-| Estado general        | 🟢 Plataforma tecnológica operativa        |
-| Release activo        | Release v0.3 — Infraestructura Tecnológica |
-| Sprint activo         | Sprint 3.5 — Validación Automática         |
-| Versión del documento | 1.2.0                                      |
-| Última actualización  | 2026-08-12                                 |
+| Elemento              | Estado                                      |
+| --------------------- | ------------------------------------------- |
+| Proyecto              | Atlas de Fitoterapia                        |
+| Estado general        | 🟢 Plataforma tecnológica operativa         |
+| Release activo        | Release v0.3 — Infraestructura Tecnológica  |
+| Sprint activo         | Sprint 3.6 — Plantillas y Flujo Editorial   |
+| Versión del documento | 1.2.1                                       |
+| Última actualización  | 2026-08-13                                  |
 
 ---
 
@@ -54,8 +52,8 @@ Toda iniciativa, capacidad, documento, componente arquitectónico o desarrollo t
 | ------------------------------- | ----: |
 | Releases completados            |     2 |
 | Release activo                  |  v0.3 |
-| Sprints completados             |     5 |
-| Sprint activo                   |   3.5 |
+| Sprints completados             |     7 |
+| Sprint activo                   |   3.6 |
 | Documentos normativos aprobados |     9 |
 | GOV                             |     1 |
 | ADR                             |     4 |
@@ -430,40 +428,64 @@ El repositorio `atlas-knowledge` dispone de una estructura inicial navegable y p
 
 ### Sprint 3.5 — Validación Automática
 
-**Estado:** 🟡 En progreso
+**Estado:** ✅ Completado
 
 #### Objetivo
 
-Implementar controles automáticos que prevengan la incorporación o publicación de contenido estructuralmente inválido.
+Implementar controles automáticos que prevengan la incorporación de contenido estructuralmente inválido dentro del flujo de integración del Atlas.
 
-#### Capacidades previstas
+#### Capacidades implementadas
 
-* [ ] Validación automática de Front Matter.
-* [ ] Validación automática de Markdown.
-* [ ] Validación automática de nomenclatura.
-* [ ] Validación automática de enlaces.
-* [ ] Detección de identificadores duplicados.
-* [ ] Detección de archivos huérfanos cuando corresponda.
-* [ ] Integración de validaciones con GitHub Actions.
-* [ ] Bloqueo de publicación ante errores críticos.
+* [x] Validación automática de Front Matter.
+* [x] Validación automática de Markdown.
+* [x] Validación automática de nomenclatura.
+* [x] Validación automática de enlaces internos.
+* [x] Detección de identificadores duplicados.
+* [x] Integración de validaciones con GitHub Actions.
+* [x] Ejecución automática sobre `push` a `develop`.
+* [x] Ejecución automática sobre Pull Requests dirigidos a `main`.
+* [x] Pruebas positivas y negativas de los validadores implementados.
+* [x] Fallo del workflow de GitHub Actions cuando una validación detecta errores.
+
+#### Controles implementados
+
+```text
+Validate Atlas Core
+│
+├── Validate Front Matter
+├── Validate Markdown
+├── Validate Naming
+├── Validate Links
+└── Validate IDs
+```
+
+#### Decisiones de alcance
+
+La detección automática de archivos huérfanos no se implementa en `atlas-core` durante este Sprint.
+
+Esta capacidad resulta más pertinente para `atlas-knowledge`, donde los documentos formarán parte de una estructura navegable y posteriormente de un grafo formal de conocimiento. Su implementación deberá evaluarse cuando exista el modelo de conocimiento correspondiente.
+
+La validación específica de que un fallo de los controles automáticos impida físicamente el merge hacia `main` o la publicación final se difiere al Sprint 3.7 — Validación Integral y Cierre, donde se validará de extremo a extremo el flujo de integración y publicación.
 
 #### Principios de implementación
 
-* Las validaciones deberán automatizar reglas existentes.
-* No deberán introducir reglas arquitectónicas nuevas fuera de los documentos normativos vigentes.
-* Las reglas deberán ser reproducibles tanto localmente como en CI.
-* Un error crítico deberá impedir la publicación.
-* Las advertencias no críticas deberán ser distinguibles de los errores de bloqueo.
+* Las validaciones automatizan reglas existentes.
+* No introducen reglas arquitectónicas nuevas fuera de los documentos normativos vigentes.
+* Las reglas son reproducibles tanto localmente como en CI.
+* Un error detectado provoca el fallo del workflow de validación.
+* La validación integral de las restricciones de merge y publicación corresponde al Sprint 3.7.
 
-#### Resultado esperado
+#### Resultado
 
-Todo contenido deberá superar controles automáticos mínimos antes de ser publicado.
+`atlas-core` dispone de una capa automática de validación estructural capaz de detectar errores de Front Matter, Markdown, nomenclatura, enlaces internos e identificadores duplicados.
+
+Los cinco controles se ejecutan mediante GitHub Actions y producen un fallo del workflow cuando detectan una condición inválida.
 
 ---
 
 ### Sprint 3.6 — Plantillas y Flujo Editorial
 
-**Estado:** ⚪ Planeado
+**Estado:** 🟡 En progreso
 
 #### Objetivo
 
@@ -504,6 +526,8 @@ Validar de extremo a extremo la plataforma antes de cerrar el Release v0.3.
 * [ ] Merge hacia `main`.
 * [ ] Ejecución de GitHub Actions.
 * [ ] Validaciones automáticas.
+* [ ] Bloqueo efectivo del merge ante controles requeridos fallidos.
+* [ ] Bloqueo efectivo de publicación ante errores críticos.
 * [ ] Build Quartz.
 * [ ] Generación de artefacto.
 * [ ] Deploy GitHub Pages.
@@ -522,6 +546,7 @@ El Release v0.3 se considerará completado cuando:
 * [ ] GitHub Pages publique automáticamente.
 * [ ] GitHub Actions ejecute el pipeline completo.
 * [ ] Las validaciones automáticas estén operativas.
+* [ ] Los controles requeridos impidan la integración o publicación cuando corresponda.
 * [ ] La navegación sea funcional.
 * [ ] El sitio sea accesible públicamente.
 * [ ] El flujo `develop → Pull Request → main → GitHub Actions → GitHub Pages` esté validado integralmente.
@@ -799,8 +824,8 @@ Release v0.3
 ├── Sprint 3.2  Página de Inicio                      ✅
 ├── Sprint 3.3  Identidad Visual y Navegación         ✅
 ├── Sprint 3.4  Estructura Inicial del Conocimiento   ✅
-├── Sprint 3.5  Validación Automática                 🟡
-├── Sprint 3.6  Plantillas y Flujo Editorial          ⚪
+├── Sprint 3.5  Validación Automática                 ✅
+├── Sprint 3.6  Plantillas y Flujo Editorial          🟡
 └── Sprint 3.7  Validación Integral y Cierre          ⚪
 
 Release v0.4
