@@ -1,11 +1,11 @@
 ---
 id: ROADMAP
 title: Plan Director del Atlas de Fitoterapia
-version: 1.2.1
+version: 1.2.2
 status: Approved
 type: ROADMAP
 created: 2026-07-25
-updated: 2026-08-13
+updated: 2026-08-16
 author: Proyecto Atlas de Fitoterapia
 tags:
   - roadmap
@@ -40,9 +40,9 @@ Toda iniciativa, capacidad, documento, componente arquitectónico o desarrollo t
 | Proyecto              | Atlas de Fitoterapia                        |
 | Estado general        | 🟢 Plataforma tecnológica operativa         |
 | Release activo        | Release v0.3 — Infraestructura Tecnológica  |
-| Sprint activo         | Sprint 3.6 — Plantillas y Flujo Editorial   |
-| Versión del documento | 1.2.1                                       |
-| Última actualización  | 2026-08-13                                  |
+| Sprint activo         | Sprint 3.7 — Validación Integral y Cierre   |
+| Versión del documento | 1.2.2                                       |
+| Última actualización  | 2026-08-16                                  |
 
 ---
 
@@ -52,13 +52,14 @@ Toda iniciativa, capacidad, documento, componente arquitectónico o desarrollo t
 | ------------------------------- | ----: |
 | Releases completados            |     2 |
 | Release activo                  |  v0.3 |
-| Sprints completados             |     7 |
-| Sprint activo                   |   3.6 |
-| Documentos normativos aprobados |     9 |
+| Sprints completados             |     8 |
+| Sprint activo                   |   3.7 |
+| Documentos normativos aprobados |    10 |
 | GOV                             |     1 |
 | ADR                             |     4 |
 | ADM                             |     1 |
 | EEA                             |     3 |
+| TPL                             |     1 |
 
 ---
 
@@ -485,32 +486,87 @@ Los cinco controles se ejecutan mediante GitHub Actions y producen un fallo del 
 
 ### Sprint 3.6 — Plantillas y Flujo Editorial
 
-**Estado:** 🟡 En progreso
+**Estado:** ✅ Completado
 
 #### Objetivo
 
-Preparar las plantillas y mecanismos mínimos necesarios para incorporar conocimiento de forma consistente.
+Preparar las plantillas y mecanismos mínimos necesarios para incorporar contenido de forma consistente sin anticipar el modelo formal de conocimiento.
 
-#### Capacidades previstas
+#### Capacidades implementadas
 
-* [ ] Plantilla base para contenido científico.
-* [ ] Plantilla compatible con Front Matter definido.
-* [ ] Integración con convenciones EEA.
-* [ ] Compatibilidad con Obsidian.
-* [ ] Compatibilidad con Quartz.
-* [ ] Validación de uso de plantillas.
+* [x] Plantilla documental base gobernada.
+* [x] Plantilla compatible con el Front Matter definido.
+* [x] Integración con las convenciones EEA.
+* [x] Tipo documental `TPL` validado mediante controles automáticos.
+* [x] `TPL-001 — Plantilla de Documento Base` implementada.
+* [x] Directorio `30-Plantillas/` incorporado formalmente a las convenciones de nomenclatura.
+* [x] Obsidian configurado como interfaz local de edición.
+* [x] `atlas-knowledge` validado como Vault de Obsidian.
+* [x] Plugin nativo Templates habilitado.
+* [x] Acceso local desde Obsidian a las plantillas gobernadas mediante enlace simbólico.
+* [x] Configuración `templates` registrada en `.obsidian/templates.json`.
+* [x] Flujo de inserción de plantilla desde Obsidian validado.
+* [x] Creación de documento editorial de prueba validada.
+* [x] Almacenamiento de contenido dentro de `atlas-knowledge/content` validado.
+* [x] Compatibilidad con Quartz validada mediante build local.
+* [x] Flujo editorial mínimo documentado en `atlas-knowledge`.
+* [x] Artefactos de prueba eliminados después de la validación.
 
-#### Restricción
+#### Flujo editorial validado
 
-Las plantillas científicas definitivas dependerán del Modelo de Información definido en el Release v0.4.
+```text
+atlas-core
+    │
+    ▼
+TPL-001
+    │
+    ▼
+Plantillas gobernadas
+    │
+    ▼
+Obsidian
+    │
+    ▼
+atlas-knowledge/content
+    │
+    ▼
+Quartz
+    │
+    ▼
+Sitio generado
+```
 
-Por tanto, este Sprint solo deberá implementar plantillas que no anticipen decisiones del modelo de conocimiento.
+Obsidian funciona como interfaz local de edición y no como fuente de verdad ni como componente arquitectónico obligatorio.
+
+Las plantillas oficiales permanecen gobernadas en `atlas-core`.
+
+El contenido permanece en `atlas-knowledge`.
+
+La integración local mediante enlace simbólico permite evitar la duplicación física de plantillas entre ambos repositorios.
+
+#### Decisiones de alcance
+
+La plantilla implementada durante este Sprint es una plantilla documental base.
+
+No constituye todavía una plantilla científica definitiva ni define la estructura formal de monografías, entidades o vistas editoriales.
+
+Las plantillas científicas definitivas dependerán del Modelo de Información definido durante el Release v0.4.
+
+La configuración específica de cada estación de trabajo, incluyendo el enlace simbólico hacia las plantillas, permanece como configuración local y no constituye una dependencia obligatoria del repositorio.
+
+#### Resultado
+
+El Atlas dispone de un flujo editorial mínimo, reproducible y desacoplado de la herramienta de edición.
+
+Las plantillas se gobiernan desde `atlas-core`, Obsidian puede utilizarlas para crear contenido en `atlas-knowledge` y Quartz puede procesar correctamente los documentos resultantes.
+
+La infraestructura queda preparada para incorporar posteriormente las plantillas científicas derivadas del modelo formal de conocimiento.
 
 ---
 
 ### Sprint 3.7 — Validación Integral y Cierre
 
-**Estado:** ⚪ Planeado
+**Estado:** 🟡 En progreso
 
 #### Objetivo
 
@@ -825,8 +881,8 @@ Release v0.3
 ├── Sprint 3.3  Identidad Visual y Navegación         ✅
 ├── Sprint 3.4  Estructura Inicial del Conocimiento   ✅
 ├── Sprint 3.5  Validación Automática                 ✅
-├── Sprint 3.6  Plantillas y Flujo Editorial          🟡
-└── Sprint 3.7  Validación Integral y Cierre          ⚪
+├── Sprint 3.6  Plantillas y Flujo Editorial          ✅
+└── Sprint 3.7  Validación Integral y Cierre          🟡
 
 Release v0.4
 ├── Sprint 4.1  Modelo Híbrido del Conocimiento       ⚪
@@ -866,3 +922,4 @@ Releases posteriores
 * EEA-000 — Convenciones Generales.
 * EEA-001 — Convenciones Documentales.
 * EEA-002 — Convenciones de Nomenclatura.
+* TPL-001 — Plantilla de Documento Base.
