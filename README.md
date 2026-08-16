@@ -20,9 +20,10 @@ Este repositorio, **`atlas-core`**, constituye el núcleo de gobernanza, arquite
 | Arquitectura documental | ✅ Consolidada |
 | Plataforma tecnológica | ✅ Operativa |
 | Validación automática | ✅ Operativa |
+| Flujo editorial | ✅ Operativo |
 | Publicación web | ✅ Operativa |
 | Release activo | v0.3 — Infraestructura Tecnológica |
-| Sprint activo | 3.6 — Plantillas y Flujo Editorial |
+| Sprint activo | 3.7 — Validación Integral y Cierre |
 | Próximo Release | v0.4 — Arquitectura del Conocimiento |
 
 Actualmente se encuentran completados:
@@ -34,8 +35,9 @@ Actualmente se encuentran completados:
 * Sprint 3.3 — Identidad Visual y Navegación.
 * Sprint 3.4 — Estructura Inicial del Conocimiento.
 * Sprint 3.5 — Validación Automática.
+* Sprint 3.6 — Plantillas y Flujo Editorial.
 
-El desarrollo continúa dentro del Release v0.3 con el Sprint 3.6 — Plantillas y Flujo Editorial.
+El desarrollo continúa dentro del Release v0.3 con el Sprint 3.7 — Validación Integral y Cierre.
 
 ---
 
@@ -240,6 +242,10 @@ La capa normativa consolidada actualmente está formada por:
 * EEA-001 — Convenciones Documentales.
 * EEA-002 — Convenciones de Nomenclatura.
 
+### Plantillas
+
+* TPL-001 — Plantilla de Documento Base.
+
 ---
 
 ## Principios arquitectónicos
@@ -252,6 +258,7 @@ La evolución del Atlas se rige, entre otros, por los siguientes principios:
 * cada documento debe aportar una responsabilidad arquitectónica única;
 * la automatización debe implementar reglas existentes y no crear gobernanza implícita;
 * el conocimiento debe mantenerse independiente de su mecanismo de presentación;
+* la herramienta de edición no constituye la fuente de verdad;
 * la documentación debe actualizarse cuando cambien la planificación, arquitectura, gobernanza o estándares;
 * se debe evitar la creación de documentación redundante.
 
@@ -345,8 +352,8 @@ Release v0.3
 ├── Sprint 3.3  Identidad Visual y Navegación         ✅
 ├── Sprint 3.4  Estructura Inicial del Conocimiento   ✅
 ├── Sprint 3.5  Validación Automática                 ✅
-├── Sprint 3.6  Plantillas y Flujo Editorial          🟡
-└── Sprint 3.7  Validación Integral y Cierre          ⚪
+├── Sprint 3.6  Plantillas y Flujo Editorial          ✅
+└── Sprint 3.7  Validación Integral y Cierre          🟡
 ```
 
 ---
@@ -561,16 +568,74 @@ El Release v0.4 contempla actualmente:
 
 ## Plantillas y flujo editorial
 
-El Sprint activo 3.6 tiene como propósito preparar las plantillas y mecanismos mínimos necesarios para incorporar conocimiento de forma consistente.
+El Sprint 3.6 estableció los mecanismos mínimos necesarios para incorporar contenido de forma consistente sin anticipar el modelo formal de conocimiento.
 
-Las plantillas desarrolladas durante este Sprint deberán:
+La primera plantilla gobernada es:
 
-* respetar las convenciones EEA existentes;
-* utilizar el Front Matter definido;
-* ser compatibles con el flujo tecnológico actual;
-* evitar anticipar decisiones que corresponden al modelo formal de conocimiento del Release v0.4.
+```text
+30-Plantillas/
+└── TPL-001-Documento-Base.md
+```
 
-Las plantillas científicas definitivas dependerán de ADM-004 — Modelo de Información del Atlas.
+TPL-001 constituye una plantilla documental base.
+
+No representa todavía una plantilla científica definitiva.
+
+Las plantillas científicas futuras deberán derivarse del Modelo de Información aprobado en el Release v0.4.
+
+### Arquitectura editorial
+
+El flujo editorial validado es:
+
+```text
+atlas-core
+    │
+    ▼
+TPL-001
+    │
+    ▼
+Plantillas gobernadas
+    │
+    ▼
+Interfaz de edición
+    │
+    ▼
+atlas-knowledge/content
+    │
+    ▼
+Quartz
+    │
+    ▼
+Sitio generado
+```
+
+Las responsabilidades permanecen separadas:
+
+```text
+atlas-core
+Gobernanza + estándares + plantillas
+
+atlas-knowledge
+Conocimiento + contenido + publicación
+
+Obsidian
+Interfaz local de edición
+```
+
+Obsidian puede utilizarse como interfaz de edición, pero:
+
+* no constituye la fuente de verdad;
+* no define la arquitectura del conocimiento;
+* no almacena las plantillas oficiales;
+* no constituye una dependencia obligatoria del Atlas.
+
+La fuente oficial de las plantillas continúa siendo `atlas-core`.
+
+La fuente oficial del contenido continúa siendo `atlas-knowledge`.
+
+La integración local permite utilizar las plantillas gobernadas desde Obsidian sin duplicarlas físicamente entre repositorios.
+
+La configuración operativa de Obsidian se documenta en el README de `atlas-knowledge`.
 
 ---
 
@@ -618,6 +683,7 @@ Los documentos principales para comprender el proyecto son:
 00-Gobierno/
 10-ADM/
 20-ADR/
+30-Plantillas/
 30-RM/
 40-EEA/
 README.md
@@ -673,8 +739,8 @@ LICENSE
 ```text
 Release v0.1  ████████████████████████████████ 100%
 Release v0.2  ████████████████████████████████ 100%
-Release v0.3  ███████████████████████░░░░░░░░░ En progreso
+Release v0.3  ████████████████████████████░░░░ En progreso
 Release v0.4  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ Planeado
 ```
 
-El proyecto se encuentra actualmente consolidando su infraestructura tecnológica antes de iniciar formalmente la arquitectura del conocimiento.
+El proyecto se encuentra actualmente en la validación integral de su infraestructura tecnológica antes de iniciar formalmente la arquitectura del conocimiento.
