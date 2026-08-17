@@ -8,6 +8,12 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 
 ## [Unreleased]
 
+Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento se registrarán en esta sección hasta su cierre formal.
+
+---
+
+## [v0.3.0] - 2026-08-16
+
 ### Added
 
 #### Infraestructura Tecnológica
@@ -138,7 +144,10 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Sprint 3.4 — Estructura Inicial del Conocimiento cerrado.
 * Sprint 3.5 — Validación Automática cerrado.
 * Sprint 3.6 — Plantillas y Flujo Editorial cerrado.
-* Sprint 3.7 — Validación Integral y Cierre establecido como Sprint activo.
+* Sprint 3.7 — Validación Integral y Cierre cerrado.
+* Release v0.3 — Infraestructura Tecnológica cerrado.
+* Release v0.4 — Arquitectura del Conocimiento establecido como Release activo.
+* Sprint 4.1 — Modelo Híbrido del Conocimiento establecido como Sprint activo.
 * La descripción de la plantilla prevista para Sprint 3.6 se ajustó para reflejar una plantilla documental base sin anticipar el modelo científico del Release v0.4.
 
 ---
@@ -155,6 +164,8 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Validación del despliegue posterior al merge de `develop` hacia `main`.
 * Corrección en EEA-002 de referencias a directorios institucionales que ya no correspondían con la estructura física vigente.
 * Restauración de archivos internos de Quartz modificados durante pruebas locales para evitar incorporar artefactos de ejecución al repositorio.
+* Corrección de la invocación de Quartz en GitHub Actions mediante `node ./quartz/bootstrap-cli.mjs`.
+* Corrección del contexto requerido del build de Quartz dentro de las reglas de protección de `main`.
 
 ---
 
@@ -176,6 +187,9 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Explorer.
 * Graph.
 * Table of Contents.
+* Enlaces internos.
+* Navegación principal completa sin errores 404.
+* Flujo integral `develop → Pull Request → main → GitHub Actions → GitHub Pages`.
 
 #### Validación Automática
 
@@ -190,7 +204,10 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Fallo del workflow de GitHub Actions ante errores detectados.
 * Ejecución reproducible de los controles tanto localmente como mediante CI.
 
-La comprobación específica de bloqueo efectivo de merge y publicación ante controles requeridos fallidos permanece diferida al Sprint 3.7.
+* Bloqueo efectivo del merge en `atlas-core` cuando falla un control requerido.
+* Bloqueo efectivo del merge en `atlas-knowledge` cuando falla el build requerido.
+* Protección efectiva de `main` mediante Rulesets.
+* Recuperación correcta del pipeline después de corregir un fallo de build.
 
 #### Plantillas y Flujo Editorial
 
@@ -227,6 +244,24 @@ Quartz Build
    ▼
 GitHub Pages
 ```
+
+#### Validación Integral y Recuperación
+
+Durante el Sprint 3.7 se validó el comportamiento completo de publicación y protección:
+
+* el Pull Request ejecuta los controles requeridos antes del merge;
+* un fallo crítico bloquea físicamente la integración hacia `main`;
+* un Pull Request fallido no ejecuta el deploy;
+* el sitio publicado permanece protegido ante errores en ramas de trabajo;
+* la corrección del error permite recuperar el pipeline;
+* el merge hacia `main` ejecuta nuevamente el build;
+* el artefacto de GitHub Pages se genera correctamente;
+* el deploy finaliza correctamente;
+* el sitio público permanece accesible después del despliegue.
+
+Se ejecutó una prueba negativa controlada con contenido inválido en `atlas-knowledge`. El build falló, el merge quedó bloqueado y no se produjo despliegue. Tras corregir el contenido, el build volvió a pasar y el merge quedó nuevamente habilitado.
+
+---
 
 #### Flujo Editorial Local
 

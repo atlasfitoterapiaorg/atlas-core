@@ -1,7 +1,7 @@
 ---
 id: ROADMAP
 title: Plan Director del Atlas de Fitoterapia
-version: 1.2.2
+version: 1.3.0
 status: Approved
 type: ROADMAP
 created: 2026-07-25
@@ -38,10 +38,10 @@ Toda iniciativa, capacidad, documento, componente arquitectónico o desarrollo t
 | Elemento              | Estado                                      |
 | --------------------- | ------------------------------------------- |
 | Proyecto              | Atlas de Fitoterapia                        |
-| Estado general        | 🟢 Plataforma tecnológica operativa         |
-| Release activo        | Release v0.3 — Infraestructura Tecnológica  |
-| Sprint activo         | Sprint 3.7 — Validación Integral y Cierre   |
-| Versión del documento | 1.2.2                                       |
+| Estado general        | 🟢 Arquitectura del conocimiento activa     |
+| Release activo        | Release v0.4 — Arquitectura del Conocimiento |
+| Sprint activo         | Sprint 4.1 — Modelo Híbrido del Conocimiento |
+| Versión del documento | 1.3.0                                       |
 | Última actualización  | 2026-08-16                                  |
 
 ---
@@ -50,10 +50,10 @@ Toda iniciativa, capacidad, documento, componente arquitectónico o desarrollo t
 
 | Indicador                       | Valor |
 | ------------------------------- | ----: |
-| Releases completados            |     2 |
-| Release activo                  |  v0.3 |
-| Sprints completados             |     8 |
-| Sprint activo                   |   3.7 |
+| Releases completados            |     3 |
+| Release activo                  |  v0.4 |
+| Sprints completados             |     9 |
+| Sprint activo                   |   4.1 |
 | Documentos normativos aprobados |    10 |
 | GOV                             |     1 |
 | ADR                             |     4 |
@@ -198,7 +198,7 @@ La capa de gobernanza del Atlas quedó consolidada y se convirtió en la base no
 
 ## Release v0.3 — Infraestructura Tecnológica
 
-**Estado:** 🟡 En progreso
+**Estado:** ✅ Completado
 
 ### Propósito arquitectónico
 
@@ -566,7 +566,7 @@ La infraestructura queda preparada para incorporar posteriormente las plantillas
 
 ### Sprint 3.7 — Validación Integral y Cierre
 
-**Estado:** 🟡 En progreso
+**Estado:** ✅ Completado
 
 #### Objetivo
 
@@ -574,47 +574,47 @@ Validar de extremo a extremo la plataforma antes de cerrar el Release v0.3.
 
 #### Validaciones previstas
 
-* [ ] Edición local.
-* [ ] Build local.
-* [ ] Commit.
-* [ ] Push.
-* [ ] Pull Request.
-* [ ] Merge hacia `main`.
-* [ ] Ejecución de GitHub Actions.
-* [ ] Validaciones automáticas.
-* [ ] Bloqueo efectivo del merge ante controles requeridos fallidos.
-* [ ] Bloqueo efectivo de publicación ante errores críticos.
-* [ ] Build Quartz.
-* [ ] Generación de artefacto.
-* [ ] Deploy GitHub Pages.
-* [ ] Navegación.
-* [ ] Search.
-* [ ] Graph.
-* [ ] Enlaces internos.
-* [ ] Visualización móvil.
-* [ ] Recuperación ante fallo de build.
+* [x] Edición local.
+* [x] Build local.
+* [x] Commit.
+* [x] Push.
+* [x] Pull Request.
+* [x] Merge hacia `main`.
+* [x] Ejecución de GitHub Actions.
+* [x] Validaciones automáticas.
+* [x] Bloqueo efectivo del merge ante controles requeridos fallidos.
+* [x] Bloqueo efectivo de publicación ante errores críticos.
+* [x] Build Quartz.
+* [x] Generación de artefacto.
+* [x] Deploy GitHub Pages.
+* [x] Navegación.
+* [x] Search.
+* [x] Graph.
+* [x] Enlaces internos.
+* [x] Visualización móvil.
+* [x] Recuperación ante fallo de build.
 
 #### Criterios de cierre
 
 El Release v0.3 se considerará completado cuando:
 
-* [ ] Quartz compile correctamente.
-* [ ] GitHub Pages publique automáticamente.
-* [ ] GitHub Actions ejecute el pipeline completo.
-* [ ] Las validaciones automáticas estén operativas.
-* [ ] Los controles requeridos impidan la integración o publicación cuando corresponda.
-* [ ] La navegación sea funcional.
-* [ ] El sitio sea accesible públicamente.
-* [ ] El flujo `develop → Pull Request → main → GitHub Actions → GitHub Pages` esté validado integralmente.
-* [ ] La infraestructura permita comenzar el Release v0.4 sin rediseño técnico.
-* [ ] ROADMAP actualizado.
-* [ ] CHANGELOG actualizado.
+* [x] Quartz compile correctamente.
+* [x] GitHub Pages publique automáticamente.
+* [x] GitHub Actions ejecute el pipeline completo.
+* [x] Las validaciones automáticas estén operativas.
+* [x] Los controles requeridos impidan la integración o publicación cuando corresponda.
+* [x] La navegación sea funcional.
+* [x] El sitio sea accesible públicamente.
+* [x] El flujo `develop → Pull Request → main → GitHub Actions → GitHub Pages` esté validado integralmente.
+* [x] La infraestructura permita comenzar el Release v0.4 sin rediseño técnico.
+* [x] ROADMAP actualizado.
+* [x] CHANGELOG actualizado.
 
 ---
 
 ## Release v0.4 — Arquitectura del Conocimiento
 
-**Estado:** ⚪ Planeado
+**Estado:** 🟡 En progreso
 
 ### Propósito arquitectónico
 
@@ -650,7 +650,7 @@ Las monografías serán vistas editoriales construidas a partir de entidades, at
 
 ### Sprint 4.1 — Modelo Híbrido del Conocimiento
 
-**Estado:** ⚪ Planeado
+**Estado:** 🟡 En progreso
 
 #### Objetivo
 
@@ -861,8 +861,8 @@ Publicación
 ```text
 v0.1  Fundación                       ✅ Completado
 v0.2  Gobernanza                      ✅ Completado
-v0.3  Infraestructura Tecnológica     🟡 En progreso
-v0.4  Arquitectura del Conocimiento   ⚪ Planeado
+v0.3  Infraestructura Tecnológica     ✅ Completado
+v0.4  Arquitectura del Conocimiento   🟡 En progreso
 v0.5+ Evolución estratégica           ⚪ Pendiente
 ```
 
@@ -882,10 +882,10 @@ Release v0.3
 ├── Sprint 3.4  Estructura Inicial del Conocimiento   ✅
 ├── Sprint 3.5  Validación Automática                 ✅
 ├── Sprint 3.6  Plantillas y Flujo Editorial          ✅
-└── Sprint 3.7  Validación Integral y Cierre          🟡
+└── Sprint 3.7  Validación Integral y Cierre          ✅
 
 Release v0.4
-├── Sprint 4.1  Modelo Híbrido del Conocimiento       ⚪
+├── Sprint 4.1  Modelo Híbrido del Conocimiento       🟡
 ├── Sprint 4.2  Arquitectura del Modelo               ⚪
 ├── Sprint 4.3  Dominios de Conocimiento              ⚪
 └── Sprint 4.4  Modelo de Información                 ⚪

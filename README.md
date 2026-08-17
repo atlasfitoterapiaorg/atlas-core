@@ -18,13 +18,13 @@ Este repositorio, **`atlas-core`**, constituye el núcleo de gobernanza, arquite
 | Repositorio | `atlas-core` |
 | Gobernanza | ✅ Consolidada |
 | Arquitectura documental | ✅ Consolidada |
-| Plataforma tecnológica | ✅ Operativa |
+| Plataforma tecnológica | ✅ Validada y operativa |
 | Validación automática | ✅ Operativa |
 | Flujo editorial | ✅ Operativo |
 | Publicación web | ✅ Operativa |
-| Release activo | v0.3 — Infraestructura Tecnológica |
-| Sprint activo | 3.7 — Validación Integral y Cierre |
-| Próximo Release | v0.4 — Arquitectura del Conocimiento |
+| Release activo | v0.4 — Arquitectura del Conocimiento |
+| Sprint activo | 4.1 — Modelo Híbrido del Conocimiento |
+| Release completado más reciente | v0.4 — Arquitectura del Conocimiento |
 
 Actualmente se encuentran completados:
 
@@ -36,8 +36,10 @@ Actualmente se encuentran completados:
 * Sprint 3.4 — Estructura Inicial del Conocimiento.
 * Sprint 3.5 — Validación Automática.
 * Sprint 3.6 — Plantillas y Flujo Editorial.
+* Sprint 3.7 — Validación Integral y Cierre.
+* Release v0.4 — Arquitectura del Conocimiento.
 
-El desarrollo continúa dentro del Release v0.3 con el Sprint 3.7 — Validación Integral y Cierre.
+El desarrollo continúa dentro del Release v0.4 con el Sprint 4.1 — Modelo Híbrido del Conocimiento.
 
 ---
 
@@ -312,8 +314,8 @@ Tareas
 ```text
 v0.1  Fundación                       ✅ Completado
 v0.2  Gobernanza                      ✅ Completado
-v0.3  Infraestructura Tecnológica     🟡 En progreso
-v0.4  Arquitectura del Conocimiento   ⚪ Planeado
+v0.3  Infraestructura Tecnológica     ✅ Completado
+v0.4  Arquitectura del Conocimiento   🟡 En progreso
 v0.5+ Evolución estratégica           ⚪ Pendiente
 ```
 
@@ -322,7 +324,7 @@ v0.5+ Evolución estratégica           ⚪ Pendiente
 El Release activo es:
 
 ```text
-v0.3 — Infraestructura Tecnológica
+v0.4 — Arquitectura del Conocimiento
 ```
 
 Su propósito es proporcionar la infraestructura necesaria para:
@@ -353,7 +355,7 @@ Release v0.3
 ├── Sprint 3.4  Estructura Inicial del Conocimiento   ✅
 ├── Sprint 3.5  Validación Automática                 ✅
 ├── Sprint 3.6  Plantillas y Flujo Editorial          ✅
-└── Sprint 3.7  Validación Integral y Cierre          🟡
+└── Sprint 3.7  Validación Integral y Cierre          ✅
 ```
 
 ---
@@ -441,7 +443,7 @@ Validate Atlas Core
 
 También se ejecutan validaciones sobre Pull Requests dirigidos a `main`.
 
-La validación integral del comportamiento de bloqueo de merge y publicación se realizará dentro del Sprint 3.7 — Validación Integral y Cierre.
+La validación integral del comportamiento de bloqueo de merge y publicación fue completada durante el Sprint 3.7.
 
 ---
 
@@ -500,7 +502,7 @@ La plataforma utiliza:
 * GitHub Actions;
 * GitHub Pages.
 
-La construcción y publicación automática del sitio ya se encuentra operativa.
+La construcción y publicación automática del sitio se encuentra operativa y validada de extremo a extremo.
 
 ---
 
@@ -529,7 +531,7 @@ No representa todavía el modelo formal del conocimiento.
 
 ## Arquitectura del conocimiento
 
-El modelo formal del conocimiento será definido durante el Release v0.4 — Arquitectura del Conocimiento.
+El modelo formal del conocimiento se desarrolla durante el Release v0.4 — Arquitectura del Conocimiento.
 
 La arquitectura conceptual objetivo es:
 
@@ -712,7 +714,7 @@ El historial oficial de cambios se mantiene en:
 CHANGELOG.md
 ```
 
-Los cambios del Release v0.3 permanecen bajo:
+Los cambios del Release v0.4 permanecen bajo:
 
 ```text
 [Unreleased]
@@ -739,8 +741,8 @@ LICENSE
 ```text
 Release v0.1  ████████████████████████████████ 100%
 Release v0.2  ████████████████████████████████ 100%
-Release v0.3  ████████████████████████████░░░░ En progreso
-Release v0.4  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ Planeado
+Release v0.3  ████████████████████████████████ 100%
+Release v0.4  ████░░░░░░░░░░░░░░░░░░░░░░░░░░ En progreso
 ```
 
-El proyecto se encuentra actualmente en la validación integral de su infraestructura tecnológica antes de iniciar formalmente la arquitectura del conocimiento.
+El proyecto se encuentra actualmente en el inicio formal de la arquitectura del conocimiento mediante el Sprint 4.1 — Modelo Híbrido del Conocimiento.
