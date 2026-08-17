@@ -63,8 +63,6 @@ Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento s
 * Ejecución automática de validaciones sobre `push` a `develop`.
 * Ejecución automática de validaciones sobre Pull Requests dirigidos a `main`.
 * Fallo automático del workflow cuando los validadores detectan condiciones inválidas.
-* Protección de `main` mediante controles requeridos.
-* Build de Quartz requerido antes de integrar cambios en `atlas-knowledge`.
 
 #### Plantillas y Flujo Editorial
 
@@ -82,8 +80,6 @@ Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento s
 * Flujo de trabajo basado en ramas `develop` y `main`.
 * Integración de cambios mediante Pull Request.
 * Primer Pull Request formal de `atlas-knowledge` hacia `main`.
-* Protección de la rama `main` en `atlas-core`.
-* Protección de la rama `main` en `atlas-knowledge`.
 
 ---
 
@@ -97,8 +93,6 @@ Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento s
 * Ajuste de la configuración visual de Quartz.
 * Incorporación de colores institucionales del Atlas.
 * Adaptación de estilos para mantener coherencia entre modo claro y oscuro.
-* El workflow de `atlas-knowledge` ejecuta el build de Quartz tanto en Pull Requests hacia `main` como después de la integración en `main`.
-* El despliegue a GitHub Pages permanece limitado a ejecuciones posteriores a la integración en `main`.
 
 #### Navegación
 
@@ -170,7 +164,7 @@ Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento s
 * Validación del despliegue posterior al merge de `develop` hacia `main`.
 * Corrección en EEA-002 de referencias a directorios institucionales que ya no correspondían con la estructura física vigente.
 * Restauración de archivos internos de Quartz modificados durante pruebas locales para evitar incorporar artefactos de ejecución al repositorio.
-* Corrección de la invocación de Quartz en GitHub Actions mediante `node ./quartz/bootstrap-cli.mjs` para asegurar su ejecución en el entorno CI.
+* Corrección de la invocación de Quartz en GitHub Actions mediante `node ./quartz/bootstrap-cli.mjs`.
 * Corrección del contexto requerido del build de Quartz dentro de las reglas de protección de `main`.
 
 ---
@@ -179,7 +173,6 @@ Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento s
 
 #### Plataforma y Publicación
 
-* Edición local.
 * Build local de Quartz.
 * Build de Quartz mediante GitHub Actions.
 * Generación del artefacto de GitHub Pages.
@@ -196,7 +189,7 @@ Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento s
 * Table of Contents.
 * Enlaces internos.
 * Navegación principal completa sin errores 404.
-* Flujo completo de publicación desde `develop` hasta GitHub Pages.
+* Flujo integral `develop → Pull Request → main → GitHub Actions → GitHub Pages`.
 
 #### Validación Automática
 
@@ -210,10 +203,11 @@ Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento s
 * Pruebas negativas de los validadores.
 * Fallo del workflow de GitHub Actions ante errores detectados.
 * Ejecución reproducible de los controles tanto localmente como mediante CI.
+
 * Bloqueo efectivo del merge en `atlas-core` cuando falla un control requerido.
 * Bloqueo efectivo del merge en `atlas-knowledge` cuando falla el build requerido.
 * Protección efectiva de `main` mediante Rulesets.
-* Imposibilidad de integrar un Pull Request mientras permanezca fallido un control requerido.
+* Recuperación correcta del pipeline después de corregir un fallo de build.
 
 #### Plantillas y Flujo Editorial
 
@@ -230,16 +224,13 @@ Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento s
 
 #### Flujo de Publicación
 
-Se validó integralmente el flujo:
+* Flujo:
 
 ```text
 develop
    │
    ▼
 Pull Request
-   │
-   ▼
-Build requerido
    │
    ▼
 main
@@ -251,10 +242,126 @@ GitHub Actions
 Quartz Build
    │
    ▼
-Artefacto GitHub Pages
-   │
-   ▼
-Deploy
-   │
-   ▼
 GitHub Pages
+```
+
+#### Validación Integral y Recuperación
+
+Durante el Sprint 3.7 se validó el comportamiento completo de publicación y protección:
+
+* el Pull Request ejecuta los controles requeridos antes del merge;
+* un fallo crítico bloquea físicamente la integración hacia `main`;
+* un Pull Request fallido no ejecuta el deploy;
+* el sitio publicado permanece protegido ante errores en ramas de trabajo;
+* la corrección del error permite recuperar el pipeline;
+* el merge hacia `main` ejecuta nuevamente el build;
+* el artefacto de GitHub Pages se genera correctamente;
+* el deploy finaliza correctamente;
+* el sitio público permanece accesible después del despliegue.
+
+Se ejecutó una prueba negativa controlada con contenido inválido en `atlas-knowledge`. El build falló, el merge quedó bloqueado y no se produjo despliegue. Tras corregir el contenido, el build volvió a pasar y el merge quedó nuevamente habilitado.
+
+---
+
+#### Flujo Editorial Local
+
+* Flujo:
+
+```text
+atlas-core
+    │
+    ▼
+TPL-001
+    │
+    ▼
+Plantillas gobernadas
+    │
+    ▼
+Obsidian
+    │
+    ▼
+atlas-knowledge/content
+    │
+    ▼
+Quartz
+    │
+    ▼
+Sitio generado
+```
+
+---
+
+## [v0.2.0] - 2026-07-28
+
+### Added
+
+#### Gobernanza
+
+* GOV-001 — Constitución del Atlas de Fitoterapia.
+
+#### Arquitectura
+
+* ADM-001 — Arquitectura General del Atlas.
+
+#### Decisiones Arquitectónicas
+
+* ADR-001 — El ROADMAP como Documento Vivo.
+* ADR-002 — Sistema de Identificación Única.
+* ADR-003 — Jerarquía Normativa.
+* ADR-004 — Arquitectura antes que Implementación.
+
+#### Estándares Editoriales
+
+* EEA-000 — Convenciones Generales.
+* EEA-001 — Convenciones Documentales.
+* EEA-002 — Convenciones de Nomenclatura.
+
+### Changed
+
+* Se consolidó la arquitectura documental del proyecto.
+* Se definió la jerarquía normativa oficial.
+* Se formalizó el modelo de gobernanza.
+* Se reestructuró el ROADMAP como Plan Director del proyecto.
+* Se reorganizó la estructura del repositorio.
+* Se actualizó completamente la documentación principal del repositorio.
+
+---
+
+## [v0.1.0] - 2026-07-25
+
+### Added
+
+* Creación del repositorio `atlas-core`.
+* Creación del repositorio `atlas-knowledge`.
+* Configuración inicial del proyecto.
+* Incorporación de Git y GitHub.
+* Creación del README inicial.
+* Creación del ROADMAP inicial.
+* Creación del CHANGELOG inicial.
+* Definición del modelo de Releases y Sprints.
+* Definición de la planificación inicial del Atlas.
+
+---
+
+## Versionado
+
+El proyecto utiliza **Semantic Versioning**.
+
+```text
+MAJOR.MINOR.PATCH
+
+MAJOR  Cambios incompatibles
+MINOR  Nuevas funcionalidades
+PATCH  Correcciones y mejoras
+```
+
+La versión correspondiente a un Release únicamente se incorpora al CHANGELOG cuando dicho Release ha sido cerrado formalmente.
+
+Mientras un Release permanezca activo, sus cambios se documentarán bajo `[Unreleased]`.
+
+---
+
+## Referencias
+
+* Keep a Changelog.
+* Semantic Versioning.
