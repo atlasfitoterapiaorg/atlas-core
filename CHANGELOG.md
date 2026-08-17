@@ -8,6 +8,12 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 
 ## [Unreleased]
 
+Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento se registrarán en esta sección hasta su cierre formal.
+
+---
+
+## [v0.3.0] - 2026-08-16
+
 ### Added
 
 #### Infraestructura Tecnológica
@@ -57,6 +63,8 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Ejecución automática de validaciones sobre `push` a `develop`.
 * Ejecución automática de validaciones sobre Pull Requests dirigidos a `main`.
 * Fallo automático del workflow cuando los validadores detectan condiciones inválidas.
+* Protección de `main` mediante controles requeridos.
+* Build de Quartz requerido antes de integrar cambios en `atlas-knowledge`.
 
 #### Plantillas y Flujo Editorial
 
@@ -74,6 +82,8 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Flujo de trabajo basado en ramas `develop` y `main`.
 * Integración de cambios mediante Pull Request.
 * Primer Pull Request formal de `atlas-knowledge` hacia `main`.
+* Protección de la rama `main` en `atlas-core`.
+* Protección de la rama `main` en `atlas-knowledge`.
 
 ---
 
@@ -87,6 +97,8 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Ajuste de la configuración visual de Quartz.
 * Incorporación de colores institucionales del Atlas.
 * Adaptación de estilos para mantener coherencia entre modo claro y oscuro.
+* El workflow de `atlas-knowledge` ejecuta el build de Quartz tanto en Pull Requests hacia `main` como después de la integración en `main`.
+* El despliegue a GitHub Pages permanece limitado a ejecuciones posteriores a la integración en `main`.
 
 #### Navegación
 
@@ -138,7 +150,10 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Sprint 3.4 — Estructura Inicial del Conocimiento cerrado.
 * Sprint 3.5 — Validación Automática cerrado.
 * Sprint 3.6 — Plantillas y Flujo Editorial cerrado.
-* Sprint 3.7 — Validación Integral y Cierre establecido como Sprint activo.
+* Sprint 3.7 — Validación Integral y Cierre cerrado.
+* Release v0.3 — Infraestructura Tecnológica cerrado.
+* Release v0.4 — Arquitectura del Conocimiento establecido como Release activo.
+* Sprint 4.1 — Modelo Híbrido del Conocimiento establecido como Sprint activo.
 * La descripción de la plantilla prevista para Sprint 3.6 se ajustó para reflejar una plantilla documental base sin anticipar el modelo científico del Release v0.4.
 
 ---
@@ -155,6 +170,8 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Validación del despliegue posterior al merge de `develop` hacia `main`.
 * Corrección en EEA-002 de referencias a directorios institucionales que ya no correspondían con la estructura física vigente.
 * Restauración de archivos internos de Quartz modificados durante pruebas locales para evitar incorporar artefactos de ejecución al repositorio.
+* Corrección de la invocación de Quartz en GitHub Actions mediante `node ./quartz/bootstrap-cli.mjs` para asegurar su ejecución en el entorno CI.
+* Corrección del contexto requerido del build de Quartz dentro de las reglas de protección de `main`.
 
 ---
 
@@ -162,6 +179,7 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 
 #### Plataforma y Publicación
 
+* Edición local.
 * Build local de Quartz.
 * Build de Quartz mediante GitHub Actions.
 * Generación del artefacto de GitHub Pages.
@@ -176,6 +194,9 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Explorer.
 * Graph.
 * Table of Contents.
+* Enlaces internos.
+* Navegación principal completa sin errores 404.
+* Flujo completo de publicación desde `develop` hasta GitHub Pages.
 
 #### Validación Automática
 
@@ -189,8 +210,10 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 * Pruebas negativas de los validadores.
 * Fallo del workflow de GitHub Actions ante errores detectados.
 * Ejecución reproducible de los controles tanto localmente como mediante CI.
-
-La comprobación específica de bloqueo efectivo de merge y publicación ante controles requeridos fallidos permanece diferida al Sprint 3.7.
+* Bloqueo efectivo del merge en `atlas-core` cuando falla un control requerido.
+* Bloqueo efectivo del merge en `atlas-knowledge` cuando falla el build requerido.
+* Protección efectiva de `main` mediante Rulesets.
+* Imposibilidad de integrar un Pull Request mientras permanezca fallido un control requerido.
 
 #### Plantillas y Flujo Editorial
 
@@ -207,13 +230,16 @@ La comprobación específica de bloqueo efectivo de merge y publicación ante co
 
 #### Flujo de Publicación
 
-* Flujo:
+Se validó integralmente el flujo:
 
 ```text
 develop
    │
    ▼
 Pull Request
+   │
+   ▼
+Build requerido
    │
    ▼
 main
@@ -225,108 +251,10 @@ GitHub Actions
 Quartz Build
    │
    ▼
+Artefacto GitHub Pages
+   │
+   ▼
+Deploy
+   │
+   ▼
 GitHub Pages
-```
-
-#### Flujo Editorial Local
-
-* Flujo:
-
-```text
-atlas-core
-    │
-    ▼
-TPL-001
-    │
-    ▼
-Plantillas gobernadas
-    │
-    ▼
-Obsidian
-    │
-    ▼
-atlas-knowledge/content
-    │
-    ▼
-Quartz
-    │
-    ▼
-Sitio generado
-```
-
----
-
-## [v0.2.0] - 2026-07-28
-
-### Added
-
-#### Gobernanza
-
-* GOV-001 — Constitución del Atlas de Fitoterapia.
-
-#### Arquitectura
-
-* ADM-001 — Arquitectura General del Atlas.
-
-#### Decisiones Arquitectónicas
-
-* ADR-001 — El ROADMAP como Documento Vivo.
-* ADR-002 — Sistema de Identificación Única.
-* ADR-003 — Jerarquía Normativa.
-* ADR-004 — Arquitectura antes que Implementación.
-
-#### Estándares Editoriales
-
-* EEA-000 — Convenciones Generales.
-* EEA-001 — Convenciones Documentales.
-* EEA-002 — Convenciones de Nomenclatura.
-
-### Changed
-
-* Se consolidó la arquitectura documental del proyecto.
-* Se definió la jerarquía normativa oficial.
-* Se formalizó el modelo de gobernanza.
-* Se reestructuró el ROADMAP como Plan Director del proyecto.
-* Se reorganizó la estructura del repositorio.
-* Se actualizó completamente la documentación principal del repositorio.
-
----
-
-## [v0.1.0] - 2026-07-25
-
-### Added
-
-* Creación del repositorio `atlas-core`.
-* Creación del repositorio `atlas-knowledge`.
-* Configuración inicial del proyecto.
-* Incorporación de Git y GitHub.
-* Creación del README inicial.
-* Creación del ROADMAP inicial.
-* Creación del CHANGELOG inicial.
-* Definición del modelo de Releases y Sprints.
-* Definición de la planificación inicial del Atlas.
-
----
-
-## Versionado
-
-El proyecto utiliza **Semantic Versioning**.
-
-```text
-MAJOR.MINOR.PATCH
-
-MAJOR  Cambios incompatibles
-MINOR  Nuevas funcionalidades
-PATCH  Correcciones y mejoras
-```
-
-La versión correspondiente a un Release únicamente se incorpora al CHANGELOG cuando dicho Release ha sido cerrado formalmente.
-
-Mientras un Release permanezca activo, sus cambios se documentarán bajo `[Unreleased]`.
-
----
-
-## Referencias
-
-* Keep a Changelog.
-* Semantic Versioning.
