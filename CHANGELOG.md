@@ -8,7 +8,134 @@ El proyecto adopta las recomendaciones de **Keep a Changelog** y utiliza **Seman
 
 ## [Unreleased]
 
-Los cambios correspondientes al Release v0.4 — Arquitectura del Conocimiento se registrarán en esta sección hasta su cierre formal.
+No existe actualmente un Release activo. El alcance del Release v0.5 permanece pendiente de definición en el ROADMAP.
+
+---
+
+## [v0.4.0] - 2026-08-25
+
+### Added
+
+#### Arquitectura del Conocimiento
+
+* ADR-005 — Modelo Híbrido del Conocimiento.
+* ADM-002 — Arquitectura del Modelo de Conocimiento.
+* ADM-003 — Dominios de Conocimiento del Atlas.
+* ADM-004 — Modelo de Información del Atlas.
+
+#### Modelo Híbrido
+
+* Modelo de conocimiento basado en entidades y relaciones como estructura formal.
+* Documentos y monografías definidos como representaciones editoriales del conocimiento.
+* Separación formal entre identidad del objeto y representación documental.
+* Cadena conceptual Fuente → Dato u observación → Afirmación → Entidad o Relación → Conocimiento gobernado → Vista editorial → Publicación.
+* Preservación de evidencia contradictoria sin eliminación automática.
+* Principio de automatización gobernada: las herramientas pueden detectar y proponer, pero no aprobar conocimiento automáticamente.
+
+#### Arquitectura del Modelo
+
+* Arquitectura conceptual organizada en siete capas:
+
+  1. Dominios de Conocimiento.
+  2. Entidades.
+  3. Relaciones.
+  4. Afirmaciones y Evidencia.
+  5. Procedencia.
+  6. Grafo de Conocimiento.
+  7. Vistas Editoriales.
+* Arquitectura taxonómica principal Familia → Género → Especie → niveles infraespecíficos cuando resulte pertinente.
+* Especie establecida como unidad biológica principal para documentación fitoterapéutica.
+* Prohibición de herencia automática de propiedades científicas entre niveles taxonómicos.
+
+#### Dominios de Conocimiento
+
+* Nueve dominios temáticos oficiales:
+
+  * Botánica.
+  * Farmacognosia.
+  * Fitoquímica.
+  * Etnobotánica y Uso Tradicional.
+  * Farmacología.
+  * Evidencia Científica y Clínica.
+  * Uso Terapéutico.
+  * Seguridad y Toxicología.
+  * Regulación y Farmacopeas.
+* Fuentes y Procedencia establecidos como capa transversal.
+* Principio de cobertura no obligatoria.
+* Separación entre uso tradicional, uso terapéutico y evidencia.
+* Separación entre calidad farmacognóstica y regulación.
+* Prohibición de completar ausencia de información mediante inferencia automática.
+
+#### Modelo de Información
+
+* Taxón definido como entidad única diferenciada mediante Nivel taxonómico.
+* Parte vegetal definida como entidad genérica reutilizable.
+* Droga vegetal diferenciada de Taxón y Parte vegetal.
+* Preparado vegetal incorporado como elemento transversal con identidad cuando el contexto lo requiera.
+* Compuesto químico y Clase química definidos como entidades reutilizables.
+* Perfil fitoquímico definido como información contextual y no como entidad.
+* Actividad biológica y Mecanismo de acción definidos como entidades.
+* Farmacodinámica y Farmacocinética definidas como información contextual.
+* Uso terapéutico y Condición de salud definidos como entidades reutilizables.
+* Evento adverso representado mediante relación contextual con Condición de salud.
+* Contraindicación y Precaución representadas como relaciones o afirmaciones contextuales.
+* Interacción definida como entidad contextual.
+* Estudio diferenciado de Publicación.
+* Revisión sistemática integrada como clasificación de Estudio secundario.
+* Metaanálisis representado como característica o método cuando corresponda.
+* Uso tradicional definido como entidad diferenciada del Uso terapéutico.
+* Comunidad / pueblo, Sistema tradicional y Región incorporados como entidades opcionales.
+* Organización, Farmacopea, Monografía y Disposición normativa definidos como entidades reutilizables.
+* Afirmación definida como entidad ligera de gobernanza y trazabilidad.
+* Evidencia definida como relación transversal calificada y no como entidad independiente.
+* Fuente definida como categoría abstracta transversal.
+* Procedencia definida como componente transversal de trazabilidad.
+* Relaciones definidas mediante vocabulario semántico controlado.
+* Estado de gobernanza separado del estado científico o de soporte.
+* Identificadores externos diferenciados del ID Atlas.
+* Cardinalidades conceptuales iniciales definidas con flexibilidad por defecto.
+* Separación explícita entre modelo conceptual e implementación física.
+
+---
+
+### Changed
+
+#### Planificación
+
+* Sprint 4.1 — Modelo Híbrido del Conocimiento cerrado.
+* Sprint 4.2 — Arquitectura del Modelo de Conocimiento cerrado.
+* Sprint 4.3 — Dominios de Conocimiento cerrado.
+* Sprint 4.4 — Modelo de Información cerrado.
+* Release v0.4 — Arquitectura del Conocimiento cerrado.
+* Release v0.5 establecido como siguiente Release pendiente de definición.
+* ROADMAP actualizado para reflejar el estado real del proyecto y las métricas posteriores al cierre de v0.4.
+
+#### Arquitectura
+
+* El Atlas deja de tratar la estructura inicial de navegación creada en v0.3 como modelo formal del conocimiento.
+* La estructura conceptual pasa a estar gobernada por ADR-005, ADM-002, ADM-003 y ADM-004.
+* La identidad del conocimiento queda desacoplada de archivos, páginas, monografías y sistemas externos.
+* Las cardinalidades se establecen como conceptuales y no como decisiones físicas de almacenamiento.
+* La arquitectura permanece independiente de tecnologías específicas de base de datos, grafo, ontología o API.
+
+---
+
+### Validated
+
+* ADR-005 aprobado e integrado.
+* ADM-002 aprobado e integrado.
+* ADM-003 aprobado e integrado.
+* ADM-004 aprobado e integrado.
+* Validadores locales de Front Matter, Markdown, nomenclatura, enlaces e identificadores ejecutados correctamente sobre los entregables del Release.
+* Controles de GitHub Actions superados durante la integración.
+* Integración de ADM-004 en `develop` sin conflictos.
+* Modelo conceptual revisado iterativamente antes de su formalización.
+
+---
+
+### Result
+
+El Release v0.4 deja al Atlas con una arquitectura conceptual gobernada capaz de representar conocimiento mediante dominios, entidades, relaciones, afirmaciones, evidencia, fuentes y procedencia, manteniendo separada la identidad científica de sus vistas editoriales y de cualquier implementación tecnológica concreta.
 
 ---
 

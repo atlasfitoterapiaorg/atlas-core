@@ -1,11 +1,11 @@
 ---
 id: ROADMAP
 title: Plan Director del Atlas de Fitoterapia
-version: 1.3.0
+version: 1.4.0
 status: Approved
 type: ROADMAP
 created: 2026-07-25
-updated: 2026-08-16
+updated: 2026-08-25
 author: Proyecto Atlas de Fitoterapia
 tags:
   - roadmap
@@ -35,14 +35,14 @@ Toda iniciativa, capacidad, documento, componente arquitectónico o desarrollo t
 
 ## 3. Estado General del Proyecto
 
-| Elemento              | Estado                                      |
-| --------------------- | ------------------------------------------- |
-| Proyecto              | Atlas de Fitoterapia                        |
-| Estado general        | 🟢 Arquitectura del conocimiento activa     |
-| Release activo        | Release v0.4 — Arquitectura del Conocimiento |
-| Sprint activo         | Sprint 4.1 — Modelo Híbrido del Conocimiento |
-| Versión del documento | 1.3.0                                       |
-| Última actualización  | 2026-08-16                                  |
+| Elemento              | Estado                                              |
+| --------------------- | --------------------------------------------------- |
+| Proyecto              | Atlas de Fitoterapia                                |
+| Estado general        | 🟢 Arquitectura del conocimiento completada         |
+| Release activo        | Ninguno — Release v0.5 pendiente de definición      |
+| Sprint activo         | Ninguno                                              |
+| Versión del documento | 1.4.0                                               |
+| Última actualización  | 2026-08-25                                          |
 
 ---
 
@@ -50,14 +50,14 @@ Toda iniciativa, capacidad, documento, componente arquitectónico o desarrollo t
 
 | Indicador                       | Valor |
 | ------------------------------- | ----: |
-| Releases completados            |     3 |
-| Release activo                  |  v0.4 |
-| Sprints completados             |     9 |
-| Sprint activo                   |   4.1 |
-| Documentos normativos aprobados |    10 |
+| Releases completados            |     4 |
+| Release activo                  |     — |
+| Sprints completados             |    13 |
+| Sprint activo                   |     — |
+| Documentos normativos aprobados |    14 |
 | GOV                             |     1 |
-| ADR                             |     4 |
-| ADM                             |     1 |
+| ADR                             |     5 |
+| ADM                             |     4 |
 | EEA                             |     3 |
 | TPL                             |     1 |
 
@@ -614,13 +614,13 @@ El Release v0.3 se considerará completado cuando:
 
 ## Release v0.4 — Arquitectura del Conocimiento
 
-**Estado:** 🟡 En progreso
+**Estado:** ✅ Completado
 
 ### Propósito arquitectónico
 
-Diseñar y aprobar la arquitectura conceptual del Atlas mediante un modelo híbrido orientado por dominios de conocimiento.
+Diseñar y aprobar la arquitectura conceptual del Atlas mediante un modelo híbrido de conocimiento estructurado por dominios, entidades, relaciones, afirmaciones, evidencia y procedencia.
 
-### Arquitectura conceptual objetivo
+### Arquitectura conceptual resultante
 
 ```text
 Atlas
@@ -638,19 +638,25 @@ Entidades
 Relaciones
  │
  ▼
+Afirmaciones y Evidencia
+ │
+ ▼
+Procedencia
+ │
+ ▼
 Grafo de Conocimiento
  │
  ▼
 Vistas Editoriales
 ```
 
-Las monografías serán vistas editoriales construidas a partir de entidades, atributos y relaciones del modelo de conocimiento.
+Las monografías se establecen como vistas editoriales construidas a partir del conocimiento gobernado y no como contenedores primarios de identidad.
 
 ---
 
 ### Sprint 4.1 — Modelo Híbrido del Conocimiento
 
-**Estado:** 🟡 En progreso
+**Estado:** ✅ Completado
 
 #### Objetivo
 
@@ -658,101 +664,165 @@ Formalizar el modelo conceptual mediante el cual se organizará el conocimiento 
 
 #### Entregable
 
-* [ ] ADR-005 — Modelo Híbrido del Conocimiento.
+* [x] ADR-005 — Modelo Híbrido del Conocimiento.
 
-#### Resultado esperado
+#### Capacidades obtenidas
 
-Definir formalmente que el Atlas será construido por dominios, entidades y relaciones, y no mediante acumulación independiente de documentos.
+* [x] Separación entre entidades y documentos.
+* [x] Relaciones independientes de la representación editorial.
+* [x] Integración explícita de afirmaciones, evidencia y procedencia.
+* [x] Distinción entre fuente externa e identidad gobernada.
+* [x] Preservación de evidencia contradictoria.
+* [x] Base arquitectónica para automatización futura sin aprobación automática.
+
+#### Resultado
+
+El Atlas adoptó formalmente un modelo híbrido en el que las entidades y relaciones constituyen la estructura del conocimiento y los documentos actúan como representaciones editoriales.
 
 ---
 
 ### Sprint 4.2 — Arquitectura del Modelo de Conocimiento
 
-**Estado:** ⚪ Planeado
+**Estado:** ✅ Completado
 
 #### Objetivo
 
-Definir la arquitectura general que conectará dominios, entidades, relaciones y vistas editoriales.
+Definir la arquitectura general que conecta dominios, entidades, relaciones, afirmaciones, evidencia, procedencia, grafo de conocimiento y vistas editoriales.
 
 #### Entregable
 
-* [ ] ADM-002 — Arquitectura del Modelo de Conocimiento.
+* [x] ADM-002 — Arquitectura del Modelo de Conocimiento.
+
+#### Capacidades obtenidas
+
+* [x] Arquitectura conceptual organizada en siete capas.
+* [x] Separación formal entre Dominios, Entidades, Relaciones, Afirmaciones y Evidencia, Procedencia, Grafo y Vistas Editoriales.
+* [x] Arquitectura taxonómica principal definida.
+* [x] Especie establecida como unidad biológica principal para documentación fitoterapéutica.
+* [x] Prohibición de herencia automática de propiedades entre niveles taxonómicos.
+* [x] Procedencia establecida como propiedad arquitectónica fundamental.
+
+#### Resultado
+
+Quedó definida la arquitectura conceptual sobre la cual pueden desarrollarse dominios, entidades, relaciones y modelos de información sin depender de una tecnología de almacenamiento específica.
 
 ---
 
 ### Sprint 4.3 — Dominios de Conocimiento
 
-**Estado:** ⚪ Planeado
+**Estado:** ✅ Completado
 
 #### Objetivo
 
-Definir formalmente los dominios y subdominios que estructurarán el Atlas.
+Definir formalmente los dominios y subdominios que estructuran el Atlas.
 
 #### Entregable
 
-* [ ] ADM-003 — Dominios de Conocimiento del Atlas.
+* [x] ADM-003 — Dominios de Conocimiento del Atlas.
 
-#### Consideraciones
+#### Dominios aprobados
 
-Los dominios deberán permitir incorporar, entre otros:
+```text
+1. Botánica
+2. Farmacognosia
+3. Fitoquímica
+4. Etnobotánica y Uso Tradicional
+5. Farmacología
+6. Evidencia Científica y Clínica
+7. Uso Terapéutico
+8. Seguridad y Toxicología
+9. Regulación y Farmacopeas
+```
 
-* botánica;
-* farmacognosia;
-* fitoquímica;
-* farmacología;
-* evidencia clínica;
-* seguridad;
-* toxicología;
-* regulación;
-* preparados;
-* referencias.
+Fuentes y Procedencia se establecieron como capa transversal y no como dominio temático independiente.
 
-La lista definitiva será definida durante este Sprint.
+#### Capacidades obtenidas
+
+* [x] Límites conceptuales entre los nueve dominios.
+* [x] Separación entre taxonomía, farmacognosia y fitoquímica.
+* [x] Separación entre uso tradicional, uso terapéutico y evidencia.
+* [x] Separación entre actividad farmacológica y evidencia experimental.
+* [x] Diferenciación entre calidad farmacognóstica y regulación farmacopéica.
+* [x] Principio de cobertura no obligatoria aplicado a todos los dominios.
+* [x] Preservación de información contradictoria y ausencia de inferencia automática.
+
+#### Resultado
+
+El Atlas dispone de una organización temática oficial suficientemente definida para estructurar su conocimiento sin convertir los dominios en silos independientes.
 
 ---
 
 ### Sprint 4.4 — Modelo de Información
 
-**Estado:** ⚪ Planeado
+**Estado:** ✅ Completado
 
 #### Objetivo
 
-Definir la estructura formal de la información del Atlas.
+Definir el modelo conceptual de información del Atlas y las reglas mínimas para representar conocimiento estructurado, trazable, interoperable y gobernado.
 
 #### Entregable
 
-* [ ] ADM-004 — Modelo de Información del Atlas.
+* [x] ADM-004 — Modelo de Información del Atlas.
 
-#### El modelo deberá definir
+#### Capacidades obtenidas
 
-* entidades;
-* atributos;
-* relaciones;
-* identificadores;
-* cardinalidades;
-* metadatos;
-* procedencia;
-* trazabilidad;
-* reglas mínimas de interoperabilidad.
+* [x] Tipos iniciales de entidades definidos.
+* [x] Elementos transversales definidos.
+* [x] Relaciones semánticas iniciales definidas.
+* [x] Cardinalidades conceptuales iniciales establecidas.
+* [x] Separación entre entidades, clasificaciones e información contextual.
+* [x] Taxón modelado como entidad única diferenciada por nivel taxonómico.
+* [x] Parte vegetal modelada como entidad genérica reutilizable.
+* [x] Droga vegetal diferenciada de Taxón y Parte vegetal.
+* [x] Preparado vegetal incorporado como elemento transversal con identidad cuando el contexto lo requiera.
+* [x] Compuesto químico y Clase química definidos como entidades reutilizables.
+* [x] Actividad biológica y Mecanismo de acción definidos como entidades.
+* [x] Uso terapéutico y Condición de salud definidos como entidades reutilizables.
+* [x] Evento adverso representado mediante relación contextual con Condición de salud.
+* [x] Contraindicación y Precaución representadas como relaciones o afirmaciones contextuales.
+* [x] Interacción definida como entidad contextual.
+* [x] Estudio diferenciado de Publicación.
+* [x] Revisión sistemática integrada mediante clasificación de Estudio.
+* [x] Uso tradicional diferenciado de Uso terapéutico.
+* [x] Organización, Farmacopea, Monografía y Disposición normativa definidas como entidades reutilizables.
+* [x] Afirmación definida como entidad ligera de gobernanza.
+* [x] Evidencia definida como relación transversal calificada y no como entidad.
+* [x] Fuente definida como categoría abstracta transversal.
+* [x] Procedencia definida como trazabilidad transversal.
+* [x] Estado de gobernanza separado del estado científico.
+* [x] Identificadores externos diferenciados de la identidad interna del Atlas.
+* [x] Modelo conceptual mantenido independiente de su implementación física.
 
-#### Preparación para agentes
+#### Resultado
 
-El modelo deberá poder ser interpretado tanto por personas como por software, permitiendo posteriormente la integración de sistemas automáticos y agentes de inteligencia artificial.
+El Atlas dispone de un Modelo de Información v1.0 suficientemente definido para iniciar posteriormente la materialización técnica del conocimiento sin anticipar una base de datos, ontología, API o tecnología de grafo concreta.
 
 ---
 
 ### Principio de diseño del Release v0.4
 
-Cada documento deberá introducir una responsabilidad arquitectónica nueva.
+Cada documento introdujo una responsabilidad arquitectónica diferenciada:
 
-No se crearán:
+```text
+ADR-005
+→ decisión del modelo híbrido
 
-* catálogos redundantes de entidades;
-* diccionarios duplicados;
-* glosarios que reproduzcan información existente;
-* documentos cuya responsabilidad pueda integrarse en ADM-002, ADM-003 o ADM-004.
+ADM-002
+→ arquitectura del conocimiento
 
----
+ADM-003
+→ dominios del conocimiento
+
+ADM-004
+→ modelo conceptual de información
+```
+
+No se crearon catálogos, diccionarios o glosarios redundantes cuya responsabilidad pudiera integrarse en estos documentos.
+
+### Resultado del Release
+
+El Release v0.4 queda completado con una arquitectura de conocimiento gobernada que permite avanzar hacia la implementación progresiva del modelo sin depender de la estructura documental inicial ni de una tecnología específica.
+
 
 ## 9. Releases Estratégicos
 
@@ -762,7 +832,7 @@ Solo se desarrollarán en detalle cuando el Release precedente permita conocer c
 
 | Release | Propósito                             | Estado                 |
 | ------- | ------------------------------------- | ---------------------- |
-| v0.5    | Por definir                           | ⚪ Planeación pendiente |
+| v0.5    | Por definir                           | ⚪ Siguiente Release — pendiente de definición |
 | v0.6    | Por definir                           | ⚪ Planeación pendiente |
 | v0.7    | Por definir                           | ⚪ Planeación pendiente |
 | v0.8    | Por definir                           | ⚪ Planeación pendiente |
@@ -862,8 +932,9 @@ Publicación
 v0.1  Fundación                       ✅ Completado
 v0.2  Gobernanza                      ✅ Completado
 v0.3  Infraestructura Tecnológica     ✅ Completado
-v0.4  Arquitectura del Conocimiento   🟡 En progreso
-v0.5+ Evolución estratégica           ⚪ Pendiente
+v0.4  Arquitectura del Conocimiento   ✅ Completado
+v0.5  Siguiente Release               ⚪ Pendiente de definición
+v0.6+ Evolución estratégica           ⚪ Pendiente
 ```
 
 ### Estado de Sprints
@@ -885,10 +956,10 @@ Release v0.3
 └── Sprint 3.7  Validación Integral y Cierre          ✅
 
 Release v0.4
-├── Sprint 4.1  Modelo Híbrido del Conocimiento       🟡
-├── Sprint 4.2  Arquitectura del Modelo               ⚪
-├── Sprint 4.3  Dominios de Conocimiento              ⚪
-└── Sprint 4.4  Modelo de Información                 ⚪
+├── Sprint 4.1  Modelo Híbrido del Conocimiento       ✅
+├── Sprint 4.2  Arquitectura del Modelo               ✅
+├── Sprint 4.3  Dominios de Conocimiento              ✅
+└── Sprint 4.4  Modelo de Información                 ✅
 ```
 
 ### Dependencia entre Releases
@@ -906,6 +977,9 @@ v0.3 Infraestructura Tecnológica
 v0.4 Arquitectura del Conocimiento
         │
         ▼
+v0.5 Pendiente de definición
+        │
+        ▼
 Releases posteriores
 ```
 
@@ -918,7 +992,11 @@ Releases posteriores
 * ADR-002 — Sistema de Identificación Única.
 * ADR-003 — Jerarquía Normativa.
 * ADR-004 — Arquitectura antes que Implementación.
+* ADR-005 — Modelo Híbrido del Conocimiento.
 * ADM-001 — Arquitectura General del Atlas.
+* ADM-002 — Arquitectura del Modelo de Conocimiento.
+* ADM-003 — Dominios de Conocimiento del Atlas.
+* ADM-004 — Modelo de Información del Atlas.
 * EEA-000 — Convenciones Generales.
 * EEA-001 — Convenciones Documentales.
 * EEA-002 — Convenciones de Nomenclatura.
