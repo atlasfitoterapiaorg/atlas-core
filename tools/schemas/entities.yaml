@@ -1,0 +1,152 @@
+version: 1.0.0
+
+entities:
+
+  taxon:
+    name: Taxón
+    prefix: TAX
+    id_pattern: "^TAX-(FAM|GEN|SP|SSP|VAR|FOR)-\\d{6}$"
+    sequence_scope: taxonomic_rank
+    required_fields:
+      - id
+      - title
+      - type
+      - taxonomic_level
+      - scientific_name
+      - governance_status
+      - relationships
+      - external_ids
+      - provenance
+    taxonomic_ranks:
+      family: FAM
+      genus: GEN
+      species: SP
+      subspecies: SSP
+      variety: VAR
+      form: FOR
+
+  plant_part:
+    name: Parte vegetal
+    prefix: PVE
+    id_pattern: "^PVE-\\d{6}$"
+    sequence_scope: entity_type
+
+  herbal_drug:
+    name: Droga vegetal
+    prefix: DVE
+    id_pattern: "^DVE-\\d{6}$"
+    sequence_scope: entity_type
+
+  herbal_preparation:
+    name: Preparado vegetal
+    prefix: PRE
+    id_pattern: "^PRE-\\d{6}$"
+    sequence_scope: entity_type
+
+  chemical_compound:
+    name: Compuesto químico
+    prefix: COM
+    id_pattern: "^COM-\\d{6}$"
+    sequence_scope: entity_type
+
+  chemical_class:
+    name: Clase química
+    prefix: CLQ
+    id_pattern: "^CLQ-\\d{6}$"
+    sequence_scope: entity_type
+
+  biological_activity:
+    name: Actividad biológica
+    prefix: ACB
+    id_pattern: "^ACB-\\d{6}$"
+    sequence_scope: entity_type
+
+  mechanism_of_action:
+    name: Mecanismo de acción
+    prefix: MEC
+    id_pattern: "^MEC-\\d{6}$"
+    sequence_scope: entity_type
+
+  therapeutic_use:
+    name: Uso terapéutico
+    prefix: UTE
+    id_pattern: "^UTE-\\d{6}$"
+    sequence_scope: entity_type
+
+  health_condition:
+    name: Condición de salud
+    prefix: CSA
+    id_pattern: "^CSA-\\d{6}$"
+    sequence_scope: entity_type
+
+  interaction:
+    name: Interacción
+    prefix: INT
+    id_pattern: "^INT-\\d{6}$"
+    sequence_scope: entity_type
+
+  study:
+    name: Estudio
+    prefix: EST
+    id_pattern: "^EST-\\d{6}$"
+    sequence_scope: entity_type
+
+  publication:
+    name: Publicación
+    prefix: PUB
+    id_pattern: "^PUB-\\d{6}$"
+    sequence_scope: entity_type
+
+  traditional_use:
+    name: Uso tradicional
+    prefix: UTR
+    id_pattern: "^UTR-\\d{6}$"
+    sequence_scope: entity_type
+
+  community:
+    name: Comunidad o pueblo
+    prefix: COMU
+    id_pattern: "^COMU-\\d{6}$"
+    sequence_scope: entity_type
+
+  traditional_system:
+    name: Sistema tradicional
+    prefix: STR
+    id_pattern: "^STR-\\d{6}$"
+    sequence_scope: entity_type
+
+  region:
+    name: Región
+    prefix: REG
+    id_pattern: "^REG-\\d{6}$"
+    sequence_scope: entity_type
+
+  organization:
+    name: Organización
+    prefix: ORG
+    id_pattern: "^ORG-\\d{6}$"
+    sequence_scope: entity_type
+
+  pharmacopoeia:
+    name: Farmacopea
+    prefix: FAR
+    id_pattern: "^FAR-\\d{6}$"
+    sequence_scope: entity_type
+
+  monograph:
+    name: Monografía
+    prefix: MON
+    id_pattern: "^MON-\\d{6}$"
+    sequence_scope: entity_type
+
+  normative_provision:
+    name: Disposición normativa
+    prefix: NOR
+    id_pattern: "^NOR-\\d{6}$"
+    sequence_scope: entity_type
+
+  assertion:
+    name: Afirmación
+    prefix: AFI
+    id_pattern: "^AFI-\\d{6}$"
+    sequence_scope: entity_type
