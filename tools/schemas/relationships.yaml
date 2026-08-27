@@ -1,0 +1,371 @@
+version: 1.0.0
+
+relationships:
+
+  pertenece_a:
+    label: pertenece a
+    description: Relación jerárquica o de pertenencia entre entidades compatibles.
+    pairs:
+      - source: taxon
+        target: taxon
+      - source: chemical_compound
+        target: chemical_class
+    cardinality: flexible
+
+  posee_parte:
+    label: posee parte
+    description: Vincula un taxón con una parte vegetal genérica presente en él.
+    pairs:
+      - source: taxon
+        target: plant_part
+    cardinality: flexible
+
+  origina:
+    label: origina
+    description: Vincula un taxón con una droga vegetal de origen.
+    pairs:
+      - source: taxon
+        target: herbal_drug
+    cardinality: flexible
+
+  procede_de:
+    label: procede de
+    description: Identifica el origen biológico o vegetal de una droga vegetal.
+    pairs:
+      - source: herbal_drug
+        target: taxon
+      - source: herbal_drug
+        target: plant_part
+    cardinality: one_or_more
+
+  deriva_de:
+    label: deriva de
+    description: Identifica el material del cual deriva un preparado vegetal.
+    pairs:
+      - source: herbal_preparation
+        target: herbal_drug
+      - source: herbal_preparation
+        target: herbal_preparation
+    cardinality: flexible
+
+  contiene:
+    label: contiene
+    description: Indica presencia documentada de un compuesto químico en un material.
+    pairs:
+      - source: herbal_drug
+        target: chemical_compound
+      - source: herbal_preparation
+        target: chemical_compound
+      - source: taxon
+        target: chemical_compound
+    cardinality: flexible
+    semantic_note: >
+      La relación directa Taxón -> Compuesto químico sólo debe utilizarse
+      cuando la fuente permita formular legítimamente el conocimiento
+      a nivel del taxón.
+
+  presenta:
+    label: presenta
+    description: Relación alternativa para presencia documentada de un compuesto químico.
+    pairs:
+      - source: herbal_drug
+        target: chemical_compound
+      - source: herbal_preparation
+        target: chemical_compound
+    cardinality: flexible
+
+  subclase_de:
+    label: subclase de
+    description: Representa jerarquía entre clases químicas.
+    pairs:
+      - source: chemical_class
+        target: chemical_class
+    cardinality: flexible
+
+  asociado_con:
+    label: asociado con
+    description: Asociación semántica documentada entre entidades compatibles.
+    pairs:
+      - source: chemical_compound
+        target: biological_activity
+      - source: herbal_drug
+        target: biological_activity
+      - source: herbal_preparation
+        target: biological_activity
+      - source: traditional_use
+        target: taxon
+      - source: traditional_use
+        target: community
+      - source: traditional_use
+        target: traditional_system
+    cardinality: flexible
+
+  actua_mediante:
+    label: actúa mediante
+    description: Vincula un compuesto químico con un mecanismo de acción documentado.
+    pairs:
+      - source: chemical_compound
+        target: mechanism_of_action
+    cardinality: flexible
+
+  explicada_por:
+    label: explicada por
+    description: Vincula una actividad biológica con un mecanismo de acción.
+    pairs:
+      - source: biological_activity
+        target: mechanism_of_action
+    cardinality: flexible
+
+  tiene_uso_terapeutico:
+    label: tiene uso terapéutico
+    description: Vincula un objeto fitoterapéutico con una entidad Uso terapéutico.
+    pairs:
+      - source: herbal_drug
+        target: therapeutic_use
+      - source: herbal_preparation
+        target: therapeutic_use
+      - source: chemical_compound
+        target: therapeutic_use
+      - source: taxon
+        target: therapeutic_use
+    cardinality: flexible
+    semantic_note: >
+      La relación desde Taxón sólo debe utilizarse cuando la fuente
+      formule explícitamente el conocimiento a ese nivel.
+
+  se_refiere_a:
+    label: se refiere a
+    description: Vincula un uso terapéutico con la condición de salud correspondiente.
+    pairs:
+      - source: therapeutic_use
+        target: health_condition
+    cardinality: flexible
+
+  asociado_con_evento_adverso:
+    label: asociado con evento adverso
+    description: Vincula un objeto de exposición con una condición de salud observada como evento adverso.
+    pairs:
+      - source: taxon
+        target: health_condition
+      - source: herbal_drug
+        target: health_condition
+      - source: herbal_preparation
+        target: health_condition
+      - source: chemical_compound
+        target: health_condition
+    cardinality: flexible
+
+  contraindicado_en:
+    label: contraindicado en
+    description: Vincula un objeto con una condición de salud documentada como contraindicación.
+    pairs:
+      - source: taxon
+        target: health_condition
+      - source: herbal_drug
+        target: health_condition
+      - source: herbal_preparation
+        target: health_condition
+      - source: chemical_compound
+        target: health_condition
+    cardinality: flexible
+    semantic_note: >
+      ADM-004 permite también contextos no representados como entidad.
+      Este esquema valida únicamente destinos que tengan identidad propia.
+
+  requiere_precaucion_en:
+    label: requiere precaución en
+    description: Vincula un objeto con una condición de salud que requiere precaución documentada.
+    pairs:
+      - source: taxon
+        target: health_condition
+      - source: herbal_drug
+        target: health_condition
+      - source: herbal_preparation
+        target: health_condition
+      - source: chemical_compound
+        target: health_condition
+    cardinality: flexible
+    semantic_note: >
+      ADM-004 permite también contextos no representados como entidad.
+      Este esquema valida únicamente destinos que tengan identidad propia.
+
+  estudia:
+    label: estudia
+    description: Vincula un estudio con un objeto de conocimiento investigado.
+    pairs:
+      - source: study
+        target: taxon
+      - source: study
+        target: plant_part
+      - source: study
+        target: herbal_drug
+      - source: study
+        target: herbal_preparation
+      - source: study
+        target: chemical_compound
+      - source: study
+        target: chemical_class
+      - source: study
+        target: biological_activity
+      - source: study
+        target: mechanism_of_action
+      - source: study
+        target: therapeutic_use
+      - source: study
+        target: health_condition
+      - source: study
+        target: interaction
+      - source: study
+        target: traditional_use
+    cardinality: flexible
+
+  reportado_en:
+    label: reportado en
+    description: Vincula un estudio con la publicación que lo comunica.
+    pairs:
+      - source: study
+        target: publication
+    cardinality: flexible
+
+  utiliza:
+    label: utiliza
+    description: Vincula un uso tradicional con la parte vegetal documentada.
+    pairs:
+      - source: traditional_use
+        target: plant_part
+    cardinality: flexible
+
+  localizado_en:
+    label: localizado en
+    description: Vincula un uso tradicional con una región documentada.
+    pairs:
+      - source: traditional_use
+        target: region
+    cardinality: flexible
+
+  relacionado_con:
+    label: relacionado con
+    description: Vincula un uso tradicional con una condición de salud en su contexto tradicional.
+    pairs:
+      - source: traditional_use
+        target: health_condition
+    cardinality: flexible
+    semantic_note: >
+      Esta relación conserva naturaleza tradicional y no implica
+      automáticamente un uso terapéutico contemporáneo.
+
+  emitida_por:
+    label: emitida por
+    description: Vincula una entidad documental o normativa con la organización responsable.
+    pairs:
+      - source: monograph
+        target: organization
+      - source: pharmacopoeia
+        target: organization
+      - source: normative_provision
+        target: organization
+    cardinality: flexible
+
+  mantenida_por:
+    label: mantenida por
+    description: Vincula una farmacopea con la organización responsable de su mantenimiento.
+    pairs:
+      - source: pharmacopoeia
+        target: organization
+    cardinality: flexible
+
+  pertenece_a_farmacopea:
+    label: pertenece a farmacopea
+    description: Vincula una monografía farmacopéica con la Farmacopea correspondiente.
+    pairs:
+      - source: monograph
+        target: pharmacopoeia
+    cardinality: flexible
+
+  documenta:
+    label: documenta
+    description: Vincula una monografía con un objeto del Atlas documentado por ella.
+    pairs:
+      - source: monograph
+        target: "*"
+    cardinality: flexible
+
+  regula:
+    label: regula
+    description: Vincula una disposición normativa con un objeto regulado del Atlas.
+    pairs:
+      - source: normative_provision
+        target: "*"
+    cardinality: flexible
+
+  sustentada_por:
+    label: sustentada por
+    description: Vincula una afirmación con una fuente que aporta soporte.
+    pairs:
+      - source: assertion
+        target: study
+      - source: assertion
+        target: publication
+      - source: assertion
+        target: monograph
+      - source: assertion
+        target: pharmacopoeia
+      - source: assertion
+        target: normative_provision
+      - source: assertion
+        target: organization
+    cardinality: flexible
+
+  limitada_por:
+    label: limitada por
+    description: Vincula una afirmación con una fuente que limita su alcance o soporte.
+    pairs:
+      - source: assertion
+        target: study
+      - source: assertion
+        target: publication
+      - source: assertion
+        target: monograph
+      - source: assertion
+        target: pharmacopoeia
+      - source: assertion
+        target: normative_provision
+      - source: assertion
+        target: organization
+    cardinality: flexible
+
+  contradicha_por:
+    label: contradicha por
+    description: Vincula una afirmación con una fuente que aporta evidencia contradictoria.
+    pairs:
+      - source: assertion
+        target: study
+      - source: assertion
+        target: publication
+      - source: assertion
+        target: monograph
+      - source: assertion
+        target: pharmacopoeia
+      - source: assertion
+        target: normative_provision
+      - source: assertion
+        target: organization
+    cardinality: flexible
+
+  contextualizada_por:
+    label: contextualizada por
+    description: Vincula una afirmación con una fuente que aporta contexto relevante.
+    pairs:
+      - source: assertion
+        target: study
+      - source: assertion
+        target: publication
+      - source: assertion
+        target: monograph
+      - source: assertion
+        target: pharmacopoeia
+      - source: assertion
+        target: normative_provision
+      - source: assertion
+        target: organization
+    cardinality: flexible

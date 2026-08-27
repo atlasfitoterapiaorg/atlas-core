@@ -9,13 +9,22 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parent
-SCHEMA_FILE = ROOT / "schemas" / "entities.yaml"
+
+ENTITY_SCHEMA_FILE = (
+    ROOT / "schemas" / "entities.yaml"
+)
+
+RELATIONSHIP_SCHEMA_FILE = (
+    ROOT / "schemas" / "relationships.yaml"
+)
+
 
 VALID_GOVERNANCE_STATUSES = {
     "proposed",
     "review",
     "approved",
 }
+
 
 EXCLUDED_DIRECTORIES = {
     ".git",
@@ -49,14 +58,16 @@ def is_excluded(path: Path) -> bool:
     )
 
 
-def load_entity_schemas() -> dict[str, dict[str, Any]]:
-    if not SCHEMA_FILE.exists():
+def load_yaml_catalog(
+    path: Path,
+    root_key: str,
+) -> dict[str, dict[str, Any]]:
+    if not path.exists():
         raise FileNotFoundError(
-            f"No existe el catálogo de entidades: "
-            f"{SCHEMA_FILE}"
+            f"No existe el catálogo: {path}"
         )
 
-    content = SCHEMA_FILE.read_text(
+    content = path.read_text(
         encoding="utf-8"
     )
 
@@ -64,19 +75,39 @@ def load_entity_schemas() -> dict[str, dict[str, Any]]:
 
     if not isinstance(data, dict):
         raise ValueError(
-            "El catálogo de entidades no contiene "
-            "un objeto YAML válido."
+            f"El catálogo {path.name} "
+            "no contiene un objeto YAML válido."
         )
 
-    entities = data.get("entities")
+    catalog = data.get(root_key)
 
-    if not isinstance(entities, dict):
+    if not isinstance(catalog, dict):
         raise ValueError(
-            "El catálogo debe contener la clave "
-            "'entities'."
+            f"El catálogo {path.name} debe "
+            f"contener la clave '{root_key}'."
         )
 
-    return entities
+    return catalog
+
+
+def load_entity_schemas() -> dict[
+    str,
+    dict[str, Any],
+]:
+    return load_yaml_catalog(
+        ENTITY_SCHEMA_FILE,
+        "entities",
+    )
+
+
+def load_relationship_schemas() -> dict[
+    str,
+    dict[str, Any],
+]:
+    return load_yaml_catalog(
+        RELATIONSHIP_SCHEMA_FILE,
+        "relationships",
+    )
 
 
 def extract_frontmatter(
@@ -88,7 +119,10 @@ def extract_frontmatter(
 
     lines = content.splitlines()
 
-    if not lines or lines[0].strip() != "---":
+    if not lines:
+        return None
+
+    if lines[0].strip() != "---":
         return None
 
     try:
@@ -127,8 +161,10 @@ def require_non_empty_string(
         errors.append(
             ValidationError(
                 path,
-                f"'{field}' debe ser "
-                "una cadena no vacía.",
+                (
+                    f"'{field}' debe ser "
+                    "una cadena no vacía."
+                ),
             )
         )
 
@@ -162,91 +198,6 @@ def validate_governance_status(
                 ),
             )
         )
-
-
-def validate_relationship_structure(
-    path: Path,
-    metadata: dict,
-    errors: list[ValidationError],
-) -> None:
-    relationships = metadata.get(
-        "relationships",
-        [],
-    )
-
-    if not isinstance(
-        relationships,
-        list,
-    ):
-        errors.append(
-            ValidationError(
-                path,
-                "'relationships' debe ser "
-                "una lista.",
-            )
-        )
-        return
-
-    for index, relationship in enumerate(
-        relationships,
-        start=1,
-    ):
-        if not isinstance(
-            relationship,
-            dict,
-        ):
-            errors.append(
-                ValidationError(
-                    path,
-                    (
-                        f"Relación {index} "
-                        "debe ser un objeto."
-                    ),
-                )
-            )
-            continue
-
-        relation_type = relationship.get(
-            "type"
-        )
-
-        target = relationship.get(
-            "target"
-        )
-
-        if (
-            not isinstance(
-                relation_type,
-                str,
-            )
-            or not relation_type.strip()
-        ):
-            errors.append(
-                ValidationError(
-                    path,
-                    (
-                        f"Relación {index}: "
-                        "falta 'type'."
-                    ),
-                )
-            )
-
-        if (
-            not isinstance(
-                target,
-                str,
-            )
-            or not target.strip()
-        ):
-            errors.append(
-                ValidationError(
-                    path,
-                    (
-                        f"Relación {index}: "
-                        "falta 'target'."
-                    ),
-                )
-            )
 
 
 def validate_transversal_lists(
@@ -303,6 +254,7 @@ def validate_required_fields(
                 ),
             )
         )
+
         return
 
     for field in required_fields:
@@ -311,7 +263,7 @@ def validate_required_fields(
                 ValidationError(
                     path,
                     (
-                        f"Falta campo obligatorio "
+                        "Falta campo obligatorio "
                         f"'{field}'."
                     ),
                 )
@@ -343,6 +295,7 @@ def validate_id(
                 ),
             )
         )
+
         return
 
     if not isinstance(
@@ -355,6 +308,7 @@ def validate_id(
                 "'id' debe ser una cadena.",
             )
         )
+
         return
 
     if not re.fullmatch(
@@ -401,6 +355,7 @@ def validate_taxon_specific_rules(
                 ),
             )
         )
+
         return
 
     if level not in ranks:
@@ -413,6 +368,7 @@ def validate_taxon_specific_rules(
                 ),
             )
         )
+
         return
 
     entity_id = metadata.get("id")
@@ -447,56 +403,123 @@ def validate_taxon_specific_rules(
         errors,
     )
 
+
+def validate_relationship_structure(
+    path: Path,
+    metadata: dict,
+    relationship_schemas: dict[
+        str,
+        dict[str, Any],
+    ],
+    errors: list[ValidationError],
+) -> None:
     relationships = metadata.get(
         "relationships",
         [],
     )
 
-    if isinstance(
+    if not isinstance(
         relationships,
         list,
     ):
-        for index, relationship in enumerate(
-            relationships,
-            start=1,
-        ):
-            if not isinstance(
-                relationship,
-                dict,
-            ):
-                continue
+        errors.append(
+            ValidationError(
+                path,
+                (
+                    "'relationships' debe ser "
+                    "una lista."
+                ),
+            )
+        )
 
-            target = relationship.get(
-                "target"
+        return
+
+    for index, relationship in enumerate(
+        relationships,
+        start=1,
+    ):
+        if not isinstance(
+            relationship,
+            dict,
+        ):
+            errors.append(
+                ValidationError(
+                    path,
+                    (
+                        f"Relación {index} "
+                        "debe ser un objeto."
+                    ),
+                )
             )
 
-            if (
-                isinstance(
-                    target,
-                    str,
+            continue
+
+        relation_type = relationship.get(
+            "type"
+        )
+
+        target = relationship.get(
+            "target"
+        )
+
+        if (
+            not isinstance(
+                relation_type,
+                str,
+            )
+            or not relation_type.strip()
+        ):
+            errors.append(
+                ValidationError(
+                    path,
+                    (
+                        f"Relación {index}: "
+                        "falta 'type'."
+                    ),
                 )
-                and target.strip()
-                and not target.startswith(
-                    "TAX-"
+            )
+
+        elif (
+            relation_type
+            not in relationship_schemas
+        ):
+            errors.append(
+                ValidationError(
+                    path,
+                    (
+                        f"Relación {index}: "
+                        f"tipo no reconocido "
+                        f"'{relation_type}'."
+                    ),
                 )
-            ):
-                errors.append(
-                    ValidationError(
-                        path,
-                        (
-                            f"Relación {index}: "
-                            "el target de una relación "
-                            "taxonómica debe utilizar "
-                            "un ID TAX-*."
-                        ),
-                    )
+            )
+
+        if (
+            not isinstance(
+                target,
+                str,
+            )
+            or not target.strip()
+        ):
+            errors.append(
+                ValidationError(
+                    path,
+                    (
+                        f"Relación {index}: "
+                        "falta 'target'."
+                    ),
                 )
+            )
 
 
 def validate_entity_metadata(
     path: Path,
     metadata: dict,
     entity_schemas: dict[
+        str,
+        dict[str, Any],
+    ],
+    relationship_schemas: dict[
         str,
         dict[str, Any],
     ],
@@ -550,6 +573,7 @@ def validate_entity_metadata(
     validate_relationship_structure(
         path,
         metadata,
+        relationship_schemas,
         errors,
     )
 
@@ -576,11 +600,16 @@ def validate_entity(
         str,
         dict[str, Any],
     ],
+    relationship_schemas: dict[
+        str,
+        dict[str, Any],
+    ],
 ) -> list[ValidationError]:
     try:
         metadata = extract_frontmatter(
             path
         )
+
     except UnicodeDecodeError:
         return [
             ValidationError(
@@ -591,6 +620,7 @@ def validate_entity(
                 ),
             )
         ]
+
     except yaml.YAMLError as exc:
         return [
             ValidationError(
@@ -609,6 +639,7 @@ def validate_entity(
         path,
         metadata,
         entity_schemas,
+        relationship_schemas,
     )
 
 
@@ -635,6 +666,7 @@ def collect_entity_files(
             metadata = extract_frontmatter(
                 path
             )
+
         except (
             UnicodeDecodeError,
             yaml.YAMLError,
@@ -658,18 +690,27 @@ def collect_entity_files(
     return sorted(files)
 
 
-def validate_duplicate_ids(
+def build_entity_index(
     files: list[Path],
-) -> list[ValidationError]:
-    errors: list[ValidationError] = []
+) -> tuple[
+    dict[str, dict[str, Any]],
+    list[ValidationError],
+]:
+    index: dict[
+        str,
+        dict[str, Any],
+    ] = {}
 
-    seen: dict[str, Path] = {}
+    errors: list[
+        ValidationError
+    ] = []
 
     for path in files:
         try:
             metadata = extract_frontmatter(
                 path
             )
+
         except (
             UnicodeDecodeError,
             yaml.YAMLError,
@@ -686,17 +727,25 @@ def validate_duplicate_ids(
             "id"
         )
 
+        entity_type = metadata.get(
+            "type"
+        )
+
         if not isinstance(
             entity_id,
             str,
         ):
             continue
 
-        previous_path = seen.get(
-            entity_id
-        )
+        if entity_id in index:
+            previous = index[
+                entity_id
+            ]
 
-        if previous_path is not None:
+            previous_path = previous[
+                "path"
+            ]
+
             errors.append(
                 ValidationError(
                     path,
@@ -708,8 +757,228 @@ def validate_duplicate_ids(
                     ),
                 )
             )
-        else:
-            seen[entity_id] = path
+
+            continue
+
+        index[entity_id] = {
+            "path": path,
+            "type": entity_type,
+            "metadata": metadata,
+        }
+
+    return index, errors
+
+
+def pair_is_allowed(
+    source_type: str,
+    target_type: str,
+    relation_schema: dict[
+        str,
+        Any,
+    ],
+) -> bool:
+    pairs = relation_schema.get(
+        "pairs",
+        [],
+    )
+
+    if not isinstance(
+        pairs,
+        list,
+    ):
+        return False
+
+    for pair in pairs:
+        if not isinstance(
+            pair,
+            dict,
+        ):
+            continue
+
+        allowed_source = pair.get(
+            "source"
+        )
+
+        allowed_target = pair.get(
+            "target"
+        )
+
+        source_matches = (
+            allowed_source == source_type
+            or allowed_source == "*"
+        )
+
+        target_matches = (
+            allowed_target == target_type
+            or allowed_target == "*"
+        )
+
+        if (
+            source_matches
+            and target_matches
+        ):
+            return True
+
+    return False
+
+
+def validate_graph_relationships(
+    files: list[Path],
+    entity_index: dict[
+        str,
+        dict[str, Any],
+    ],
+    relationship_schemas: dict[
+        str,
+        dict[str, Any],
+    ],
+) -> list[ValidationError]:
+    errors: list[
+        ValidationError
+    ] = []
+
+    for path in files:
+        try:
+            metadata = extract_frontmatter(
+                path
+            )
+
+        except (
+            UnicodeDecodeError,
+            yaml.YAMLError,
+        ):
+            continue
+
+        if not isinstance(
+            metadata,
+            dict,
+        ):
+            continue
+
+        source_type = metadata.get(
+            "type"
+        )
+
+        source_id = metadata.get(
+            "id"
+        )
+
+        relationships = metadata.get(
+            "relationships",
+            [],
+        )
+
+        if not isinstance(
+            source_type,
+            str,
+        ):
+            continue
+
+        if not isinstance(
+            relationships,
+            list,
+        ):
+            continue
+
+        for index, relationship in enumerate(
+            relationships,
+            start=1,
+        ):
+            if not isinstance(
+                relationship,
+                dict,
+            ):
+                continue
+
+            relation_type = relationship.get(
+                "type"
+            )
+
+            target_id = relationship.get(
+                "target"
+            )
+
+            if not isinstance(
+                relation_type,
+                str,
+            ):
+                continue
+
+            if not isinstance(
+                target_id,
+                str,
+            ):
+                continue
+
+            relation_schema = (
+                relationship_schemas.get(
+                    relation_type
+                )
+            )
+
+            if relation_schema is None:
+                continue
+
+            target_entity = entity_index.get(
+                target_id
+            )
+
+            if target_entity is None:
+                errors.append(
+                    ValidationError(
+                        path,
+                        (
+                            f"Relación {index} "
+                            f"'{relation_type}': "
+                            f"target inexistente "
+                            f"'{target_id}'."
+                        ),
+                    )
+                )
+
+                continue
+
+            target_type = target_entity.get(
+                "type"
+            )
+
+            if not isinstance(
+                target_type,
+                str,
+            ):
+                errors.append(
+                    ValidationError(
+                        path,
+                        (
+                            f"Relación {index} "
+                            f"'{relation_type}': "
+                            f"target '{target_id}' "
+                            "no tiene un tipo válido."
+                        ),
+                    )
+                )
+
+                continue
+
+            if not pair_is_allowed(
+                source_type,
+                target_type,
+                relation_schema,
+            ):
+                errors.append(
+                    ValidationError(
+                        path,
+                        (
+                            f"Relación {index} "
+                            f"'{relation_type}' "
+                            "no permite "
+                            f"{source_type} -> "
+                            f"{target_type}. "
+                            f"Origen: {source_id}. "
+                            f"Destino: {target_id}."
+                        ),
+                    )
+                )
 
     return errors
 
@@ -717,8 +986,9 @@ def validate_duplicate_ids(
 def main() -> int:
     parser = argparse.ArgumentParser(
         description=(
-            "Valida entidades de conocimiento "
-            "del Atlas de Fitoterapia."
+            "Valida entidades y relaciones "
+            "del conocimiento del "
+            "Atlas de Fitoterapia."
         )
     )
 
@@ -742,12 +1012,18 @@ def main() -> int:
         print(
             f"ERROR: No existe: {target}"
         )
+
         return 2
 
     try:
         entity_schemas = (
             load_entity_schemas()
         )
+
+        relationship_schemas = (
+            load_relationship_schemas()
+        )
+
     except (
         FileNotFoundError,
         ValueError,
@@ -756,10 +1032,12 @@ def main() -> int:
         print(
             f"ERROR DE CONFIGURACIÓN: {exc}"
         )
+
         return 2
 
     if target.is_file():
         files = [target]
+
     else:
         files = collect_entity_files(
             target,
@@ -771,6 +1049,7 @@ def main() -> int:
             "No se encontraron entidades "
             "de conocimiento soportadas."
         )
+
         return 0
 
     all_errors: list[
@@ -782,14 +1061,28 @@ def main() -> int:
             validate_entity(
                 path,
                 entity_schemas,
+                relationship_schemas,
             )
         )
 
-    all_errors.extend(
-        validate_duplicate_ids(
+    entity_index, index_errors = (
+        build_entity_index(
             files
         )
     )
+
+    all_errors.extend(
+        index_errors
+    )
+
+    if not target.is_file():
+        all_errors.extend(
+            validate_graph_relationships(
+                files,
+                entity_index,
+                relationship_schemas,
+            )
+        )
 
     if all_errors:
         print(
@@ -804,6 +1097,7 @@ def main() -> int:
                         target
                     )
                 )
+
             except ValueError:
                 display_path = error.path
 
@@ -823,12 +1117,6 @@ def main() -> int:
 
         return 1
 
-    supported_types = ", ".join(
-        sorted(
-            entity_schemas.keys()
-        )
-    )
-
     print(
         "VALIDACIÓN CORRECTA: "
         f"{len(files)} entidad(es)."
@@ -836,7 +1124,16 @@ def main() -> int:
 
     print(
         "Tipos soportados: "
-        f"{supported_types}."
+        f"{len(entity_schemas)}."
+    )
+
+    print(
+        "Relaciones soportadas: "
+        f"{len(relationship_schemas)}."
+    )
+
+    print(
+        "Integridad referencial: correcta."
     )
 
     return 0
