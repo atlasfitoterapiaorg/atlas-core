@@ -3,11 +3,13 @@ name: Validate Atlas Core
 on:
   pull_request:
     branches:
+      - develop
       - main
 
   push:
     branches:
       - develop
+      - main
 
   workflow_dispatch:
 
@@ -104,3 +106,31 @@ jobs:
       - name: Validate IDs
         run: python tools/validate_ids.py
 
+
+  validate-knowledge:
+    name: Validate knowledge compatibility
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current Atlas Core
+        uses: actions/checkout@v6
+        with:
+          path: atlas-core
+
+      - name: Checkout reference knowledge
+        uses: actions/checkout@v6
+        with:
+          repository: atlasfitoterapiaorg/atlas-knowledge
+          ref: develop
+          path: atlas-knowledge
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install pyyaml
+
+      - name: Validate entities and relationships
+        run: python atlas-core/tools/validate_entities.py atlas-knowledge

@@ -35,6 +35,7 @@ EXCLUDED_DIRECTORIES = {
     "__pycache__",
     "node_modules",
     "public",
+    "templates",  # Plantillas operativas de Obsidian, no entidades reales.
 }
 
 
