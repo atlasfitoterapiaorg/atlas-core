@@ -23,6 +23,7 @@ EXCLUDED_DIRECTORIES = {
 }
 
 EXCLUDED_FILES = {
+    "AGENTS.md",  # Instrucciones operativas para agentes, no documento institucional.
     "README.md",
     "CHANGELOG.md",
 }
